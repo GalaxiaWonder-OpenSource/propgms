@@ -1,3 +1,7 @@
 {
-
+  "global": {
+    "startup-name": "Galaxia Wonder",
+    "product-name": "PROP GMS"
+  },
+  "footer":
 }

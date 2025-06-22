@@ -1,3 +1,14 @@
 {
-
+  "global": {
+    "startup-name": "Galaxia Wonder",
+    "product-name": "PROP GMS"
+  },
+  "footer": {
+    "about": "Learn About Us",
+    "faq": "FAQ",
+    "privacy-policy": "Privacy Policy",
+    "terms-and-conditions": "Terms and Conditions",
+    "contact": "Contact Us",
+    "rights": "All rights reserved."
+  }
 }
