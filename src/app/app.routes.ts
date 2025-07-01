@@ -1,32 +1,18 @@
 import { Routes } from '@angular/router';
+
 import {AuthenticationLayout} from './iam/layouts/authentication-layout/authentication-layout';
-//import {PageNotFoundComponent} from "./public/pages/page-not-found/page-not-found";
+import {RegisterTab} from './iam/tabs/register-tab/register-tab';
+import {LoginTab} from './iam/components/tabs/login-tab/login-tab';
 
 export const routes: Routes = [
-  //{ path: '',                 redirectTo: 'login', pathMatch: 'full' },
-  //{ path: '**',               component: PageNotFoundComponent }
   {
     path: '',
     component: AuthenticationLayout,
     children: [
-      //*
-      // {
-      //         path: 'login',
-      //         loadComponent: () =>
-      //           import('../features/auth/login.component').then(m => m.LoginComponent)
-      //       },
-      //       {
-      //         path: 'register',
-      //         loadComponent: () =>
-      //           import('../features/auth/register.component').then(m => m.RegisterComponent)
-      //       },
-      //       { path: '', redirectTo: 'login', pathMatch: 'full' }
-      //
-      //
-      //
-      //
-      //
-      //
+      { path: '', redirectTo: 'register', pathMatch: 'full' },
+      { path: 'login', component: LoginTab },
+      { path: 'register', component: RegisterTab },
     ]
-  }
+  },
+  { path: '**', redirectTo: 'login' }
 ];

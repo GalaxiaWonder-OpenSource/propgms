@@ -1,7 +1,12 @@
 {
   "global": {
     "startup-name": "Galaxia Wonder",
-    "product-name": "PROP GMS"
+    "product-name": "PROP GMS",
+    "action": {
+      "next": "Next",
+      "back": "Back",
+      "register": "Register"
+    }
   },
   "footer": {
     "about": "Learn About Us",
@@ -10,5 +15,45 @@
     "terms-and-conditions": "Terms and Conditions",
     "contact": "Contact Us",
     "rights": "All rights reserved."
+  },
+  "auth": {
+    "register": {
+      "title": "Sign up",
+      "form": {
+        "personal-data-title": "Personal information",
+        "auth-credentials-title": "Account information",
+        "review-title": "Final check-in",
+        "welcome-message": "¡Welcome {{name}}! You're about to finish your account creation.",
+        "summary-message": "Make sure your personal data has been introduced properly.",
+        "client-message": "We hope our tool makes your project smooth, transparent, and successful.",
+        "worker-message": "We hope our tool is of great utility for your work!",
+        "next-steps-message": "If everything is correct, you may proceed to finish the registration process."
+      }
+    }
+  },
+  "model": {
+    "person": {
+      "first-name": "First Name",
+      "first-name-example": "John",
+      "last-name": "Last Name",
+      "last-name-example": "Doe",
+      "email": "Email Address",
+      "email-example": "john.doe@example.com",
+      "phone": "Phone Number",
+      "phone-example": "+51987654321",
+      "professional-id": "Professional ID",
+      "professional-id-example": "CIP123456"
+    },
+    "user-account": {
+      "username": "Username",
+      "username-example": "johndoe",
+      "password": "Password",
+      "password-example": "••••••••",
+      "type": "User Account Type"
+    },
+    "user-account-type": {
+      "TYPE_WORKER": "Worker",
+      "TYPE_CLIENT": "Client"
+    }
   }
 }

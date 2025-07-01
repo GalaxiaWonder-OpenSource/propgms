@@ -1,0 +1,122 @@
+  <div class="form-wrapper">
+  <mat-horizontal-stepper [linear]="isLinear" (selectionChange)="onStepChange($event)" #stepper>
+
+    <mat-step [stepControl]="accountFormGroup">
+      <form [formGroup]="accountFormGroup">
+        <ng-template matStepLabel>{{ 'auth.register.form.auth-credentials-title' | translate }}</ng-template>
+
+        <mat-form-field appearance="fill">
+          <mat-label>{{ 'model.user-account.username' | translate }}</mat-label>
+          <input matInput formControlName="username" [placeholder]="'model.user-account.username-example' | translate">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>{{ 'model.user-account.password' | translate }}</mat-label>
+          <input matInput type="password" formControlName="password" [placeholder]="'model.user-account.password-example' | translate">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>{{ 'model.user-account.type' | translate }}</mat-label>
+          <mat-select formControlName="type">
+            @for (type of accountTypes; track type) {
+              <mat-option [value]="type">
+                {{ ('model.user-account-type.' + type) | translate }}
+              </mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+
+        <div class="form-actions">
+          <button mat-button matStepperPrevious>{{ 'global.action.back' | translate }}</button>
+          <button mat-button matStepperNext>{{ 'global.action.next' | translate }}</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="personalFormGroup">
+      <form [formGroup]="personalFormGroup">
+        <ng-template matStepLabel>{{ 'auth.register.form.personal-data-title' | translate }}</ng-template>
+
+        <mat-form-field appearance="fill">
+          <mat-label>{{ 'model.person.first-name' | translate }}</mat-label>
+          <input matInput formControlName="firstname" [placeholder]="'model.person.first-name-example' | translate">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>{{ 'model.person.last-name' | translate }}</mat-label>
+          <input matInput formControlName="lastname" [placeholder]="'model.person.last-name-example' | translate">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>{{ 'model.person.email' | translate }}</mat-label>
+          <input matInput formControlName="email" [placeholder]="'model.person.email-example' | translate">
+        </mat-form-field>
+
+        @if(accountFormGroup.get('type')?.value === UserAccountType.TYPE_WORKER) {
+          <mat-form-field appearance="fill">
+            <mat-label>{{ 'model.person.professional-id' | translate }}</mat-label>
+            <input matInput formControlName="professionalId" [placeholder]="'model.person.professional-id-example' | translate">
+          </mat-form-field>
+        }
+
+        <mat-form-field appearance="fill">
+          <mat-label>{{ 'model.person.phone' | translate }}</mat-label>
+          <input matInput formControlName="phone" [placeholder]="'model.person.phone-example' | translate">
+        </mat-form-field>
+
+        <div>
+          <button mat-button matStepperPrevious>{{ 'global.action.back' | translate }}</button>
+          <button mat-button matStepperNext>{{ 'global.action.next' | translate }}</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>{{ 'auth.register.form.review-title' | translate }}</ng-template>
+
+      <p>
+        {{ 'auth.register.form.welcome-message' | translate: {
+        name: personalFormGroup.get('firstname')?.value + ' ' + personalFormGroup.get('lastname')?.value
+      } }}
+      </p>
+
+      @switch(accountFormGroup.get('type')?.value){
+        @case(UserAccountType.TYPE_CLIENT){
+          <p>{{ 'auth.register.form.client-message' | translate}}</p>
+        }
+
+        @case(UserAccountType.TYPE_WORKER){
+          <p>{{ 'auth.register.form.worker-message' | translate}}</p>
+        }
+      }
+
+      <p>{{ 'auth.register.form.summary-message' | translate }}</p>
+      <ul>
+        <li>
+          <strong>{{ 'model.person.email' | translate }}:</strong>
+          {{ personalFormGroup.get('email')?.value }}
+        </li>
+        <li>
+          <strong>{{ 'model.person.phone' | translate }}:</strong>
+          {{ personalFormGroup.get('phone')?.value }}
+        </li>
+        @if (accountFormGroup.get('type')?.value === UserAccountType.TYPE_WORKER) {
+          <li>
+            <strong>{{ 'model.person.professional-id' | translate }}:</strong>
+            {{ personalFormGroup.get('professionalId')?.value || '—' }}
+          </li>
+        }
+      </ul>
+
+      <p>{{ 'auth.register.form.next-steps-message' | translate }}</p>
+
+      <div class="form-global.actions mt-4">
+        <button mat-button matStepperPrevious>{{ 'global.action.back' | translate }}</button>
+        <button mat-raised-button color="primary" (click)="submit()">
+          {{ 'global.action.register' | translate }}
+        </button>
+      </div>
+    </mat-step>
+
+  </mat-horizontal-stepper>
+  </div>

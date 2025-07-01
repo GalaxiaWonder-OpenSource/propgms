@@ -1,7 +1,44 @@
 {
   "global": {
     "startup-name": "Galaxia Wonder",
-    "product-name": "PROP GMS"
+    "product-name": "PROP GMS",
+    "action": {
+      "next": "Siguiente",
+      "back": "Atrás",
+      "register": "Registrarse"
+    }
   },
-  "footer":
+  "footer": {
+    "about": "Conocer acerca de",
+    "faq": "FAQ",
+    "privacy-policy": "Política de privacidad",
+    "terms-and-conditions": "Términos y Condiciones",
+    "contact": "Contact Us",
+    "rights": "All rights reserved."
+  },
+  "model": {
+    "person": {
+      "first-name": "Nombre",
+      "first-name-example": "Juan",
+      "last-name": "Apellido",
+      "last-name-example": "Pérez",
+      "email": "Correo electrónico",
+      "email-example": "juan.perez@ejemplo.com",
+      "phone": "Número de teléfono",
+      "phone-example": "+51987654321",
+      "professional-id": "Código de colegiado",
+      "professional-id-example": "CIP123456"
+    },
+    "user-account": {
+      "username": "Nombre de usuario",
+      "username-example": "juanperez",
+      "password": "Contraseña",
+      "password-example": "••••••••",
+      "type": "Tipo de cuenta"
+    },
+    "user-account-type": {
+      "TYPE_WORKER": "Trabajador",
+      "TYPE_CLIENT": "Cliente"
+    }
+  }
 }
