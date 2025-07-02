@@ -10,7 +10,7 @@ import { UserAccount } from '../../model/user-account';
 import { AuthenticationService } from '../../services/authentication-service';
 import { LayoutEventService } from '../../../shared/services/layout-event-service';
 
-import { SignUpResourceFromEntityAssembler } from '../../services/SignUpResourceFromEntityAssembler';
+import { SignUpResourceFromEntityAssembler } from '../../services/sign-up-resource-from-entity-assembler';
 
 
 @Component({

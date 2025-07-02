@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 import { dynamicServiceFactory } from '../../shared/utils/dynamic-service-factory';
 import { EndpointConfig, HttpMethod } from '../../shared/model/endpoint-config';
 import { environment } from '../../../environments/environment';
-import {UserAccountResource} from '../resources/UserAccountResource';
+import {UserAccountResource} from '../resources/user-account-resource';
 import {Observable} from 'rxjs';
-import {SignUpResource} from '../resources/SignUpResource';
-import {SignInResponseResource} from '../resources/SignInResponseResource';
-import {SignInResource} from '../resources/SignInResource';
+import {SignUpResource} from '../resources/sign-up-resource';
+import {SignInResponseResource} from '../resources/sign-in-response-resource';
+import {SignInResource} from '../resources/sign-in-resource';
 
 const apiBaseUrl = environment.serverBaseUrl;
 const resourcePath = environment.authorizationPath;

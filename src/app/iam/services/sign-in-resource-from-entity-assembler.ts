@@ -1,5 +1,5 @@
 import { UserAccount } from '../model/user-account';
-import { SignInResource } from '../resources/SignInResource';
+import { SignInResource } from '../resources/sign-in-resource';
 
 export function SignInResourceFromEntityAssembler(account: UserAccount): SignInResource {
   return {

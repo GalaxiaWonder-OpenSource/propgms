@@ -1,4 +1,4 @@
-import { SignUpResource} from '../resources/SignUpResource';
+import { SignUpResource} from '../resources/sign-up-resource';
 import { Person } from '../model/person';
 import { UserAccount } from '../model/user-account';
 

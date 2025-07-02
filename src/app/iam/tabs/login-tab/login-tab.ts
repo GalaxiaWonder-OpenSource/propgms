@@ -9,8 +9,8 @@ import { AuthenticationService } from '../../services/authentication-service';
 import { LayoutEventService } from '../../../shared/services/layout-event-service';
 import { AppContextService } from '../../../shared/services/app-context-service';
 
-import { SignInResourceFromEntityAssembler } from '../../services/SignInResourceFromEntityAssembler';
-import { SignInResponseResource } from '../../resources/SignInResponseResource';
+import { SignInResourceFromEntityAssembler } from '../../services/sign-in-resource-from-entity-assembler';
+import { SignInResponseResource } from '../../resources/sign-in-response-resource';
 
 import {UserAccountType} from '../../model/user-account-type';
 
