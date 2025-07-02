@@ -64,6 +64,20 @@
     "user-account-type": {
       "TYPE_WORKER": "Worker",
       "TYPE_CLIENT": "Client"
+    },
+    "organization-status": {
+      "ACTIVE": "Active",
+      "INACTIVE": "Inactive"
+    },
+    "organization-member-type": {
+      "CONTRACTOR": "Contractor",
+      "WORKER": "Worker"
+    }
+  },
+  "worker": {
+    "organizations": {
+      "empty-list-message": "No organizations have been found.",
+      "created-at-label": "Since:"
     }
   }
 }

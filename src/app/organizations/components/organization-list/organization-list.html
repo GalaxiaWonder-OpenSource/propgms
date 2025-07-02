@@ -1,0 +1,13 @@
+@if (!organizationList || organizationList.length === 0) {
+  <app-empty-list-message-placeholder
+    layout="worker"
+    tab="organizations"
+  />
+} @else {
+  @for (organization of organizationList; track organization.id) {
+    <app-organization-card
+      [organization]="organization"
+    />
+  }
+}
+

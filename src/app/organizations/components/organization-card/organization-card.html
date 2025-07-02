@@ -1,0 +1,23 @@
+<mat-card
+  class="organization-card"
+  [ngClass]="{ 'inactive': organization.status === 'INACTIVE' }"
+>
+  <div class="card-header">
+    <div class="card-title-wrapper">
+      <mat-card-title>{{ organization.commercialName }}</mat-card-title>
+      <mat-card-subtitle>RUC: {{ organization.ruc }}</mat-card-subtitle>
+    </div>
+
+    <div class="role-label">
+      <mat-icon class="role-icon">badge</mat-icon>
+      {{ ('model.organization-member-type.' + organization.currentUsersRole) | translate }}
+    </div>
+  </div>
+
+  <mat-card-content>
+    <p class="creation-date">
+      {{ 'worker.organizations.created-at-label' | translate }}:
+      {{ organization.createdAt | date: 'longDate' }}
+    </p>
+  </mat-card-content>
+</mat-card>
