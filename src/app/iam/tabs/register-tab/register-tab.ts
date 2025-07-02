@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TranslatePipe } from '@ngx-translate/core';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 import { BaseTab } from '../../../shared/components/base-tab';
 import { RegisterForm } from '../../components/register-form/register-form';
@@ -36,11 +36,11 @@ export class RegisterTab extends BaseTab {
 
     this.authService.signUp(payload).subscribe({
       next: () => {
-        this.emitSnackbar('success', 'Signup successful!');
+        this.emitSnackbar('success', 'auth.register.success');
         this.switchTab('/login');
       },
       error: () => {
-        this.emitSnackbar('error', 'Signup failed. Please try again.');
+        this.emitSnackbar('error', 'auth.register.failure');
       }
     });
   }

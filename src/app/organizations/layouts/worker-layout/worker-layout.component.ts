@@ -5,6 +5,7 @@ import { LayoutEventService } from '../../../shared/services/layout-event-servic
 import { SnackbarService } from '../../../shared/services/snackbar-service';
 import {NavigationBarComponent} from '../../../public/components/navigation-bar/navigation-bar';
 import {NavItem} from '../../../public/model/navigation-item';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-worker-layout',
@@ -17,9 +18,10 @@ export class WorkerLayout extends BaseLayout {
   constructor(
     layoutEvents: LayoutEventService,
     router: Router,
-    snackbar: SnackbarService
+    snackbar: SnackbarService,
+    translate: TranslateService
   ) {
-    super(layoutEvents, router, snackbar);
+    super(layoutEvents, router, snackbar, translate);
   }
 
   organizationNavItems: NavItem[] = [

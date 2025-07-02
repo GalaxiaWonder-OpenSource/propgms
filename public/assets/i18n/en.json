@@ -5,7 +5,9 @@
     "action": {
       "next": "Next",
       "back": "Back",
-      "register": "Register"
+      "register": "Register",
+      "accept": "Accept",
+      "reject": "Reject"
     }
   },
   "footer": {
@@ -29,7 +31,9 @@
         "worker-message": "We hope our tool is of great utility for your work!",
         "next-steps-message": "If everything is correct, you may proceed to finish the registration process."
       },
-      "back-to-login": "Back to login"
+      "back-to-login": "Back to login",
+      "success": "Sign up successful!",
+      "failure": "Sign up failed. Please try again."
     },
     "login": {
       "title": "Sign In",
@@ -38,7 +42,9 @@
       "password": "Password",
       "password-placeholder": "Enter your password",
       "submit": "Log In",
-      "register-link": "Don't have an account? Sign up"
+      "register-link": "Don't have an account? Sign up",
+      "success": "Sign in successful!",
+      "failure": "Sign in failed. Please try again."
     }
   },
   "model": {
@@ -72,12 +78,26 @@
     "organization-member-type": {
       "CONTRACTOR": "Contractor",
       "WORKER": "Worker"
+    },
+    "invitation-status": {
+      "PENDING": "Pending",
+      "ACCEPTED": "Accepted",
+      "Rejected": "Rejected"
     }
   },
   "worker": {
     "organizations": {
       "empty-list-message": "No organizations have been found.",
       "created-at-label": "Since:"
+    },
+    "invitations": {
+      "empty-list-message": "No invitations have been found.",
+      "invited-by-label": "From:",
+      "organization-label": "To the organization:",
+      "reject-success": "Invitation rejected successfully.",
+      "reject-failure": "Failed to reject invitation. Please try again.",
+      "accept-success": "Invitation accepted successfully.",
+      "accept-failure": "Failed to accept invitation. Please try again."
     }
   }
 }

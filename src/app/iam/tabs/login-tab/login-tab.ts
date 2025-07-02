@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TranslatePipe } from '@ngx-translate/core';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 import { BaseTab } from '../../../shared/components/base-tab';
 import { LoginForm } from '../../components/login-form/login-form';
@@ -26,7 +26,7 @@ export class LoginTab extends BaseTab {
   constructor(
     layoutEvents: LayoutEventService,
     appContextService: AppContextService,
-    private authService: AuthenticationService
+    private authService: AuthenticationService,
   ) {
     super(layoutEvents, appContextService);
   }
@@ -38,11 +38,11 @@ export class LoginTab extends BaseTab {
       next: (response: SignInResponseResource) => {
         this.setToken(response.token);
         this.setPersonId(response.user.personId);
-        this.emitSnackbar('success', 'Login successful!');
+        this.emitSnackbar('success', 'auth.login.success');
         this.redirectAfterLogin(UserAccountType[response.user.userType as keyof typeof UserAccountType]);
       },
       error: () => {
-        this.emitSnackbar('error', 'Login failed. Please check your credentials.');
+        this.emitSnackbar('error', 'auth.login.failure');
       }
     });
   }
