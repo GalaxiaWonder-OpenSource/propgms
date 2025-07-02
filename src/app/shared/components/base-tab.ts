@@ -1,6 +1,7 @@
 import { Directive } from '@angular/core';
 import { LayoutEventService } from '../services/layout-event-service';
 import { AppContextService } from '../services/app-context-service';
+import {Organization} from '../../organizations/model/organization-entity';
 
 @Directive()
 export abstract class BaseTab {
@@ -47,11 +48,23 @@ export abstract class BaseTab {
     return id;
   }
 
+  protected getOrganizationOrThrow(): Organization {
+    const organization = this.appContext.organization;
+    if (!organization) {
+      throw new Error('Missing organization in application context.');
+    }
+    return organization;
+  }
+
   protected setToken(token: string | undefined): void {
     this.appContext.token = token;
   }
 
   protected setPersonId(personId: number | undefined): void {
     this.appContext.personId = personId;
+  }
+
+  protected setOrganization(org: Organization | null): void {
+    this.appContext.organization = org;
   }
 }

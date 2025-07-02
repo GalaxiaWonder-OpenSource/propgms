@@ -10,7 +10,7 @@ interface AuthData {
 @Injectable({
   providedIn: 'root'
 })
-export class TokenService {
+export class IamContextService {
   /** Save only the token */
   setToken(token: string): void {
     const data = this.getStoredData() || {};

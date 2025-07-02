@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { TokenService } from './token-service';
+import { IamContextService } from './iam-context-service';
 
-describe('TokenService', () => {
-  let service: TokenService;
+describe('IamContextService', () => {
+  let service: IamContextService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(TokenService);
+    service = TestBed.inject(IamContextService);
   });
 
   it('should be created', () => {

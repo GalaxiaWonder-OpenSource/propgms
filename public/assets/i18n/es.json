@@ -7,7 +7,9 @@
       "back": "Atrás",
       "register": "Registrarse",
       "accept": "Aceptar",
-      "reject": "Rechazar"
+      "reject": "Rechazar",
+      "create": "Crear",
+      "cancel": "Cancelar"
     }
   },
   "footer": {
@@ -83,12 +85,25 @@
       "PENDING": "Pendiente",
       "ACCEPTED": "Aceptada",
       "Rejected": "Rechazada"
+    },
+    "organization": {
+      "legal-name": "Razón social",
+      "legal-name-example": "ABC Tecnologías S.A.",
+      "commercial-name": "Nombre comercial",
+      "commercial-name-example": "ABC Tech",
+      "ruc": "RUC",
+      "ruc-example": "20481234567"
     }
   },
   "worker": {
     "organizations": {
       "empty-list-message": "No se encontraron organizaciones.",
-      "created-at-label": "Desde:"
+      "created-at-label": "Desde:",
+      "create": {
+        "title": "Crear organización"
+      },
+      "create-success": "Organización creada con éxito.",
+      "create-failure": "No se pudo crear la organización. Intenta nuevamente."
     },
     "invitations": {
       "empty-list-message": "No se encontraron invitaciones.",

@@ -1,31 +1,49 @@
 import { Injectable } from '@angular/core';
-import { TokenService } from '../../iam/services/token-service';
+import { IamContextService } from '../../iam/services/iam-context-service';
+import {OrganizationContextService} from '../../organizations/services/organization-context-service';
+import {Organization} from '../../organizations/model/organization-entity';
 
 @Injectable({ providedIn: 'root' })
 export class AppContextService {
-  constructor(private tokenService: TokenService) {}
+  constructor(
+    private iamContextService: IamContextService,
+    private organizationContextService: OrganizationContextService
+  ) {}
 
   get token(): string | undefined {
-    return this.tokenService.getToken() || undefined;
+    return this.iamContextService.getToken() || undefined;
   }
 
   set token(token: string | undefined) {
     if (token) {
-      this.tokenService.setToken(token);
+      this.iamContextService.setToken(token);
     } else {
-      this.tokenService.clearToken();
+      this.iamContextService.clearToken();
     }
   }
 
   get personId(): number | undefined {
-    return this.tokenService.getPersonId() ?? undefined;
+    return this.iamContextService.getPersonId() ?? undefined;
   }
 
   set personId(id: number | undefined) {
     if (id !== undefined) {
-      this.tokenService.setPersonId(id);
+      this.iamContextService.setPersonId(id);
     } else {
-      this.tokenService.clearPersonId();
+      this.iamContextService.clearPersonId();
+    }
+  }
+
+  get organization(): Organization | null {
+    return this.organizationContextService.getSelected();
+  }
+
+  set organization(org: Organization | null) {
+    if (org) {
+      this.organizationContextService.setSelected(org);
+    } else {
+      this.organizationContextService.clear();
     }
   }
 }
+
