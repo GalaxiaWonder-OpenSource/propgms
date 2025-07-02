@@ -16,6 +16,31 @@
     "contact": "Contact Us",
     "rights": "All rights reserved."
   },
+  "auth": {
+    "register": {
+      "title": "Regístrate",
+      "form": {
+        "personal-data-title": "Información personal",
+        "auth-credentials-title": "Información de la cuenta",
+        "review-title": "Revisión final",
+        "welcome-message": "¡Bienvenido {{name}}! Estás a punto de terminar la creación de tu cuenta.",
+        "summary-message": "Asegúrate de que tus datos personales hayan sido introducidos correctamente.",
+        "client-message": "Esperamos que nuestra herramienta haga tu proyecto más fluido, transparente y exitoso.",
+        "worker-message": "¡Esperamos que nuestra herramienta sea de gran utilidad para tu trabajo!",
+        "next-steps-message": "Si todo está correcto, puedes proceder a finalizar el proceso de registro."
+      },
+      "back-to-login": "Regresar a login"
+    },
+    "login": {
+      "title": "Iniciar sesión",
+      "username": "Nombre de usuario",
+      "username-placeholder": "Introduce tu nombre de usuario",
+      "password": "Contraseña",
+      "password-placeholder": "Introduce tu contraseña",
+      "submit": "Acceder",
+      "register-link": "¿No tienes una cuenta? Regístrate"
+    }
+  },
   "model": {
     "person": {
       "first-name": "Nombre",

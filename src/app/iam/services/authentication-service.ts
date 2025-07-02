@@ -5,6 +5,8 @@ import { environment } from '../../../environments/environment';
 import {UserAccountResource} from '../resources/UserAccountResource';
 import {Observable} from 'rxjs';
 import {SignUpResource} from '../resources/SignUpResource';
+import {SignInResponseResource} from '../resources/SignInResponseResource';
+import {SignInResource} from '../resources/SignInResource';
 
 const apiBaseUrl = environment.serverBaseUrl;
 const resourcePath = environment.authorizationPath;
@@ -34,7 +36,7 @@ export class AuthenticationService {
     return this.api["signup"](data);
   }
 
-  signIn(data: any) {
+  signIn(data: SignInResource):Observable<SignInResponseResource> {
     return this.api["signin"](data);
   }
 }

@@ -71,6 +71,9 @@ export class RegisterForm {
   /** Event that emits the data of the form using the {@link Person} and {@link UserAccount} model. */
   @Output() registerSubmit = new EventEmitter<{ person: Person; account: UserAccount }>();
 
+  /** Emits the directive to move into the login tab. */
+  @Output() redirectToLogin = new EventEmitter<void>();
+
   /** Method called upon clicking the 'Register' button.
    * It calls both validation form groups and emits the event if the data meets the validation criteria. */
   submit() {
@@ -83,6 +86,10 @@ export class RegisterForm {
       this.personalFormGroup.markAllAsTouched();
       this.accountFormGroup.markAllAsTouched();
     }
+  }
+
+  triggerLoginRedirect() {
+    this.redirectToLogin.emit();
   }
 
   /** Utility method that changes the {@linkcode personalFormGroup} validation behavior.

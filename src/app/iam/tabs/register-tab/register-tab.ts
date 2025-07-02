@@ -42,4 +42,8 @@ export class RegisterTab extends BaseTab {
       }
     });
   }
+
+  handleLoginRedirect() {
+    this.switchTab('/login');
+  }
 }

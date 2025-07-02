@@ -27,8 +27,10 @@
         </mat-form-field>
 
         <div class="form-actions">
-          <button mat-button matStepperPrevious>{{ 'global.action.back' | translate }}</button>
-          <button mat-button matStepperNext>{{ 'global.action.next' | translate }}</button>
+          <button mat-raised-button color="accent" (click)="triggerLoginRedirect()">
+            {{ 'auth.register.back-to-login' | translate }}
+          </button>
+          <button mat-raised-button matStepperNext>{{ 'global.action.next' | translate }}</button>
         </div>
       </form>
     </mat-step>
@@ -64,9 +66,9 @@
           <input matInput formControlName="phone" [placeholder]="'model.person.phone-example' | translate">
         </mat-form-field>
 
-        <div>
-          <button mat-button matStepperPrevious>{{ 'global.action.back' | translate }}</button>
-          <button mat-button matStepperNext>{{ 'global.action.next' | translate }}</button>
+        <div class="form-actions">
+          <button mat-raised-button matStepperPrevious>{{ 'global.action.back' | translate }}</button>
+          <button mat-raised-button matStepperNext>{{ 'global.action.next' | translate }}</button>
         </div>
       </form>
     </mat-step>
@@ -110,8 +112,8 @@
 
       <p>{{ 'auth.register.form.next-steps-message' | translate }}</p>
 
-      <div class="form-global.actions mt-4">
-        <button mat-button matStepperPrevious>{{ 'global.action.back' | translate }}</button>
+      <div class="form-actions">
+        <button mat-raised-button matStepperPrevious>{{ 'global.action.back' | translate }}</button>
         <button mat-raised-button color="primary" (click)="submit()">
           {{ 'global.action.register' | translate }}
         </button>

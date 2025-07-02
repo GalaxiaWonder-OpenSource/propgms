@@ -18,7 +18,7 @@
   },
   "auth": {
     "register": {
-      "title": "Sign up",
+      "title": "Sign Up",
       "form": {
         "personal-data-title": "Personal information",
         "auth-credentials-title": "Account information",
@@ -28,7 +28,17 @@
         "client-message": "We hope our tool makes your project smooth, transparent, and successful.",
         "worker-message": "We hope our tool is of great utility for your work!",
         "next-steps-message": "If everything is correct, you may proceed to finish the registration process."
-      }
+      },
+      "back-to-login": "Back to login"
+    },
+    "login": {
+      "title": "Sign In",
+      "username": "Username",
+      "username-placeholder": "Enter your username",
+      "password": "Password",
+      "password-placeholder": "Enter your password",
+      "submit": "Log In",
+      "register-link": "Don't have an account? Sign up"
     }
   },
   "model": {

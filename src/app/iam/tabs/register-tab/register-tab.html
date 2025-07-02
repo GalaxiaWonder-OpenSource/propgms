@@ -1,4 +1,7 @@
 <main>
   <h1>{{ 'auth.register.title' | translate }}</h1>
-  <app-register-form (registerSubmit)="handleFormSubmission($event)"/>
+  <app-register-form
+    (registerSubmit)="handleFormSubmission($event)"
+    (redirectToLogin)="handleLoginRedirect()"
+  />
 </main>
