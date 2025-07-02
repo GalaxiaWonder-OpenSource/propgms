@@ -13,17 +13,17 @@ export abstract class BaseTab {
     });
   }
 
-  protected switchTab(to: string): void {
+  protected switchTab(tab: string): void {
     this.layoutEvents.emit({
       type: 'SWITCH_TAB',
-      to
+      to: tab
     });
   }
 
-  protected switchLayout(layoutId: string): void {
+  protected switchLayout(layout: string): void {
     this.layoutEvents.emit({
       type: 'SWITCH_LAYOUT',
-      layoutId
+      layoutId: layout
     });
   }
 }

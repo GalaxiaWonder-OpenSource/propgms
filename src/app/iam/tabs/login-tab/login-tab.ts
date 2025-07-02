@@ -12,6 +12,8 @@ import { AppContextService } from '../../../shared/services/app-context-service'
 import { SignInResourceFromEntityAssembler } from '../../services/SignInResourceFromEntityAssembler';
 import { SignInResponseResource } from '../../resources/SignInResponseResource';
 
+import {UserAccountType} from '../../model/user-account-type';
+
 @Component({
   selector: 'app-login-tab',
   standalone: true,
@@ -37,6 +39,7 @@ export class LoginTab extends BaseTab {
         this.appContextService.token = response.token;
         this.appContextService.personId = response.user.personId;
         this.emitSnackbar('success', 'Login successful!');
+        this.redirectAfterLogin(UserAccountType[response.user.userType as keyof typeof UserAccountType]);
       },
       error: () => {
         this.emitSnackbar('error', 'Login failed. Please check your credentials.');
@@ -46,5 +49,18 @@ export class LoginTab extends BaseTab {
 
   handleRegisterRedirect() {
     this.switchTab('/register');
+  }
+
+  redirectAfterLogin(accountType: UserAccountType) {
+    switch (accountType) {
+      case UserAccountType.TYPE_WORKER: {
+        this.switchLayout('/organizations');
+        break;
+      }
+      default: {
+        console.warn("Error managing auto redirect after login for user with account type: " + accountType)
+        return;
+      }
+    }
   }
 }

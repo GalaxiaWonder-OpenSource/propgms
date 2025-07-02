@@ -4,6 +4,8 @@ import {AuthenticationLayout} from './iam/layouts/authentication-layout/authenti
 import {RegisterTab} from './iam/tabs/register-tab/register-tab';
 import {LoginTab} from './iam/tabs/login-tab/login-tab';
 
+import {OrganizationLayout} from './organizations/layouts/organization-layout/organization-layout';
+
 export const routes: Routes = [
   {
     path: '',
@@ -13,6 +15,10 @@ export const routes: Routes = [
       { path: 'login', component: LoginTab },
       { path: 'register', component: RegisterTab },
     ]
+  },
+  {
+    path: 'organizations',
+    component: OrganizationLayout
   },
   { path: '**', redirectTo: 'login' }
 ];
