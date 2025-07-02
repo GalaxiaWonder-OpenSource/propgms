@@ -1,9 +1,10 @@
 import {Component} from '@angular/core';
-import {TranslateService} from '@ngx-translate/core';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 import {MatToolbar, MatToolbarRow} from '@angular/material/toolbar';
 import {RouterLink, RouterOutlet} from '@angular/router';
 import {MatAnchor} from '@angular/material/button';
 import {LanguageSwitcherComponent} from './public/components/language-switcher/language-switcher';
+import {Footer} from './public/components/footer/footer';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,9 @@ import {LanguageSwitcherComponent} from './public/components/language-switcher/l
     RouterLink,
     RouterOutlet,
     MatAnchor,
-    LanguageSwitcherComponent
+    LanguageSwitcherComponent,
+    TranslatePipe,
+    Footer
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'

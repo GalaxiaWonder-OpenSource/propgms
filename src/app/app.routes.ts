@@ -1,7 +1,18 @@
 import { Routes } from '@angular/router';
-//import {PageNotFoundComponent} from "./public/pages/page-not-found/page-not-found";
+
+import {AuthenticationLayout} from './iam/layouts/authentication-layout/authentication-layout';
+import {RegisterTab} from './iam/tabs/register-tab/register-tab';
+import {LoginTab} from './iam/tabs/login-tab/login-tab';
 
 export const routes: Routes = [
-  //{ path: '',                 redirectTo: 'login', pathMatch: 'full' },
-  //{ path: '**',               component: PageNotFoundComponent }
+  {
+    path: '',
+    component: AuthenticationLayout,
+    children: [
+      { path: '', redirectTo: 'login', pathMatch: 'full' },
+      { path: 'login', component: LoginTab },
+      { path: 'register', component: RegisterTab },
+    ]
+  },
+  { path: '**', redirectTo: 'login' }
 ];

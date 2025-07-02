@@ -1,3 +1,69 @@
 {
-
+  "global": {
+    "startup-name": "Galaxia Wonder",
+    "product-name": "PROP GMS",
+    "action": {
+      "next": "Siguiente",
+      "back": "Atrás",
+      "register": "Registrarse"
+    }
+  },
+  "footer": {
+    "about": "Conocer acerca de",
+    "faq": "FAQ",
+    "privacy-policy": "Política de privacidad",
+    "terms-and-conditions": "Términos y Condiciones",
+    "contact": "Contact Us",
+    "rights": "All rights reserved."
+  },
+  "auth": {
+    "register": {
+      "title": "Regístrate",
+      "form": {
+        "personal-data-title": "Información personal",
+        "auth-credentials-title": "Información de la cuenta",
+        "review-title": "Revisión final",
+        "welcome-message": "¡Bienvenido {{name}}! Estás a punto de terminar la creación de tu cuenta.",
+        "summary-message": "Asegúrate de que tus datos personales hayan sido introducidos correctamente.",
+        "client-message": "Esperamos que nuestra herramienta haga tu proyecto más fluido, transparente y exitoso.",
+        "worker-message": "¡Esperamos que nuestra herramienta sea de gran utilidad para tu trabajo!",
+        "next-steps-message": "Si todo está correcto, puedes proceder a finalizar el proceso de registro."
+      },
+      "back-to-login": "Regresar a login"
+    },
+    "login": {
+      "title": "Iniciar sesión",
+      "username": "Nombre de usuario",
+      "username-placeholder": "Introduce tu nombre de usuario",
+      "password": "Contraseña",
+      "password-placeholder": "Introduce tu contraseña",
+      "submit": "Acceder",
+      "register-link": "¿No tienes una cuenta? Regístrate"
+    }
+  },
+  "model": {
+    "person": {
+      "first-name": "Nombre",
+      "first-name-example": "Juan",
+      "last-name": "Apellido",
+      "last-name-example": "Pérez",
+      "email": "Correo electrónico",
+      "email-example": "juan.perez@ejemplo.com",
+      "phone": "Número de teléfono",
+      "phone-example": "+51987654321",
+      "professional-id": "Código de colegiado",
+      "professional-id-example": "CIP123456"
+    },
+    "user-account": {
+      "username": "Nombre de usuario",
+      "username-example": "juanperez",
+      "password": "Contraseña",
+      "password-example": "••••••••",
+      "type": "Tipo de cuenta"
+    },
+    "user-account-type": {
+      "TYPE_WORKER": "Trabajador",
+      "TYPE_CLIENT": "Cliente"
+    }
+  }
 }

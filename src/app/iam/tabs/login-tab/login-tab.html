@@ -1,0 +1,7 @@
+<main>
+  <h1>{{ 'auth.login.title' | translate }}</h1>
+  <app-login-form
+    (loginSubmit)="handleFormSubmission($event)"
+    (redirectToRegister)="handleRegisterRedirect()"
+  />
+</main>
