@@ -1,9 +1,11 @@
-import {Component, ElementRef, Input, ViewChild} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 import { NavItem } from '../../model/navigation-item';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { LayoutEventService} from '../../../shared/services/layout-event-service';
+import {MatMenuModule} from '@angular/material/menu';
+import {AppContextService} from '../../../shared/services/app-context-service';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -13,13 +15,19 @@ import { LayoutEventService} from '../../../shared/services/layout-event-service
   imports: [
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatMenuModule
   ]
 })
 export class NavigationBarComponent {
   @Input() navItems: NavItem[] = [];
+  @Output() logoutRequested = new EventEmitter<void>();
 
-  constructor(private layoutEvents: LayoutEventService) {}
+
+  constructor(
+    private layoutEvents: LayoutEventService,
+    private appContext: AppContextService
+  ) {}
 
   onClick(item: NavItem): void {
     this.layoutEvents.emit({
@@ -39,4 +47,13 @@ export class NavigationBarComponent {
     }, { passive: false });
   }
 
+  onLogoutClick(): void {
+    this.appContext.personId = undefined;
+    this.appContext.token = undefined;
+
+    this.layoutEvents.emit({
+      type: 'SWITCH_LAYOUT',
+      layoutId: '/auth'
+    });
+  }
 }
