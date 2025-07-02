@@ -25,10 +25,10 @@ export class LoginTab extends BaseTab {
 
   constructor(
     layoutEvents: LayoutEventService,
-    private authService: AuthenticationService,
-    private appContextService: AppContextService
+    appContextService: AppContextService,
+    private authService: AuthenticationService
   ) {
-    super(layoutEvents);
+    super(layoutEvents, appContextService);
   }
 
   handleFormSubmission(account: UserAccount) {
@@ -36,8 +36,8 @@ export class LoginTab extends BaseTab {
 
     this.authService.signIn(payload).subscribe({
       next: (response: SignInResponseResource) => {
-        this.appContextService.token = response.token;
-        this.appContextService.personId = response.user.personId;
+        this.setToken(response.token);
+        this.setPersonId(response.user.personId);
         this.emitSnackbar('success', 'Login successful!');
         this.redirectAfterLogin(UserAccountType[response.user.userType as keyof typeof UserAccountType]);
       },

@@ -11,6 +11,7 @@ import { AuthenticationService } from '../../services/authentication-service';
 import { LayoutEventService } from '../../../shared/services/layout-event-service';
 
 import { SignUpResourceFromEntityAssembler } from '../../services/sign-up-resource-from-entity-assembler';
+import {AppContextService} from '../../../shared/services/app-context-service';
 
 
 @Component({
@@ -24,9 +25,10 @@ export class RegisterTab extends BaseTab {
 
   constructor(
     layoutEvents: LayoutEventService,
+    appContextService: AppContextService,
     private authService: AuthenticationService
   ) {
-    super(layoutEvents);
+    super(layoutEvents, appContextService);
   }
 
   handleFormSubmission(data: { person: Person; account: UserAccount }) {
