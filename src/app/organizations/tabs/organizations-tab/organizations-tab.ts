@@ -11,11 +11,16 @@ import { OrganizationEntityFromResourceAssembler } from '../../services/organiza
 
 import {Organization} from '../../model/organization-entity';
 import {OrganizationList} from '../../components/organization-list/organization-list';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDialog} from '@angular/material/dialog';
+import {CreateOrganizationModal} from '../../components/create-organization-modal/create-organization-modal';
+import {CreateOrganizationResource} from '../../../iam/resources/create-organization-resource';
 
 @Component({
   selector: 'app-organizations-tab',
   standalone: true,
-  imports: [TranslatePipe, OrganizationList],
+  imports: [TranslatePipe, OrganizationList, MatIconModule, MatButtonModule],
   templateUrl: './organizations-tab.html',
   styleUrl: './organizations-tab.css'
 })
@@ -25,7 +30,8 @@ export class OrganizationsTab extends BaseTab implements OnInit {
   constructor(
     layoutEvents: LayoutEventService,
     appContextService: AppContextService,
-    private organizationService: OrganizationService
+    private organizationService: OrganizationService,
+    private dialog: MatDialog
   ) {
     super(layoutEvents, appContextService);
   }
@@ -47,6 +53,35 @@ export class OrganizationsTab extends BaseTab implements OnInit {
       },
       error: (err) => {
         console.error('Failed to fetch organization by personId:', err);
+      }
+    });
+  }
+
+  openCreateOrganizationModal() {
+    const dialogRef = this.dialog.open(CreateOrganizationModal);
+
+    dialogRef.afterClosed().subscribe((result: Partial<CreateOrganizationResource> | undefined) => {
+      if (result) {
+        const personId = this.getPersonIdOrThrow();
+
+        const resource: CreateOrganizationResource = {
+          legalName: result.legalName ?? '',
+          commercialName: result.commercialName ?? '',
+          ruc: result.ruc ?? '',
+          createdBy: personId
+        };
+
+        this.organizationService.createOrganization(resource).subscribe({
+          next: (response) => {
+            this.emitSnackbar("success", "worker.organizations.create-success")
+            this.organizationsList.push(
+              OrganizationEntityFromResourceAssembler(response, personId)
+            )
+          },
+          error: (err) => {
+            this.emitSnackbar("error", "worker.organizations.create-failure")
+          }
+        });
       }
     });
   }

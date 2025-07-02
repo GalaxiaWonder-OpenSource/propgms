@@ -3,5 +3,12 @@
     [organizationList]="organizationsList"
   />
 
-
+  <button
+    mat-fab
+    class="floating-create-btn"
+    aria-label="Add Organization"
+    (click)="openCreateOrganizationModal()"
+  >
+    <mat-icon>add</mat-icon>
+  </button>
 </main>

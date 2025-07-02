@@ -31,4 +31,19 @@ export class ValidatorsService {
       return { phoneFormat: 'Phone number must be in E.164 format (e.g., +1234567890)' };
     };
   }
+
+  public rucFormat() {
+    const RUC_REGEX = /^(10|15|17|20)\d{9}$/;
+
+    return (control: AbstractControl): ValidationErrors | null => {
+      const value = control.value;
+      if (!value || RUC_REGEX.test(value)) {
+        return null;
+      }
+      return {
+        rucFormat: 'RUC must be 11 digits and start with 10, 15, 17, or 20 (e.g., 20123456789)'
+      };
+    };
+  }
+
 }

@@ -7,7 +7,9 @@
       "back": "Back",
       "register": "Register",
       "accept": "Accept",
-      "reject": "Reject"
+      "reject": "Reject",
+      "create": "Create",
+      "cancel": "Cancel"
     }
   },
   "footer": {
@@ -83,12 +85,25 @@
       "PENDING": "Pending",
       "ACCEPTED": "Accepted",
       "Rejected": "Rejected"
+    },
+    "organization": {
+      "legal-name": "Legal name",
+      "legal-name-example": "ABC Technologies S.A.",
+      "commercial-name": "Commercial name",
+      "commercial-name-example": "ABC Tech",
+      "ruc": "TIN",
+      "ruc-example": "20481234567"
     }
   },
   "worker": {
     "organizations": {
       "empty-list-message": "No organizations have been found.",
-      "created-at-label": "Since:"
+      "created-at-label": "Since:",
+      "create": {
+        "title": "Create Organization"
+      },
+      "create-success": "Organization created successfully.",
+      "create-failure": "Failed to create organization. Please try again."
     },
     "invitations": {
       "empty-list-message": "No invitations have been found.",

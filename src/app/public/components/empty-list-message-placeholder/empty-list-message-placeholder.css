@@ -12,13 +12,6 @@
   border-radius: 8px;
 }
 
-@media (min-width: 768px) {
-  .not-found-card {
-    max-width: 40%;
-  }
-}
-
-
 .not-found-content {
   display: flex;
   align-items: center;
