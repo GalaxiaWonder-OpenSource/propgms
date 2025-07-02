@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WorkerDashboardLayout } from './worker-dashboard-layout.component';
+import { WorkerLayout } from './worker-layout.component';
 
 describe('OrganizationLayout', () => {
-  let component: WorkerDashboardLayout;
-  let fixture: ComponentFixture<WorkerDashboardLayout>;
+  let component: WorkerLayout;
+  let fixture: ComponentFixture<WorkerLayout>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [WorkerDashboardLayout]
+      imports: [WorkerLayout]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(WorkerDashboardLayout);
+    fixture = TestBed.createComponent(WorkerLayout);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

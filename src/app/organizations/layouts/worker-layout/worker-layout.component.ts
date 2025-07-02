@@ -7,13 +7,13 @@ import {NavigationBarComponent} from '../../../public/components/navigation-bar/
 import {NavItem} from '../../../public/model/navigation-item';
 
 @Component({
-  selector: 'app-organization-layout',
+  selector: 'app-worker-layout',
   standalone: true,
   imports: [RouterOutlet, NavigationBarComponent],
-  templateUrl: './worker-dashboard-layout.component.html',
-  styleUrl: './worker-dashboard-layout.component.css'
+  templateUrl: './worker-layout.component.html',
+  styleUrl: './worker-layout.component.css'
 })
-export class WorkerDashboardLayout extends BaseLayout {
+export class WorkerLayout extends BaseLayout {
   constructor(
     layoutEvents: LayoutEventService,
     router: Router,
