@@ -1,0 +1,42 @@
+import {Component, ElementRef, Input, ViewChild} from '@angular/core';
+import { NavItem } from '../../model/navigation-item';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { LayoutEventService} from '../../../shared/services/layout-event-service';
+
+@Component({
+  selector: 'app-navigation-bar',
+  templateUrl: './navigation-bar.html',
+  styleUrls: ['./navigation-bar.scss'],
+  standalone: true,
+  imports: [
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule
+  ]
+})
+export class NavigationBarComponent {
+  @Input() navItems: NavItem[] = [];
+
+  constructor(private layoutEvents: LayoutEventService) {}
+
+  onClick(item: NavItem): void {
+    this.layoutEvents.emit({
+      type: 'SWITCH_TAB',
+      to: item.route
+    });
+  }
+
+  @ViewChild('scrollContainer', { static: true }) scrollContainer!: ElementRef;
+
+  ngAfterViewInit(): void {
+    const el = this.scrollContainer.nativeElement;
+    el.addEventListener('wheel', (e: WheelEvent) => {
+      if (e.deltaY === 0) return;
+      e.preventDefault();
+      el.scrollLeft += e.deltaY;
+    }, { passive: false });
+  }
+
+}

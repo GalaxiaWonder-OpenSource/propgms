@@ -1,6 +1,6 @@
 .footer {
   padding: 2rem;
-  background-color: #22396B;
+  background-color: var(--brand-primary);
   color: white;
 }
 

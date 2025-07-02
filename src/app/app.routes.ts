@@ -4,7 +4,9 @@ import {AuthenticationLayout} from './iam/layouts/authentication-layout/authenti
 import {RegisterTab} from './iam/tabs/register-tab/register-tab';
 import {LoginTab} from './iam/tabs/login-tab/login-tab';
 
-import {OrganizationLayout} from './organizations/layouts/organization-layout/organization-layout';
+import {WorkerDashboardLayout} from './organizations/layouts/organization-layout/worker-dashboard-layout.component';
+import {OrganizationsTab} from './organizations/tabs/organizations-tab/organizations-tab';
+import {InvitationsTab} from './organizations/tabs/invitations-tab/invitations-tab';
 
 export const routes: Routes = [
   {
@@ -17,8 +19,13 @@ export const routes: Routes = [
     ]
   },
   {
-    path: 'organizations',
-    component: OrganizationLayout
+    path: 'worker',
+    component: WorkerDashboardLayout,
+    children: [
+      { path: '', redirectTo: 'organizations', pathMatch: 'full' },
+      { path: 'organizations', component: OrganizationsTab },
+      { path: 'invitations', component: InvitationsTab }
+    ]
   },
   { path: '**', redirectTo: 'login' }
 ];

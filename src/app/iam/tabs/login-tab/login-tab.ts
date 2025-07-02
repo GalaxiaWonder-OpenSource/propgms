@@ -54,7 +54,7 @@ export class LoginTab extends BaseTab {
   redirectAfterLogin(accountType: UserAccountType) {
     switch (accountType) {
       case UserAccountType.TYPE_WORKER: {
-        this.switchLayout('/organizations');
+        this.switchLayout('/worker');
         break;
       }
       default: {
