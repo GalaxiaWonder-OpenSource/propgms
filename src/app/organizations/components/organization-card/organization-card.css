@@ -1,5 +1,5 @@
 .organization-card {
-  max-width: 400px;
+  max-width: 600px;
   margin: 1rem auto;
   padding: 1rem;
   border-radius: 12px;
@@ -9,6 +9,7 @@
 
 .organization-card:hover {
   transform: translateY(-4px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Match invitation card hover */
 }
 
 .organization-card.inactive {
@@ -44,10 +45,14 @@ mat-card-subtitle {
   align-items: center;
   background-color: #1976d2;
   color: white;
-  padding: 4px 8px;
+  padding: 10px;
   border-radius: 4px;
   font-size: 0.75rem;
   white-space: nowrap;
+  min-width: 100px;
+  justify-content: center;
+  margin-left: 1rem;
+  height: 20px;
 }
 
 .role-icon {
