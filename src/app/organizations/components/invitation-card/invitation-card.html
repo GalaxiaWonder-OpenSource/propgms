@@ -14,13 +14,23 @@
     </div>
   }
 
-  <mat-card-title class="org-label">
-    {{ 'worker.invitations.organization-label' | translate }}
-  </mat-card-title>
+  @if(invitation.organizationName) {
+    <mat-card-title class="org-label">
+      {{ 'worker.invitations.organization-label' | translate }}
+    </mat-card-title>
 
-  <mat-card-subtitle class="org-name">
-    {{ invitation.organizationName }}
-  </mat-card-subtitle>
+    <mat-card-subtitle class="org-name">
+      {{ invitation.organizationName }}
+    </mat-card-subtitle>
+  } @else {
+    <mat-card-title class="org-label">
+      {{ 'organization.members.person-label' | translate }}
+    </mat-card-title>
+
+    <mat-card-subtitle class="org-name">
+      {{ invitation.invitedPerson }}
+    </mat-card-subtitle>
+  }
 
   <div class="card-footer">
     <span class="status-label">

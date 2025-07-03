@@ -3,5 +3,6 @@ export const environment = {
   serverBaseUrl: 'http://localhost:8080/api/v1',
   authorizationPath: '/auth',
   organizationPath: '/organizations',
-  invitationPath: '/organizations/invitations'
+  invitationPath: '/organizations/invitations',
+  organizationMembersPath: '/organizations'
 };

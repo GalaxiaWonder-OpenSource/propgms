@@ -9,7 +9,9 @@
       "accept": "Accept",
       "reject": "Reject",
       "create": "Create",
-      "cancel": "Cancel"
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "invite": "Invite"
     }
   },
   "footer": {
@@ -93,6 +95,10 @@
       "commercial-name-example": "ABC Tech",
       "ruc": "TIN",
       "ruc-example": "20481234567"
+    },
+    "invitation": {
+      "email": "Email",
+      "email-example": "john.doe@example.com"
     }
   },
   "worker": {
@@ -113,6 +119,26 @@
       "reject-failure": "Failed to reject invitation. Please try again.",
       "accept-success": "Invitation accepted successfully.",
       "accept-failure": "Failed to accept invitation. Please try again."
+    }
+  },
+  "organization": {
+    "members": {
+      "load-failure": "Failed to load organization members. Please try again.",
+      "delete-success": "Organization member removed successfully",
+      "delete-failure": "Failed to remove organization member. Please try again.",
+      "joined-at-label": "Member since",
+      "remove": {
+        "title": "Remove member from organization",
+        "message": "Are you sure you want to proceed?"
+      },
+      "person-label": "Sent to:",
+      "member-list-title": "Organization members",
+      "invitation-list-title": "Pending invitations",
+      "invite": {
+        "title": "Invite to Organization"
+      },
+      "invite-success": "Invitation sent successfully.",
+      "invite-failure": "Failed to send invitation. Please try again."
     }
   }
 }
