@@ -139,6 +139,12 @@
       },
       "invite-success": "Invitation sent successfully.",
       "invite-failure": "Failed to send invitation. Please try again."
+    },
+    "settings": {
+      "danger-zone": {
+        "title": "DANGER ZONE",
+        "action": "DELETE ORGANIZATION"
+      }
     }
   }
 }

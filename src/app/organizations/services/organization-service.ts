@@ -5,6 +5,7 @@ import {dynamicServiceFactory} from '../../shared/utils/dynamic-service-factory'
 import {OrganizationResource} from '../resources/organization-resource';
 import {Observable} from 'rxjs';
 import {CreateOrganizationResource} from '../../iam/resources/create-organization-resource';
+import {GenericMessageResource} from '../../shared/resources/GenericMessageResource';
 
 const apiBaseUrl = environment.serverBaseUrl;
 const resourcePath = environment.organizationPath;
@@ -20,6 +21,12 @@ const endpoints: EndpointConfig[] = [
     name: 'createOrganization',
     method: HttpMethod.POST,
     url: `${apiBaseUrl}${resourcePath}`,
+    requiresAuth: true
+  },
+  {
+    name: 'deleteOrganizationByRuc',
+    method: HttpMethod.DELETE,
+    url: `${apiBaseUrl}${resourcePath}/{ruc}`,
     requiresAuth: true
   }
 ];
@@ -38,5 +45,9 @@ export class OrganizationService {
 
   createOrganization(resource: CreateOrganizationResource): Observable<OrganizationResource> {
     return this.api["createOrganization"](resource);
+  }
+
+  deleteOrganizationByRuc(ruc: string): Observable<GenericMessageResource> {
+    return this.api["deleteOrganizationByRuc"]({}, {ruc});
   }
 }
