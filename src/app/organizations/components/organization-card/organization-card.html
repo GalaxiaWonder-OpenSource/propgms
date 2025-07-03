@@ -9,9 +9,23 @@
       <mat-card-subtitle>RUC: {{ organization.ruc }}</mat-card-subtitle>
     </div>
 
-    <div class="role-label">
-      <mat-icon class="role-icon">badge</mat-icon>
-      {{ ('model.organization-member-type.' + organization.currentUsersRole) | translate }}
+    <div
+      class="member-type-label"
+      [ngClass]="{
+        'contractor': organization.currentUsersRole === 'CONTRACTOR',
+        'worker': organization.currentUsersRole === 'WORKER'
+      }"
+    >
+      <mat-icon class="role-icon">
+        {{
+          organization.currentUsersRole === 'CONTRACTOR'
+            ? 'handshake'
+            : organization.currentUsersRole === 'WORKER'
+              ? 'engineering'
+              : 'admin_panel_settings'
+        }}
+      </mat-icon>
+      {{ 'model.organization-member-type.' + organization.currentUsersRole | translate }}
     </div>
   </div>
 

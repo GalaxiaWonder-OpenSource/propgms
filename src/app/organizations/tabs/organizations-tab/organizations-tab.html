@@ -1,15 +1,19 @@
 <main>
+  <div class="header-row">
+    <h1>My organizations</h1>
+    <button
+      mat-raised-button
+      color="primary"
+      aria-label="Add Organization"
+      (click)="openCreateOrganizationModal()"
+    >
+      {{ 'global.action.create' | translate }}
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+
   <app-organization-list
     [organizationList]="organizationsList"
     (click)="handleClick($event)"
   />
-
-  <button
-    mat-fab
-    class="floating-create-btn"
-    aria-label="Add Organization"
-    (click)="openCreateOrganizationModal()"
-  >
-    <mat-icon>add</mat-icon>
-  </button>
 </main>
