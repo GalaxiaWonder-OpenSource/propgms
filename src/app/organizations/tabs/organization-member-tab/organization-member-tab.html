@@ -1,5 +1,7 @@
-<app-organization-member-list
-  [organizationMemberList]="organizationMembers"
-  [showActions]="isContractor"
-  (remove)="handleRemove($event)"
-/>
+<main>
+  <app-organization-member-list
+    [organizationMemberList]="organizationMembers"
+    [showActions]="isContractor"
+    (remove)="handleRemove($event)"
+  />
+</main>
