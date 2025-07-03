@@ -5,16 +5,20 @@
     "action": {
       "next": "Siguiente",
       "back": "Atrás",
-      "register": "Registrarse"
+      "register": "Registrarse",
+      "accept": "Aceptar",
+      "reject": "Rechazar",
+      "create": "Crear",
+      "cancel": "Cancelar"
     }
   },
   "footer": {
-    "about": "Conocer acerca de",
-    "faq": "FAQ",
+    "about": "Conócenos",
+    "faq": "Preguntas frecuentes",
     "privacy-policy": "Política de privacidad",
-    "terms-and-conditions": "Términos y Condiciones",
-    "contact": "Contact Us",
-    "rights": "All rights reserved."
+    "terms-and-conditions": "Términos y condiciones",
+    "contact": "Contáctanos",
+    "rights": "Todos los derechos reservados."
   },
   "auth": {
     "register": {
@@ -29,7 +33,9 @@
         "worker-message": "¡Esperamos que nuestra herramienta sea de gran utilidad para tu trabajo!",
         "next-steps-message": "Si todo está correcto, puedes proceder a finalizar el proceso de registro."
       },
-      "back-to-login": "Regresar a login"
+      "back-to-login": "Regresar a login",
+      "success": "¡Registro exitoso!",
+      "failure": "No se pudo completar el registro. Intenta nuevamente."
     },
     "login": {
       "title": "Iniciar sesión",
@@ -38,7 +44,9 @@
       "password": "Contraseña",
       "password-placeholder": "Introduce tu contraseña",
       "submit": "Acceder",
-      "register-link": "¿No tienes una cuenta? Regístrate"
+      "register-link": "¿No tienes una cuenta? Regístrate",
+      "success": "¡Inicio de sesión exitoso!",
+      "failure": "No se pudo iniciar sesión. Intenta nuevamente."
     }
   },
   "model": {
@@ -64,6 +72,47 @@
     "user-account-type": {
       "TYPE_WORKER": "Trabajador",
       "TYPE_CLIENT": "Cliente"
+    },
+    "organization-status": {
+      "ACTIVE": "Activa",
+      "INACTIVE": "Inactiva"
+    },
+    "organization-member-type": {
+      "CONTRACTOR": "Contratista",
+      "WORKER": "Trabajador"
+    },
+    "invitation-status": {
+      "PENDING": "Pendiente",
+      "ACCEPTED": "Aceptada",
+      "Rejected": "Rechazada"
+    },
+    "organization": {
+      "legal-name": "Razón social",
+      "legal-name-example": "ABC Tecnologías S.A.",
+      "commercial-name": "Nombre comercial",
+      "commercial-name-example": "ABC Tech",
+      "ruc": "RUC",
+      "ruc-example": "20481234567"
+    }
+  },
+  "worker": {
+    "organizations": {
+      "empty-list-message": "No se encontraron organizaciones.",
+      "created-at-label": "Desde:",
+      "create": {
+        "title": "Crear organización"
+      },
+      "create-success": "Organización creada con éxito.",
+      "create-failure": "No se pudo crear la organización. Intenta nuevamente."
+    },
+    "invitations": {
+      "empty-list-message": "No se encontraron invitaciones.",
+      "invited-by-label": "De parte de:",
+      "organization-label": "Para la organización:",
+      "reject-success": "Invitación rechazada con éxito.",
+      "reject-failure": "No se pudo rechazar la invitación. Intenta nuevamente.",
+      "accept-success": "Invitación aceptada con éxito.",
+      "accept-failure": "No se pudo aceptar la invitación. Intenta nuevamente."
     }
   }
 }

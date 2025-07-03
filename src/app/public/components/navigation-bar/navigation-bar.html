@@ -1,0 +1,35 @@
+<mat-toolbar color="primary" class="top-toolbar" role="banner">
+  <span class="toolbar-title">PROP GMS</span>
+  <span class="toolbar-spacer"></span>
+
+  <button mat-icon-button aria-label="Notifications">
+    <mat-icon>notifications</mat-icon>
+  </button>
+
+  <button mat-icon-button [matMenuTriggerFor]="userMenu" aria-label="User profile">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+
+  <!-- Context menu definition -->
+  <mat-menu #userMenu="matMenu">
+    <button mat-menu-item (click)="onLogoutClick()">
+      <mat-icon>logout</mat-icon>
+      <span>Logout</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>
+
+<mat-toolbar color="primary" class="bottom-toolbar" role="navigation">
+  <div #scrollContainer class="nav-scroll-container" tabindex="0">
+    @for (item of navItems; track item.label) {
+      @if (isConditionMet(item.condition)) {
+        <button mat-button (click)="onClick(item)">
+          @if (item.icon) {
+            <mat-icon>{{ item.icon }}</mat-icon>
+          }
+          {{ item.label }}
+        </button>
+      }
+    }
+  </div>
+</mat-toolbar>

@@ -1,0 +1,20 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: start;
+}
+
+
+.floating-create-btn {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 2;
+}

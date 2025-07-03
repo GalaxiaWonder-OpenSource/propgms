@@ -44,7 +44,8 @@ export function dynamicServiceFactory<T>(configs: EndpointConfig[]): Record<stri
       normalizeIdParam(params);
       const url = buildUrlWithParams(cfg.url, params);
       const body = serializeData(data);
-      const headers = getAuthHeaders(appContextService);
+
+      const headers = cfg.requiresAuth ? getAuthHeaders(appContextService) : { 'Content-Type': 'application/json' };
       const options = { headers };
 
       switch (cfg.method) {

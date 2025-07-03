@@ -1,5 +1,7 @@
 export const environment = {
   production: true,
   serverBaseUrl: 'http://localhost:8080/api/v1',
-  authorizationPath: '/auth'
+  authorizationPath: '/auth',
+  organizationPath: '/organizations',
+  invitationPath: '/organizations/invitations'
 };

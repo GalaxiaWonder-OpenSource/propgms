@@ -1,0 +1,40 @@
+<mat-card class="invitation-card">
+  @if (invitation.invitedBy || invitation.invitedAt) {
+    <div class="card-header-top">
+      @if (invitation.invitedBy) {
+        <span class="inviter">
+          {{ 'worker.invitations.invited-by-label' | translate }} {{ invitation.invitedBy }}
+        </span>
+      }
+      @if (invitation.invitedAt) {
+        <span class="invited-date">
+          {{ invitation.invitedAt | date: 'longDate' }}
+        </span>
+      }
+    </div>
+  }
+
+  <mat-card-title class="org-label">
+    {{ 'worker.invitations.organization-label' | translate }}
+  </mat-card-title>
+
+  <mat-card-subtitle class="org-name">
+    {{ invitation.organizationName }}
+  </mat-card-subtitle>
+
+  <div class="card-footer">
+    <span class="status-label">
+      {{ ('model.invitation-status.' + invitation.status) | translate }}
+    </span>
+    @if(showActions) {
+      <mat-card-actions align="end" class="action-buttons">
+        <button mat-stroked-button color="primary" class="accept-btn" (click)="onAccept()">
+          {{ 'global.action.accept' | translate }}
+        </button>
+        <button mat-stroked-button color="warn" class="reject-btn" (click)="onReject()">
+          {{ 'global.action.reject' | translate }}
+        </button>
+      </mat-card-actions>
+    }
+  </div>
+</mat-card>

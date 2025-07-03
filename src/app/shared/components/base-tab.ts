@@ -1,9 +1,14 @@
 import { Directive } from '@angular/core';
-import {LayoutEventService} from '../services/layout-event-service';
+import { LayoutEventService } from '../services/layout-event-service';
+import { AppContextService } from '../services/app-context-service';
+import {Organization} from '../../organizations/model/organization-entity';
 
 @Directive()
 export abstract class BaseTab {
-  constructor(protected layoutEvents: LayoutEventService) {}
+  constructor(
+    protected layoutEvents: LayoutEventService,
+    protected appContext: AppContextService
+  ) {}
 
   protected emitSnackbar(level: 'success' | 'error' | 'info', message: string): void {
     this.layoutEvents.emit({
@@ -13,17 +18,53 @@ export abstract class BaseTab {
     });
   }
 
-  protected switchTab(to: string): void {
+  protected switchTab(tab: string): void {
     this.layoutEvents.emit({
       type: 'SWITCH_TAB',
-      to
+      to: tab
     });
   }
 
-  protected switchLayout(layoutId: string): void {
+  protected switchLayout(layout: string): void {
     this.layoutEvents.emit({
       type: 'SWITCH_LAYOUT',
-      layoutId
+      layoutId: layout
     });
+  }
+
+  protected getTokenOrThrow(): string {
+    const token = this.appContext.token;
+    if (!token) {
+      throw new Error('Missing token in application context.');
+    }
+    return token;
+  }
+
+  protected getPersonIdOrThrow(): number {
+    const id = this.appContext.personId;
+    if (id === undefined) {
+      throw new Error('Missing person ID in application context.');
+    }
+    return id;
+  }
+
+  protected getOrganizationOrThrow(): Organization {
+    const organization = this.appContext.organization;
+    if (!organization) {
+      throw new Error('Missing organization in application context.');
+    }
+    return organization;
+  }
+
+  protected setToken(token: string | undefined): void {
+    this.appContext.token = token;
+  }
+
+  protected setPersonId(personId: number | undefined): void {
+    this.appContext.personId = personId;
+  }
+
+  protected setOrganization(org: Organization | null): void {
+    this.appContext.organization = org;
   }
 }

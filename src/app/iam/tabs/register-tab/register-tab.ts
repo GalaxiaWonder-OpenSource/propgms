@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TranslatePipe } from '@ngx-translate/core';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 import { BaseTab } from '../../../shared/components/base-tab';
 import { RegisterForm } from '../../components/register-form/register-form';
@@ -10,7 +10,8 @@ import { UserAccount } from '../../model/user-account';
 import { AuthenticationService } from '../../services/authentication-service';
 import { LayoutEventService } from '../../../shared/services/layout-event-service';
 
-import { SignUpResourceFromEntityAssembler } from '../../services/SignUpResourceFromEntityAssembler';
+import { SignUpResourceFromEntityAssembler } from '../../services/sign-up-resource-from-entity-assembler';
+import {AppContextService} from '../../../shared/services/app-context-service';
 
 
 @Component({
@@ -24,9 +25,10 @@ export class RegisterTab extends BaseTab {
 
   constructor(
     layoutEvents: LayoutEventService,
+    appContextService: AppContextService,
     private authService: AuthenticationService
   ) {
-    super(layoutEvents);
+    super(layoutEvents, appContextService);
   }
 
   handleFormSubmission(data: { person: Person; account: UserAccount }) {
@@ -34,11 +36,11 @@ export class RegisterTab extends BaseTab {
 
     this.authService.signUp(payload).subscribe({
       next: () => {
-        this.emitSnackbar('success', 'Signup successful!');
+        this.emitSnackbar('success', 'auth.register.success');
         this.switchTab('/login');
       },
       error: () => {
-        this.emitSnackbar('error', 'Signup failed. Please try again.');
+        this.emitSnackbar('error', 'auth.register.failure');
       }
     });
   }

@@ -1,0 +1,62 @@
+.organization-card {
+  max-width: 600px;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.organization-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.organization-card.inactive {
+  background-color: #f5f5f5;
+  opacity: 0.85;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.card-title-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-card-title,
+mat-card-subtitle {
+  text-align: left;
+  margin: 0;
+}
+
+mat-card-subtitle {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.role-label {
+  display: flex;
+  align-items: center;
+  background-color: #1976d2;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  min-width: 100px;
+  justify-content: center;
+  margin-left: 1rem;
+  height: 20px;
+}
+
+.role-icon {
+  margin-right: 4px;
+  font-size: 16px;
+}
