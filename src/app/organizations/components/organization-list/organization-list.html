@@ -7,6 +7,7 @@
   @for (organization of organizationList; track organization.id) {
     <app-organization-card
       [organization]="organization"
+      (click)="onClick($event)"
     />
   }
 }

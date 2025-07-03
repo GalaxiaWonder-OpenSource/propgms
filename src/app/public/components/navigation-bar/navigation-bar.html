@@ -22,12 +22,14 @@
 <mat-toolbar color="primary" class="bottom-toolbar" role="navigation">
   <div #scrollContainer class="nav-scroll-container" tabindex="0">
     @for (item of navItems; track item.label) {
-      <button mat-button (click)="onClick(item)">
-        @if (item.icon) {
-          <mat-icon>{{ item.icon }}</mat-icon>
-        }
-        {{ item.label }}
-      </button>
+      @if (isConditionMet(item.condition)) {
+        <button mat-button (click)="onClick(item)">
+          @if (item.icon) {
+            <mat-icon>{{ item.icon }}</mat-icon>
+          }
+          {{ item.label }}
+        </button>
+      }
     }
   </div>
 </mat-toolbar>

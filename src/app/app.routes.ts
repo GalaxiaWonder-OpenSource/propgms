@@ -4,9 +4,11 @@ import {AuthenticationLayout} from './iam/layouts/authentication-layout/authenti
 import {RegisterTab} from './iam/tabs/register-tab/register-tab';
 import {LoginTab} from './iam/tabs/login-tab/login-tab';
 
-import {WorkerLayout} from './organizations/layouts/worker-layout/worker-layout.component';
+import {WorkerLayout} from './organizations/layouts/worker-layout/worker-layout';
 import {OrganizationsTab} from './organizations/tabs/organizations-tab/organizations-tab';
 import {InvitationsTab} from './organizations/tabs/invitations-tab/invitations-tab';
+import {OrganizationLayout} from './organizations/layouts/organization-layout/organization-layout';
+import {MembersTab} from './organizations/tabs/members-tab/members-tab';
 
 export const routes: Routes = [
   {
@@ -25,6 +27,14 @@ export const routes: Routes = [
       { path: '', redirectTo: 'organizations', pathMatch: 'full' },
       { path: 'organizations', component: OrganizationsTab },
       { path: 'invitations', component: InvitationsTab }
+    ]
+  },
+  {
+    path: 'organizations/:orgId',
+    component: OrganizationLayout,
+    children: [
+      { path: '', redirectTo: 'members', pathMatch: 'full' },
+      { path: 'members', component: MembersTab }
     ]
   },
   { path: '**', redirectTo: 'login' }

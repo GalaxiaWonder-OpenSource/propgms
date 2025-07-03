@@ -1,5 +1,5 @@
 import {Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
-import { NavItem } from '../../model/navigation-item';
+import {NavItem, NavItemCondition} from '../../model/navigation-item';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -55,5 +55,19 @@ export class NavigationBarComponent {
       type: 'SWITCH_LAYOUT',
       layoutId: '/auth'
     });
+  }
+
+  isConditionMet(condition?: NavItemCondition): boolean {
+    if (!condition) return true;
+
+    switch (condition) {
+      case NavItemCondition.MUST_BE_OWNER:
+        const currentOrg = this.appContext.organization
+        const personId = this.appContext.personId
+        return !!currentOrg && currentOrg.createdBy === this.appContext.personId;
+
+      default:
+        return true;
+    }
   }
 }

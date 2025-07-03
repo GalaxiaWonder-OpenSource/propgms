@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Organization} from '../../model/organization-entity';
 import {TranslatePipe} from '@ngx-translate/core';
 import {
@@ -18,4 +18,9 @@ import {OrganizationCard} from '../organization-card/organization-card';
 })
 export class OrganizationList {
   @Input() organizationList: Organization[] = [];
+  @Output() click = new EventEmitter<Organization>();
+
+  onClick(org: Organization): void {
+    this.click.emit(org);
+  }
 }

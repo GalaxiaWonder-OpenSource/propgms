@@ -1,6 +1,7 @@
 <main>
   <app-organization-list
     [organizationList]="organizationsList"
+    (click)="handleClick($event)"
   />
 
   <button

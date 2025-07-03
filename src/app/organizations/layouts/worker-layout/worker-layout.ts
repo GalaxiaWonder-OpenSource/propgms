@@ -11,8 +11,8 @@ import {TranslateService} from '@ngx-translate/core';
   selector: 'app-worker-layout',
   standalone: true,
   imports: [RouterOutlet, NavigationBarComponent],
-  templateUrl: './worker-layout.component.html',
-  styleUrl: './worker-layout.component.css'
+  templateUrl: 'worker-layout.html',
+  styleUrl: './worker-layout.css'
 })
 export class WorkerLayout extends BaseLayout {
   constructor(

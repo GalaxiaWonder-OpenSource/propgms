@@ -1,6 +1,7 @@
 <mat-card
   class="organization-card"
   [ngClass]="{ 'inactive': organization.status === 'INACTIVE' }"
+  (click)="onClick()"
 >
   <div class="card-header">
     <div class="card-title-wrapper">

@@ -85,4 +85,9 @@ export class OrganizationsTab extends BaseTab implements OnInit {
       }
     });
   }
+
+  handleClick(org: Organization) {
+    this.appContext.organization = org;
+    this.switchLayout(`/organizations/${org.id}`);
+  }
 }

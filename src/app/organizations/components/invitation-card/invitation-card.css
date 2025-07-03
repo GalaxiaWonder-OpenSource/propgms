@@ -45,11 +45,13 @@
 .action-buttons .accept-btn:hover {
   border-color: var(--success-color);
   color: var(--success-color);
+  cursor: pointer;
 }
 
 .action-buttons .reject-btn:hover {
   border-color: var(--error-color);
   color: var(--error-color);
+  cursor: pointer;
 }
 
 .card-footer {

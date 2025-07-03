@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Organization} from '../../model/organization-entity';
 import {MatCardModule} from '@angular/material/card';
 import {TranslatePipe} from '@ngx-translate/core';
@@ -19,4 +19,9 @@ import {DatePipe, NgClass} from '@angular/common';
 })
 export class OrganizationCard {
   @Input() organization!: Organization
+  @Output() click = new EventEmitter<Organization>();
+
+  onClick() {
+    this.click.emit(this.organization);
+  }
 }
