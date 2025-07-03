@@ -10,7 +10,8 @@
       "reject": "Reject",
       "create": "Create",
       "cancel": "Cancel",
-      "confirm": "Confirm"
+      "confirm": "Confirm",
+      "invite": "Invite"
     }
   },
   "footer": {
@@ -94,6 +95,10 @@
       "commercial-name-example": "ABC Tech",
       "ruc": "TIN",
       "ruc-example": "20481234567"
+    },
+    "invitation": {
+      "email": "Email",
+      "email-example": "john.doe@example.com"
     }
   },
   "worker": {
@@ -126,9 +131,14 @@
         "title": "Remove member from organization",
         "message": "Are you sure you want to proceed?"
       },
-      "person-label": "Invited person",
+      "person-label": "Sent to:",
       "member-list-title": "Organization members",
-      "invitation-list-title": "Pending invitations"
+      "invitation-list-title": "Pending invitations",
+      "invite": {
+        "title": "Invite to Organization"
+      },
+      "invite-success": "Invitation sent successfully.",
+      "invite-failure": "Failed to send invitation. Please try again."
     }
   }
 }

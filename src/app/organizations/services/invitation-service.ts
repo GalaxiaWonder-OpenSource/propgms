@@ -4,6 +4,7 @@ import {EndpointConfig, HttpMethod} from '../../shared/model/endpoint-config';
 import {dynamicServiceFactory} from '../../shared/utils/dynamic-service-factory';
 import {InvitationResource} from '../resources/invitation-resource';
 import {Observable} from 'rxjs';
+import {InviteToOrganizationResource} from '../resources/invite-to-organization-resource';
 
 const apiBaseUrl = environment.serverBaseUrl;
 const resourcePath = environment.invitationPath;
@@ -32,6 +33,12 @@ const endpoints: EndpointConfig[] = [
     method: HttpMethod.GET,
     url: `${apiBaseUrl}/organizations/{id}/invitations`,
     requiresAuth: true
+  },
+  {
+    name: 'inviteByPersonEmailAndOrganizationId',
+    method: HttpMethod.POST,
+    url: `${apiBaseUrl}${resourcePath}`,
+    requiresAuth: true
   }
 ];
 
@@ -57,5 +64,9 @@ export class InvitationService {
 
   getByOrganizationId(id: number): Observable<InvitationResource[]> {
     return this.api["getByOrganizationId"]({}, { id });
+  }
+
+  inviteByPersonEmailAndOrganizationId(resource: InviteToOrganizationResource): Observable<InvitationResource> {
+    return this.api["inviteByPersonEmailAndOrganizationId"](resource);
   }
 }

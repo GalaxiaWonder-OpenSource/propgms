@@ -3,7 +3,6 @@ import { BaseTab } from '../../../shared/components/base-tab';
 import { LayoutEventService } from '../../../shared/services/layout-event-service';
 import { AppContextService } from '../../../shared/services/app-context-service';
 import { OrganizationMemberService } from '../../services/organization-member-service';
-import { OrganizationMemberResource } from '../../resources/organization-member-resource';
 import {OrganizationMemberList} from "../../components/organization-member-list/organization-member-list";
 import {InvitationList} from '../../components/invitation-list/invitation-list';
 import {InvitationService} from '../../services/invitation-service';
@@ -14,6 +13,12 @@ import {
 import {Invitation} from '../../model/invitation-entity';
 import {InvitationEntityFromResourceAssembler} from '../../services/invitation-entity-from-resource-assembler';
 import {TranslatePipe} from '@ngx-translate/core';
+import {MatIconModule} from '@angular/material/icon';
+import {InviteToOrganizationResource} from '../../resources/invite-to-organization-resource';
+import {InviteToOrganizationModal} from '../../components/invite-to-organization-modal/invite-to-organization-modal';
+import {MatDialog} from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
+import {Organization} from '../../model/organization-entity';
 
 @Component({
   selector: 'app-organization-member-tab',
@@ -21,7 +26,9 @@ import {TranslatePipe} from '@ngx-translate/core';
   imports: [
     OrganizationMemberList,
     InvitationList,
-    TranslatePipe
+    TranslatePipe,
+    MatIconModule,
+    MatButtonModule
   ],
   templateUrl: './organization-member-tab.html',
   styleUrl: './organization-member-tab.css'
@@ -35,7 +42,8 @@ export class OrganizationMemberTab extends BaseTab implements OnInit {
     layoutEvents: LayoutEventService,
     appContext: AppContextService,
     private memberService: OrganizationMemberService,
-    private invitationService: InvitationService
+    private invitationService: InvitationService,
+    private dialog: MatDialog
   ) {
     super(layoutEvents, appContext);
   }
@@ -58,6 +66,11 @@ export class OrganizationMemberTab extends BaseTab implements OnInit {
       }
     });
 
+    this.reloadInvitations(organization);
+  }
+
+  // Introduced due to poorly backend use case management
+  private reloadInvitations(organization: Organization) {
     this.invitationService.getByOrganizationId(organization.id).subscribe({
       next: (invitations) => {
         this.organizationInvitations = invitations.map(invitation =>
@@ -83,4 +96,30 @@ export class OrganizationMemberTab extends BaseTab implements OnInit {
       }
     });
   }
+
+  openInviteToOrganizationModal() {
+    const organization = this.getOrganizationOrThrow();
+
+    const dialogRef = this.dialog.open(InviteToOrganizationModal);
+
+    dialogRef.afterClosed().subscribe((result: { email: string } | undefined) => {
+      if (result) {
+        const resource: InviteToOrganizationResource = {
+          organizationId: organization.id,
+          email: result.email
+        };
+
+        this.invitationService.inviteByPersonEmailAndOrganizationId(resource).subscribe({
+          next: (response) => {
+            this.reloadInvitations(organization);
+            this.emitSnackbar("success", "organization.members.invite-success");
+          },
+          error: () => {
+            this.emitSnackbar("error", "organization.members.invite-failure");
+          }
+        });
+      }
+    });
+  }
+
 }

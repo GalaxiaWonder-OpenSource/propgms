@@ -13,12 +13,24 @@
     </section>
 
     <section>
-      <h2>{{ 'organization.members.invitation-list-title' | translate }}</h2>
+      <div class="section-header">
+        <h2>{{ 'organization.members.invitation-list-title' | translate }}</h2>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="openInviteToOrganizationModal()"
+        >
+          {{ 'global.action.invite' | translate }}
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+
       <app-invitation-list
         [invitationList]="organizationInvitations"
         [showActions]="false"
       />
     </section>
+
   </div>
 </main>
 
