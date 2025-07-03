@@ -125,7 +125,10 @@
       "remove": {
         "title": "Remove member from organization",
         "message": "Are you sure you want to proceed?"
-      }
+      },
+      "person-label": "Invited person",
+      "member-list-title": "Organization members",
+      "invitation-list-title": "Pending invitations"
     }
   }
 }

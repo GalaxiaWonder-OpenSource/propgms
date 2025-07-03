@@ -1,7 +1,24 @@
 <main>
-  <app-organization-member-list
-    [organizationMemberList]="organizationMembers"
-    [showActions]="isContractor"
-    (remove)="handleRemove($event)"
-  />
+  <div>
+    <h1>{{getOrganizationOrThrow().legalName}}</h1>
+  </div>
+  <div class="flex-div">
+    <section>
+      <h2>{{ 'organization.members.member-list-title' | translate }}</h2>
+      <app-organization-member-list
+        [organizationMemberList]="organizationMembers"
+        [showActions]="isContractor"
+        (remove)="handleRemove($event)"
+      />
+    </section>
+
+    <section>
+      <h2>{{ 'organization.members.invitation-list-title' | translate }}</h2>
+      <app-invitation-list
+        [invitationList]="organizationInvitations"
+        [showActions]="false"
+      />
+    </section>
+  </div>
 </main>
+

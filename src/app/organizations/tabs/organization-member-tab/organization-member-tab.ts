@@ -5,24 +5,37 @@ import { AppContextService } from '../../../shared/services/app-context-service'
 import { OrganizationMemberService } from '../../services/organization-member-service';
 import { OrganizationMemberResource } from '../../resources/organization-member-resource';
 import {OrganizationMemberList} from "../../components/organization-member-list/organization-member-list";
+import {InvitationList} from '../../components/invitation-list/invitation-list';
+import {InvitationService} from '../../services/invitation-service';
+import {OrganizationMember} from '../../model/organization-member-entity';
+import {
+  OrganizationMemberEntityFromResourceAssembler
+} from '../../services/organization-member-entity-fron-resource-assembler';
+import {Invitation} from '../../model/invitation-entity';
+import {InvitationEntityFromResourceAssembler} from '../../services/invitation-entity-from-resource-assembler';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-organization-member-tab',
   standalone: true,
   imports: [
-    OrganizationMemberList
+    OrganizationMemberList,
+    InvitationList,
+    TranslatePipe
   ],
   templateUrl: './organization-member-tab.html',
   styleUrl: './organization-member-tab.css'
 })
 export class OrganizationMemberTab extends BaseTab implements OnInit {
-  organizationMembers: OrganizationMemberResource[] = [];
+  organizationMembers: OrganizationMember[] = [];
   isContractor: boolean = false;
+  organizationInvitations: Invitation[] = [];
 
   constructor(
     layoutEvents: LayoutEventService,
     appContext: AppContextService,
-    private memberService: OrganizationMemberService
+    private memberService: OrganizationMemberService,
+    private invitationService: InvitationService
   ) {
     super(layoutEvents, appContext);
   }
@@ -35,11 +48,24 @@ export class OrganizationMemberTab extends BaseTab implements OnInit {
 
     this.memberService.getByOrganizationId(organization.id).subscribe({
       next: (members) => {
-        this.organizationMembers = members;
+        this.organizationMembers = members.map(member =>
+          OrganizationMemberEntityFromResourceAssembler(member)
+        );
       },
       error: (err) => {
         console.error('Failed to load organization members:', err);
         this.emitSnackbar('error', 'organization.members.load-failure');
+      }
+    });
+
+    this.invitationService.getByOrganizationId(organization.id).subscribe({
+      next: (invitations) => {
+        this.organizationInvitations = invitations.map(invitation =>
+          InvitationEntityFromResourceAssembler(invitation)
+        );
+      },
+      error: (err) => {
+        console.error('Failed to fetch invitations by personId:', err);
       }
     });
   }

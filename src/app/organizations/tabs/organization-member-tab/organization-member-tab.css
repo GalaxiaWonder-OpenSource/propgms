@@ -1,1 +1,16 @@
+main {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.flex-div {
+  display: flex;
+  flex-direction: row;
+}
 
+.flex-div section:nth-child(1) {
+  flex: 2;
+}
+
+.flex-div section:nth-child(2) {
+  flex: 1;
+}

@@ -1,7 +1,7 @@
 import { OrganizationMemberResource } from '../resources/organization-member-resource';
 import { OrganizationMember } from '../model/organization-member-entity';
 
-export function OrganizationMemberFromResourceAssembler(
+export function OrganizationMemberEntityFromResourceAssembler(
   resource: OrganizationMemberResource
 ): OrganizationMember {
   return new OrganizationMember(

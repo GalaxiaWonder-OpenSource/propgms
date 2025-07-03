@@ -26,6 +26,12 @@ const endpoints: EndpointConfig[] = [
     method: HttpMethod.PATCH,
     url: `${apiBaseUrl}${resourcePath}/{id}/reject`,
     requiresAuth: true
+  },
+  {
+    name: 'getByOrganizationId',
+    method: HttpMethod.GET,
+    url: `${apiBaseUrl}/organizations/{id}/invitations`,
+    requiresAuth: true
   }
 ];
 
@@ -47,5 +53,9 @@ export class InvitationService {
 
   rejectInvitationById(id: number): Observable<InvitationResource> {
     return this.api["rejectInvitationById"]({}, { id });
+  }
+
+  getByOrganizationId(id: number): Observable<InvitationResource[]> {
+    return this.api["getByOrganizationId"]({}, { id });
   }
 }
