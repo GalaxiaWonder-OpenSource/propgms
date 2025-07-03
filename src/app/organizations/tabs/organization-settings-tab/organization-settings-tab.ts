@@ -26,12 +26,12 @@ export class OrganizationSettingsTab extends BaseTab {
 
     this.organizationService.deleteOrganizationByRuc(organization.ruc).subscribe({
       next: (response) => {
-        this.emitSnackbar('success', 'organizations.settings.delete-success');
+        this.emitSnackbar('success', 'organization.settings.delete-success');
         this.switchLayout("/worker/organizations");
       },
       error: (err) => {
         console.error('Failed to delete organization:', err);
-        this.emitSnackbar('error', 'organizations.settings.delete-failure');
+        this.emitSnackbar('error', 'organization.settings.delete-failure');
       }
     });
   }

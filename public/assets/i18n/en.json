@@ -144,7 +144,13 @@
       "danger-zone": {
         "title": "DANGER ZONE",
         "action": "DELETE ORGANIZATION"
-      }
+      },
+      "delete": {
+        "title": "Delete Organization",
+        "message": "Are you sure you want to delete the organization"
+      },
+      "delete-success": "Deleted organization successfully",
+      "delete-failure": "Unable to delete organization"
     }
   }
 }

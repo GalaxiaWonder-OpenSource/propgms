@@ -9,7 +9,9 @@
       "accept": "Aceptar",
       "reject": "Rechazar",
       "create": "Crear",
-      "cancel": "Cancelar"
+      "cancel": "Cancelar",
+      "confirm": "Confirmar",
+      "invite": "Invitar"
     }
   },
   "footer": {
@@ -93,6 +95,10 @@
       "commercial-name-example": "ABC Tech",
       "ruc": "RUC",
       "ruc-example": "20481234567"
+    },
+    "invitation": {
+      "email": "Correo electrónico",
+      "email-example": "juan.perez@ejemplo.com"
     }
   },
   "worker": {
@@ -113,6 +119,38 @@
       "reject-failure": "No se pudo rechazar la invitación. Intenta nuevamente.",
       "accept-success": "Invitación aceptada con éxito.",
       "accept-failure": "No se pudo aceptar la invitación. Intenta nuevamente."
+    }
+  },
+  "organization": {
+    "members": {
+      "load-failure": "No se pudieron cargar los miembros de la organización. Intenta nuevamente.",
+      "delete-success": "Miembro eliminado con éxito",
+      "delete-failure": "No se pudo eliminar al miembro. Intenta nuevamente.",
+      "joined-at-label": "Miembro desde",
+      "remove": {
+        "title": "Eliminar miembro de la organización",
+        "message": "¿Estás seguro de que deseas continuar?"
+      },
+      "person-label": "Enviado a:",
+      "member-list-title": "Miembros de la organización",
+      "invitation-list-title": "Invitaciones pendientes",
+      "invite": {
+        "title": "Invitar a la organización"
+      },
+      "invite-success": "Invitación enviada con éxito.",
+      "invite-failure": "No se pudo enviar la invitación. Intenta nuevamente."
+    },
+    "settings": {
+      "danger-zone": {
+        "title": "ZONA DE PELIGRO",
+        "action": "ELIMINAR ORGANIZACIÓN"
+      },
+      "delete": {
+        "title": "Eliminar organización",
+        "message": "¿Estás seguro de que deseas eliminar la organización?"
+      },
+      "delete-success": "Organización eliminada con éxito",
+      "delete-failure": "No se pudo eliminar la organización"
     }
   }
 }

@@ -29,8 +29,8 @@ export class OrganizationDangerZone {
   confirmDelete(): void {
     this.dialog.open(ConfirmDialog, {
       data: {
-        title: 'organizations.settings.delete.title',
-        message: 'organizations.settings.delete.message'
+        title: 'organization.settings.delete.title',
+        message: 'organization.settings.delete.message'
       }
     }).afterClosed().subscribe(confirmed => {
       if (confirmed) {

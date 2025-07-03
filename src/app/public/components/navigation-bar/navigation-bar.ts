@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { LayoutEventService} from '../../../shared/services/layout-event-service';
 import {MatMenuModule} from '@angular/material/menu';
 import {AppContextService} from '../../../shared/services/app-context-service';
+import {LanguageSwitcherComponent} from '../language-switcher/language-switcher';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -16,7 +17,8 @@ import {AppContextService} from '../../../shared/services/app-context-service';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatMenuModule
+    MatMenuModule,
+    LanguageSwitcherComponent
   ]
 })
 export class NavigationBarComponent {
