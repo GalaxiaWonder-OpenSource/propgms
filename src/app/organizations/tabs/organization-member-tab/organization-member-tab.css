@@ -14,3 +14,21 @@ main {
 .flex-div section:nth-child(2) {
   flex: 1;
 }
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .flex-div {
+    flex-direction: column;
+  }
+
+  .flex-div section {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
