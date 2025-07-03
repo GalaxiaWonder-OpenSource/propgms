@@ -13,7 +13,11 @@ export abstract class BaseLayout implements OnInit {
     protected translate: TranslateService
   ) {}
 
+  protected currentBaseUrl: string = "";
+
   ngOnInit(): void {
+    this.currentBaseUrl = this.getBaseUrl();
+
     this.layoutEvents.events$.subscribe(event => {
       switch (event.type) {
         case 'SNACKBAR':
@@ -22,7 +26,8 @@ export abstract class BaseLayout implements OnInit {
           break;
 
         case 'SWITCH_TAB':
-          this.router.navigateByUrl(event.to);
+          const targetUrl = `${this.currentBaseUrl}/${event.to}`;
+          this.router.navigateByUrl(targetUrl);
           break;
 
         case 'SWITCH_LAYOUT':
@@ -30,5 +35,10 @@ export abstract class BaseLayout implements OnInit {
           break;
       }
     });
+  }
+
+  private getBaseUrl(): string {
+    const url = this.router.url;
+    return url.substring(0, url.lastIndexOf('/'));
   }
 }

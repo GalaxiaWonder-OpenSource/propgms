@@ -9,6 +9,7 @@ import {OrganizationsTab} from './organizations/tabs/organizations-tab/organizat
 import {InvitationsTab} from './organizations/tabs/invitations-tab/invitations-tab';
 import {OrganizationLayout} from './organizations/layouts/organization-layout/organization-layout';
 import {OrganizationMemberTab} from './organizations/tabs/organization-member-tab/organization-member-tab';
+import {OrganizationSettingsTab} from './organizations/tabs/organization-settings-tab/organization-settings-tab';
 
 export const routes: Routes = [
   {
@@ -34,7 +35,8 @@ export const routes: Routes = [
     component: OrganizationLayout,
     children: [
       { path: '', redirectTo: 'members', pathMatch: 'full' },
-      { path: 'members', component: OrganizationMemberTab }
+      { path: 'members', component: OrganizationMemberTab },
+      { path: 'settings', component: OrganizationSettingsTab }
     ]
   },
   { path: '**', redirectTo: 'login' }
