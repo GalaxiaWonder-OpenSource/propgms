@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 import { BaseTab } from '../../../shared/components/base-tab';
@@ -21,7 +21,7 @@ import {UserAccountType} from '../../model/user-account-type';
   templateUrl: './login-tab.html',
   styleUrl: './login-tab.css'
 })
-export class LoginTab extends BaseTab {
+export class LoginTab extends BaseTab implements OnInit {
 
   constructor(
     layoutEvents: LayoutEventService,
@@ -31,6 +31,12 @@ export class LoginTab extends BaseTab {
     super(layoutEvents, appContextService);
   }
 
+  ngOnInit() {
+    if(this.appContext.personId && this.appContext.token && this.appContext.accountType) {
+      this.redirectAfterLogin();
+    }
+  }
+
   handleFormSubmission(account: UserAccount) {
     const payload = SignInResourceFromEntityAssembler(account);
 
@@ -38,8 +44,9 @@ export class LoginTab extends BaseTab {
       next: (response: SignInResponseResource) => {
         this.setToken(response.token);
         this.setPersonId(response.user.personId);
+        this.setAccountType(response.user.userType)
         this.emitSnackbar('success', 'auth.login.success');
-        this.redirectAfterLogin(UserAccountType[response.user.userType as keyof typeof UserAccountType]);
+        this.redirectAfterLogin();
       },
       error: () => {
         this.emitSnackbar('error', 'auth.login.failure');
@@ -51,7 +58,9 @@ export class LoginTab extends BaseTab {
     this.switchTab('/register');
   }
 
-  redirectAfterLogin(accountType: UserAccountType) {
+  redirectAfterLogin() {
+    var accountType = this.getAccountTypeOrThrow();
+
     switch (accountType) {
       case UserAccountType.TYPE_WORKER: {
         this.switchLayout('/worker');

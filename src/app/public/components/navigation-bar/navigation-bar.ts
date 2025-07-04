@@ -52,6 +52,7 @@ export class NavigationBarComponent {
   onLogoutClick(): void {
     this.appContext.personId = undefined;
     this.appContext.token = undefined;
+    this.appContext.accountType = undefined;
 
     this.layoutEvents.emit({
       type: 'SWITCH_LAYOUT',

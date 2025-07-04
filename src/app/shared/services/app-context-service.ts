@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { IamContextService } from '../../iam/services/iam-context-service';
 import {OrganizationContextService} from '../../organizations/services/organization-context-service';
 import {Organization} from '../../organizations/model/organization-entity';
+import {UserAccountType} from '../../iam/model/user-account-type';
 
 @Injectable({ providedIn: 'root' })
 export class AppContextService {
@@ -31,6 +32,18 @@ export class AppContextService {
       this.iamContextService.setPersonId(id);
     } else {
       this.iamContextService.clearPersonId();
+    }
+  }
+
+  get accountType(): UserAccountType | undefined {
+    return this.iamContextService.getAccountType() ?? undefined;
+  }
+
+  set accountType(type: UserAccountType | undefined) {
+    if (type !== undefined) {
+      this.iamContextService.setAccountType(type);
+    } else {
+      this.iamContextService.clearAccountType();
     }
   }
 
