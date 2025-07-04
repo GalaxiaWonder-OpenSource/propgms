@@ -1,0 +1,32 @@
+<mat-card class="edit-organization-card">
+  <mat-card-title>{{ 'organization.settings.edit.title' | translate }}</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <mat-form-field appearance="fill" class="form-field">
+        <mat-label>{{ 'organization.settings.edit.legal-name' | translate }}</mat-label>
+        <input matInput formControlName="legalName" />
+        <mat-error *ngIf="form.controls.legalName.hasError('required')">
+          {{ 'organization.settings.edit.legal-name-required' | translate }}
+        </mat-error>
+        <mat-error *ngIf="form.controls.legalName.hasError('maxLength')">
+          {{ 'organization.settings.edit.legal-name-too-long' | translate }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="form-field">
+        <mat-label>{{ 'organization.settings.edit.commercial-name' | translate }}</mat-label>
+        <input matInput formControlName="commercialName" />
+        <mat-error *ngIf="form.controls.commercialName.hasError('required')">
+          {{ 'organization.settings.edit.commercial-name-required' | translate }}
+        </mat-error>
+        <mat-error *ngIf="form.controls.commercialName.hasError('maxLength')">
+          {{ 'organization.settings.edit.commercial-name-too-long' | translate }}
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+        {{ 'organization.settings.edit.save' | translate }}
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>

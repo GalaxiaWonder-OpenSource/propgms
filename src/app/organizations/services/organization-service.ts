@@ -6,6 +6,7 @@ import {OrganizationResource} from '../resources/organization-resource';
 import {Observable} from 'rxjs';
 import {CreateOrganizationResource} from '../../iam/resources/create-organization-resource';
 import {GenericMessageResource} from '../../shared/resources/GenericMessageResource';
+import {UpdateOrganizationResource} from '../resources/update-organization-resource';
 
 const apiBaseUrl = environment.serverBaseUrl;
 const resourcePath = environment.organizationPath;
@@ -28,6 +29,12 @@ const endpoints: EndpointConfig[] = [
     method: HttpMethod.DELETE,
     url: `${apiBaseUrl}${resourcePath}/{ruc}`,
     requiresAuth: true
+  },
+  {
+    name: 'updateOrganization',
+    method: HttpMethod.PATCH,
+    url: `${apiBaseUrl}${resourcePath}/{id}`,
+    requiresAuth: true
   }
 ];
 
@@ -49,5 +56,9 @@ export class OrganizationService {
 
   deleteOrganizationByRuc(ruc: string): Observable<GenericMessageResource> {
     return this.api["deleteOrganizationByRuc"]({}, {ruc});
+  }
+
+  updateOrganization(resource: UpdateOrganizationResource, id: number): Observable<GenericMessageResource> {
+    return this.api["updateOrganization"](resource, {id});
   }
 }

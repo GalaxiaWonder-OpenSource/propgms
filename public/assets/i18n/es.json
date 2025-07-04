@@ -150,7 +150,19 @@
         "message": "¿Estás seguro de que deseas eliminar la organización?"
       },
       "delete-success": "Organización eliminada con éxito",
-      "delete-failure": "No se pudo eliminar la organización"
+      "delete-failure": "No se pudo eliminar la organización",
+      "edit": {
+        "title": "Editar organización",
+        "legal-name": "Razón social",
+        "legal-name-required": "La razón social es obligatoria.",
+        "legal-name-too-long": "La razón social es demasiado larga.",
+        "commercial-name": "Nombre comercial",
+        "commercial-name-required": "El nombre comercial es obligatorio.",
+        "commercial-name-too-long": "El nombre comercial es demasiado largo.",
+        "save": "Guardar cambios"
+      },
+      "update-success": "Organización actualizada con éxito.",
+      "update-failure": "No se pudo actualizar la organización. Inténtalo de nuevo."
     }
   }
 }
