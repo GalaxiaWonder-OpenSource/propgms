@@ -1,12 +1,14 @@
 import {Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 import {NavItem, NavItemCondition} from '../../model/navigation-item';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { LayoutEventService} from '../../../shared/services/layout-event-service';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {LayoutEventService} from '../../../shared/services/layout-event-service';
 import {MatMenuModule} from '@angular/material/menu';
 import {AppContextService} from '../../../shared/services/app-context-service';
 import {LanguageSwitcherComponent} from '../language-switcher/language-switcher';
+import {Router} from '@angular/router';
+import {UserAccountType} from '../../../iam/model/user-account-type';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -28,7 +30,8 @@ export class NavigationBarComponent {
 
   constructor(
     private layoutEvents: LayoutEventService,
-    private appContext: AppContextService
+    private appContext: AppContextService,
+    private router: Router
   ) {}
 
   onClick(item: NavItem): void {
@@ -72,5 +75,44 @@ export class NavigationBarComponent {
       default:
         return true;
     }
+  }
+
+  shouldShowBackButton(): boolean {
+    const path = this.extractBasePath();
+
+    return !(path === 'worker' || path === 'client');
+  }
+
+  navigateBack(): void {
+    const path = this.extractBasePath();
+
+    switch (path) {
+      case 'organizations':
+        this.layoutEvents.emit({
+          type: 'SWITCH_LAYOUT',
+          layoutId: '/worker'
+        });
+        break;
+      case 'projects':
+        this.layoutEvents.emit({
+          type: 'SWITCH_LAYOUT',
+          layoutId: '/organizations' + this.appContext.organization?.id
+        });
+        break;
+      case 'project-tracking':
+        this.layoutEvents.emit({
+          type: 'SWITCH_LAYOUT',
+          layoutId: '/client'
+        });
+        break;
+      default:
+        return;
+    }
+  }
+
+  private extractBasePath(): string {
+    const url = this.router.url;
+    const match = url.match(/^\/([^\/\?]+)/);
+    return match ? match[1] : '';
   }
 }
