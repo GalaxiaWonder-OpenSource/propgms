@@ -11,6 +11,7 @@ export function SignUpResourceFromEntityAssembler(person: Person, account: UserA
     lastName: person.lastname,
     email: person.email,
     phone: person.phone || null,
-    professionalId: person.professionalId || null
+    professionalId: person.professionalId || null,
+    specialty: person.specialty || null
   };
 }

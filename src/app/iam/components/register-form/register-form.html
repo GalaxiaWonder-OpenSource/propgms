@@ -59,6 +59,17 @@
             <mat-label>{{ 'model.person.professional-id' | translate }}</mat-label>
             <input matInput formControlName="professionalId" [placeholder]="'model.person.professional-id-example' | translate">
           </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>{{ 'model.person.specialty' | translate }}</mat-label>
+            <mat-select formControlName="specialty">
+              @for (specialty of specialties; track specialty) {
+                <mat-option [value]="specialty">
+                  {{ ('model.specialty.' + specialty) | translate }}
+                </mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
         }
 
         <mat-form-field appearance="fill">
@@ -106,6 +117,10 @@
           <li>
             <strong>{{ 'model.person.professional-id' | translate }}:</strong>
             {{ personalFormGroup.get('professionalId')?.value || '—' }}
+          </li>
+          <li>
+            <strong>{{ 'model.person.specialty' | translate }}:</strong>
+            {{ ('model.specialty.' + personalFormGroup.get('specialty')?.value) | translate }}
           </li>
         }
       </ul>

@@ -62,7 +62,8 @@
       "phone": "Phone Number",
       "phone-example": "+51987654321",
       "professional-id": "Professional ID",
-      "professional-id-example": "CIP123456"
+      "professional-id-example": "CIP123456",
+      "specialty": "Specialty"
     },
     "user-account": {
       "username": "Username",
@@ -99,6 +100,16 @@
     "invitation": {
       "email": "Email",
       "email-example": "john.doe@example.com"
+    },
+    "specialty": {
+      "ARCHITECTURE": "Architecture",
+      "STRUCTURES": "Structures",
+      "HSA": "Health, Safety and Accessibility",
+      "TOPOGRAPHY": "Topography",
+      "SANITATION": "Sanitation",
+      "ELECTRICITY": "Electricity",
+      "COMMUNICATIONS": "Communications",
+      "NON_APPLICABLE": "Non applicable"
     }
   },
   "worker": {

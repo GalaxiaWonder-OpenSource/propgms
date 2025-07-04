@@ -1,3 +1,5 @@
+import {Specialty} from '../../public/model/specialty';
+
 export class Person {
   constructor(
     public firstname: string = '',
@@ -5,6 +7,7 @@ export class Person {
     public email: string = '',
     public phone: string = '',
     public professionalId?: string,
+    public specialty?: Specialty,
     public id?: number
   ) {
   }

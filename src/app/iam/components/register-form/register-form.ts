@@ -12,6 +12,7 @@ import {StepperSelectionEvent} from '@angular/cdk/stepper';
 import {ValidatorsService} from '../../../shared/services/validator-service';
 import {Person} from '../../model/person';
 import {UserAccount} from '../../model/user-account';
+import {Specialty} from '../../../public/model/specialty';
 
 
 @Component({
@@ -48,6 +49,10 @@ export class RegisterForm {
    * This way, the values can be iterated and called more easily on the select field. */
   protected readonly accountTypes = Object.values(UserAccountType);
 
+  /** Declaring the enum values as part of an array.
+   * This way, the values can be iterated and called more easily on the select field. */
+  protected readonly specialties = Object.values(Specialty);
+
   /** Value to control whether the form is linear.
    * Due to product design it should stay linear.  */
   protected readonly isLinear = true;
@@ -65,7 +70,8 @@ export class RegisterForm {
     lastname: ['', [Validators.required, Validators.minLength(2)]],
     email: ['', [Validators.required, Validators.email]],
     phone: ['', [this.validator.phoneNumberFormat()]],
-    professionalId: ['']
+    professionalId: [''],
+    specialty: [null]
   });
 
   /** Event that emits the data of the form using the {@link Person} and {@link UserAccount} model. */
@@ -98,15 +104,19 @@ export class RegisterForm {
   onStepChange(event: StepperSelectionEvent) {
     const typeValue = this.accountFormGroup.get('type')?.value;
     const professionalIdControl = this.personalFormGroup.get('professionalId');
+    const specialtyControl = this.personalFormGroup.get('specialty');
 
     if (typeValue === UserAccountType.TYPE_WORKER) {
       professionalIdControl?.setValidators([
         Validators.required,
         this.validator.professionalIdFormat()
       ]);
+      specialtyControl?.setValidators([Validators.required]);
     } else {
       professionalIdControl?.clearValidators();
+      specialtyControl?.clearValidators();
     }
     professionalIdControl?.updateValueAndValidity();
+    specialtyControl?.updateValueAndValidity();
   }
 }

@@ -60,7 +60,8 @@
       "phone": "Número de teléfono",
       "phone-example": "+51987654321",
       "professional-id": "Código de colegiado",
-      "professional-id-example": "CIP123456"
+      "professional-id-example": "CIP123456",
+      "specialty": "Especialidad profesional"
     },
     "user-account": {
       "username": "Nombre de usuario",
@@ -93,6 +94,16 @@
       "commercial-name-example": "ABC Tech",
       "ruc": "RUC",
       "ruc-example": "20481234567"
+    },
+    "specialty": {
+      "ARCHITECTURE": "Arquitectura",
+      "STRUCTURES": "Estructuras",
+      "HSA": "Higiene, Seguridad y Accesibilidad",
+      "TOPOGRAPHY": "Topografía",
+      "SANITATION": "Saneamiento",
+      "ELECTRICITY": "Electricidad",
+      "COMMUNICATIONS": "Comunicaciones",
+      "NON_APPLICABLE": "No aplica"
     }
   },
   "worker": {

@@ -7,4 +7,5 @@ export interface SignUpResource {
   email: string;
   phone?: string | null;
   professionalId?: string | null;
+  specialty?: string | null;
 }
