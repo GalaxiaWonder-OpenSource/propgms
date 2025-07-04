@@ -60,3 +60,26 @@ mat-card-subtitle {
   margin-right: 4px;
   font-size: 16px;
 }
+
+/* Reuse shared label styles */
+.member-type-label {
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  min-width: 100px;
+  justify-content: center;
+  margin-left: 1rem;
+  height: 20px;
+}
+
+.member-type-label.contractor {
+  background-color: #4caf50;
+}
+
+.member-type-label.worker {
+  background-color: #1976d2;
+}

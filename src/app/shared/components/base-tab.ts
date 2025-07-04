@@ -2,6 +2,7 @@ import { Directive } from '@angular/core';
 import { LayoutEventService } from '../services/layout-event-service';
 import { AppContextService } from '../services/app-context-service';
 import {Organization} from '../../organizations/model/organization-entity';
+import {UserAccountType} from '../../iam/model/user-account-type';
 
 @Directive()
 export abstract class BaseTab {
@@ -48,6 +49,14 @@ export abstract class BaseTab {
     return id;
   }
 
+  protected getAccountTypeOrThrow(): UserAccountType {
+    const type = this.appContext.accountType;
+    if (!type) {
+      throw new Error('Missing account type in application context.');
+    }
+    return type;
+  }
+
   protected getOrganizationOrThrow(): Organization {
     const organization = this.appContext.organization;
     if (!organization) {
@@ -62,6 +71,14 @@ export abstract class BaseTab {
 
   protected setPersonId(personId: number | undefined): void {
     this.appContext.personId = personId;
+  }
+
+  protected setAccountType(type: string | undefined): void {
+    if (type && Object.values(UserAccountType).includes(type as UserAccountType)) {
+      this.appContext.accountType = type as UserAccountType;
+    } else {
+      this.appContext.accountType = undefined;
+    }
   }
 
   protected setOrganization(org: Organization | null): void {

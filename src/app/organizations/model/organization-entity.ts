@@ -15,14 +15,20 @@ export class Organization {
     public createdAt: Date,
   ) {}
 
-  updateLegalName(newLegalName: string): void {
+  updateLegalName(newLegalName: string | undefined): void {
+    if (newLegalName === undefined || newLegalName === this.legalName) {
+      return;
+    }
     if (!newLegalName.trim()) {
       throw new Error('Legal name cannot be empty.');
     }
     this.legalName = newLegalName;
   }
 
-  updateCommercialName(newCommercialName: string): void {
+  updateCommercialName(newCommercialName: string | undefined): void {
+    if (newCommercialName === undefined || newCommercialName === this.commercialName) {
+      return;
+    }
     if (!newCommercialName.trim()) {
       throw new Error('Commercial name cannot be empty.');
     }

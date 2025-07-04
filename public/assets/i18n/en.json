@@ -150,6 +150,30 @@
       },
       "invite-success": "Invitation sent successfully.",
       "invite-failure": "Failed to send invitation. Please try again."
+    },
+    "settings": {
+      "danger-zone": {
+        "title": "DANGER ZONE",
+        "action": "DELETE ORGANIZATION"
+      },
+      "delete": {
+        "title": "Delete Organization",
+        "message": "Are you sure you want to delete the organization"
+      },
+      "delete-success": "Deleted organization successfully",
+      "delete-failure": "Unable to delete organization",
+      "edit": {
+        "title": "Edit organization",
+        "legal-name": "Legal name",
+        "legal-name-required": "Legal name is required.",
+        "legal-name-too-long": "Legal name is too long.",
+        "commercial-name": "Commercial name",
+        "commercial-name-required": "Commercial name is required.",
+        "commercial-name-too-long": "Commercial name is too long.",
+        "save": "Save changes"
+      },
+      "update-success": "Organization updated successfully.",
+      "update-failure": "Failed to update the organization. Please try again."
     }
   }
 }

@@ -1,0 +1,11 @@
+<main>
+
+  <app-edit-organization-form
+    [organization]="getOrganizationOrThrow()"
+    (update)="handleUpdate($event)"
+  />
+
+  <app-organization-danger-zone
+    (deleteOrganization)="handleDelete()"
+  />
+</main>

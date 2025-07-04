@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NavigationBar } from './navigation-bar';
+import { OrganizationSettingsTab } from './organization-settings-tab';
 
-describe('NavigationBar', () => {
-  let component: NavigationBar;
-  let fixture: ComponentFixture<NavigationBar>;
+describe('OrganizationSettingsTab', () => {
+  let component: OrganizationSettingsTab;
+  let fixture: ComponentFixture<OrganizationSettingsTab>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NavigationBar]
+      imports: [OrganizationSettingsTab]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(NavigationBar);
+    fixture = TestBed.createComponent(OrganizationSettingsTab);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
