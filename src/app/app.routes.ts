@@ -11,6 +11,8 @@ import {OrganizationLayout} from './organizations/layouts/organization-layout/or
 import {OrganizationMemberTab} from './organizations/tabs/organization-member-tab/organization-member-tab';
 import {OrganizationSettingsTab} from './organizations/tabs/organization-settings-tab/organization-settings-tab';
 import {ProjectsTab} from './projects/tabs/projects-tab/projects-tab';
+import {ProjectLayout} from './projects/layouts/project-layout/project-layout';
+import {ProjectSettingsTab} from './projects/tabs/project-settings-tab/project-settings-tab';
 
 export const routes: Routes = [
   {
@@ -39,6 +41,14 @@ export const routes: Routes = [
       { path: 'projects', component: ProjectsTab },
       { path: 'members', component: OrganizationMemberTab },
       { path: 'settings', component: OrganizationSettingsTab }
+    ]
+  },
+  {
+    path: 'projects/:orgId',
+    component: ProjectLayout,
+    children: [
+      { path: '', redirectTo: 'settings', pathMatch: 'full' },
+      {path: 'settings', component: ProjectSettingsTab }
     ]
   },
   { path: '**', redirectTo: 'login' }

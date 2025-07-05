@@ -197,12 +197,31 @@
       "start-date-label": "Fecha de inicio",
       "end-date-label": "Fecha de finalización",
       "create-success": "Proyecto creado con éxito.",
-      "create-failure": "No se pudo crear el proyecto. Por favor, inténtalo de nuevo."
+      "create-failure": "No se pudo crear el proyecto. Por favor, inténtalo de nuevo.",
+      "empty-list-message": "Actualmente no eres parte del equipo de ningún proyecto en la organización."
     }
   },
   "project": {
+    "edit": {
+      "save": "Guardar cambios",
+      "title": "Editar proyecto"
+    },
     "create": {
       "title": "Iniciar un nuevo proyecto"
+    },
+    "settings": {
+      "danger-zone": {
+        "title": "ZONA DE PELIGRO",
+        "action": "ELIMINAR PROYECTO"
+      },
+      "delete": {
+        "title": "¿Eliminar proyecto?",
+        "message": "Esta acción no se puede deshacer. ¿Está seguro de que desea eliminar este proyecto?"
+      },
+      "delete-success": "Proyecto eliminado con éxito.",
+      "delete-failure": "No se pudo eliminar el proyecto. Inténtelo de nuevo.",
+      "update-success": "Proyecto actualizado con éxito.",
+      "update-failure": "No se pudo actualizar el proyecto. Inténtelo de nuevo."
     }
   }
 }

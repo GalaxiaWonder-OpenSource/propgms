@@ -96,7 +96,7 @@ export class NavigationBarComponent {
       case 'projects':
         this.layoutEvents.emit({
           type: 'SWITCH_LAYOUT',
-          layoutId: '/organizations' + this.appContext.organization?.id
+          layoutId: '/organizations/' + this.appContext.organization?.id
         });
         break;
       case 'project-tracking':

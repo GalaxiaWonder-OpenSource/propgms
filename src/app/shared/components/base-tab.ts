@@ -3,6 +3,7 @@ import { LayoutEventService } from '../services/layout-event-service';
 import { AppContextService } from '../services/app-context-service';
 import {Organization} from '../../organizations/model/organization-entity';
 import {UserAccountType} from '../../iam/model/user-account-type';
+import {Project} from '../../projects/model/project-entity';
 
 @Directive()
 export abstract class BaseTab {
@@ -65,6 +66,14 @@ export abstract class BaseTab {
     return organization;
   }
 
+  protected getProjectOrThrow(): Project {
+    const project = this.appContext.project;
+    if (!project) {
+      throw new Error('Missing project in application context.');
+    }
+    return project;
+  }
+
   protected setToken(token: string | undefined): void {
     this.appContext.token = token;
   }
@@ -83,5 +92,9 @@ export abstract class BaseTab {
 
   protected setOrganization(org: Organization | null): void {
     this.appContext.organization = org;
+  }
+
+  protected setProject(pro: Project | null ): void {
+    this.appContext.project = pro;
   }
 }

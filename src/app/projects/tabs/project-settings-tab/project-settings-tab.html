@@ -1,0 +1,11 @@
+<main>
+
+  <app-edit-project-form
+    [project]="getProjectOrThrow()"
+    (update)="handleUpdate($event)"
+  />
+
+  <app-project-danger-zone
+    (deleteProject)="handleDelete()"
+  />
+</main>
