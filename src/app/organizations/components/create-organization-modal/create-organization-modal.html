@@ -3,30 +3,30 @@
 <mat-dialog-content [formGroup]="orgForm" class="form-wrapper">
   <div class="vertical-form">
     <mat-form-field appearance="fill" class="full-width">
-      <mat-label>{{ 'resources.organization.legal-name' | translate }}</mat-label>
+      <mat-label>{{ 'model.organization.legal-name' | translate }}</mat-label>
       <input
         matInput
         formControlName="legalName"
-        [placeholder]="'resources.organization.legal-name-example' | translate"
+        [placeholder]="'model.organization.legal-name-example' | translate"
       />
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="full-width">
-      <mat-label>{{ 'resources.organization.commercial-name' | translate }}</mat-label>
+      <mat-label>{{ 'model.organization.commercial-name' | translate }}</mat-label>
       <input
         matInput
         formControlName="commercialName"
-        [placeholder]="'resources.organization.commercial-name-example' | translate"
+        [placeholder]="'model.organization.commercial-name-example' | translate"
       />
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="full-width">
-      <mat-label>{{ 'resources.organization.ruc' | translate }}</mat-label>
+      <mat-label>{{ 'model.organization.ruc' | translate }}</mat-label>
       <input
         matInput
         formControlName="ruc"
         maxlength="11"
-        [placeholder]="'resources.organization.ruc-example' | translate"
+        [placeholder]="'model.organization.ruc-example' | translate"
       />
     </mat-form-field>
   </div>
