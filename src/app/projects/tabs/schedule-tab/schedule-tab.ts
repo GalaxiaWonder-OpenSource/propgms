@@ -50,8 +50,6 @@ export class ScheduleTab extends BaseTab implements OnInit {
   openCreateMilestoneDialog(): void {
     const projectId = this.getProjectOrThrow().id;
 
-    console.log('Project ID:', projectId);
-
     const dialogRef = this.dialog.open(CreateMilestoneModal, {
       data: { projectId }
     });
@@ -65,7 +63,7 @@ export class ScheduleTab extends BaseTab implements OnInit {
             );
             this.emitSnackbar("success", "project.schedule.create-success");
           },
-          error: (err) => {
+          error: () => {
             this.emitSnackbar("error", "project.schedule.create-failure");
           }
         });
