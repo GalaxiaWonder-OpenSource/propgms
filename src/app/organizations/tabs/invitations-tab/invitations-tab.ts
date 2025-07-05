@@ -15,7 +15,7 @@ import { InvitationList } from '../../components/invitation-list/invitation-list
 @Component({
   selector: 'app-invitations-tab',
   standalone: true,
-  imports: [TranslatePipe, InvitationList],
+  imports: [InvitationList],
   templateUrl: './invitations-tab.html',
   styleUrl: './invitations-tab.css'
 })

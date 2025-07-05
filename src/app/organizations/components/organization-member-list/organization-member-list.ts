@@ -11,7 +11,6 @@ import {OrganizationMember} from '../../model/organization-member-entity';
   templateUrl: 'organization-member-list.html',
   styleUrl: 'organization-member-list.css',
   imports: [
-    TranslatePipe,
     EmptyListMessagePlaceholderComponent,
     OrganizationMemberCard
   ]

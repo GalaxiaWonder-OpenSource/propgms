@@ -39,6 +39,7 @@ export abstract class BaseLayout implements OnInit {
 
   private getBaseUrl(): string {
     const url = this.router.url;
+    console.log( url.substring(0, url.lastIndexOf('/')) )
     return url.substring(0, url.lastIndexOf('/'));
   }
 }
