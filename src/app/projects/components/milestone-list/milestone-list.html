@@ -1,0 +1,12 @@
+@if (!milestoneList || milestoneList.length === 0) {
+  <app-empty-list-message-placeholder
+    layout="project"
+    tab="schedule"
+  />
+} @else {
+  <div class="milestone-list-container">
+    @for (milestone of milestoneList; track milestone.id) {
+      <app-milestone-card [milestone]="milestone" />
+    }
+  </div>
+}

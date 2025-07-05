@@ -1,0 +1,30 @@
+<mat-card class="milestone-card" (click)="toggleExpanded()">
+  <div class="card-header">
+    <div class="card-title-group">
+      <mat-card-title>
+        {{ milestone.name }}
+      </mat-card-title>
+      <mat-card-subtitle>
+        {{ milestone.description }}
+      </mat-card-subtitle>
+    </div>
+    <div class="card-dates">
+      <span>{{ milestone.startDate | date }}</span> –
+      <span>{{ milestone.endDate | date }}</span>
+    </div>
+  </div>
+
+  <mat-card-content class="card-content">
+    @if(expanded()) {
+      <div class="expanded-content">
+        <p><strong>{{ 'model.milestone.details' | translate }}</strong></p>
+        <p>[Static placeholder for meetings/tasks]</p>
+        <mat-icon class="collapse-arrow-bottom">expand_less</mat-icon>
+      </div>
+    }
+  </mat-card-content>
+
+  @if (!expanded()) {
+    <mat-icon class="expand-arrow-bottom">expand_more</mat-icon>
+  }
+</mat-card>

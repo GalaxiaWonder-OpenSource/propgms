@@ -1,0 +1,28 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.flex-layout {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  gap: 1rem;
+}
+
+.left-column {
+  flex: 2;
+  background-color: #f4f6fa;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.right-column {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 1px solid #ddd;
+}
+

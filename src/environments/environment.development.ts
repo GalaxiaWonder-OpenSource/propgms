@@ -6,5 +6,6 @@ export const environment = {
   invitationPath: '/organizations/invitations',
   organizationMembersPath: '/organizations',
   projectPath: '/projects',
-  changeProcessPath: '/change-process'
+  changeProcessPath: '/change-process',
+  milestonePath: '/milestones'
 };

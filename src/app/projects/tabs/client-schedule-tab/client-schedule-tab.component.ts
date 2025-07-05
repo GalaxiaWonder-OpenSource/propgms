@@ -5,15 +5,15 @@ import {AppContextService} from '../../../shared/services/app-context-service';
 import {ComingSoon} from '../../../public/components/coming-soon/coming-soon';
 
 @Component({
-  selector: 'app-schedule-tab',
+  selector: 'app-client-schedule-tab',
   standalone: true,
   imports: [
     ComingSoon
   ],
-  templateUrl: './schedule-tab.html',
-  styleUrl: './schedule-tab.css'
+  templateUrl: './client-schedule-tab.component.html',
+  styleUrl: './client-schedule-tab.component.css'
 })
-export class ScheduleTab extends BaseTab {
+export class ClientScheduleTab extends BaseTab {
   constructor(
     layoutEvents: LayoutEventService,
     appContextService: AppContextService
