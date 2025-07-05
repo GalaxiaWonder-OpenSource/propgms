@@ -255,6 +255,14 @@
         "warning-label": "WARNING"
       },
       "title": "Start a Change Process"
+    },
+    "schedule": {
+      "coming-soon-title": "Schedule"
+    }
+  },
+  "common": {
+    "coming-soon": {
+      "sub-text": "This functionality isn't here yet... But it will be soon! Stay around!"
     }
   }
 }

@@ -254,6 +254,14 @@
         "warning-label": "ADVERTENCIA"
       },
       "title": "Iniciar un Proceso de Cambio"
+    },
+    "schedule": {
+      "coming-soon-title": "Calendario"
+    }
+  },
+  "common": {
+    "coming-soon": {
+      "sub-text": "Esta funcionalidad no se encuentra aquí aún... pero va a estarlo. ¡Hasta entonces!"
     }
   }
 }
