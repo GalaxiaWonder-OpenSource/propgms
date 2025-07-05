@@ -239,6 +239,17 @@
       "project-subtitle": "Información del proyecto",
       "organization-subtitle": "Información de la organización",
       "history-title": "Historial de proceso de cambio"
+    },
+    "change-process": {
+      "create-success": "Solicitud de cambio creada correctamente.",
+      "create-failure": "Error al crear la solicitud de cambio. Inténtalo de nuevo.",
+      "create": {
+        "title": "Ingresa los detalles de tu solicitud",
+        "description": "Estos detalles iniciarán un Proceso de Cambio que será revisado por el contratista de la organización a cargo de tu proyecto. Con base en su experiencia, podrá determinar si la solicitud debe proceder y bajo qué condiciones.",
+        "warning": "No se puede iniciar un proceso de cambio si ya hay uno pendiente actualmente.",
+        "warning-label": "ADVERTENCIA"
+      },
+      "title": "Iniciar un Proceso de Cambio"
     }
   }
 }

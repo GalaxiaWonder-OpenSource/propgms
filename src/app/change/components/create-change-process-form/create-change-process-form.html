@@ -1,1 +1,33 @@
-<p>create-change-process-form works!</p>
+<mat-card class="form-wrapper">
+  <h2>{{ 'project-tracking.change-process.create.title' | translate }}</h2>
+
+  <p class="form-description">
+    {{ 'project-tracking.change-process.create.description' | translate }}
+  </p>
+
+  <form [formGroup]="form" (ngSubmit)="submit()" class="form-section">
+    <mat-form-field appearance="fill">
+      <mat-label>{{ 'model.change-process.justification' | translate }}</mat-label>
+      <textarea
+        matInput
+        formControlName="justification"
+        rows="4"
+      ></textarea>
+    </mat-form-field>
+
+    <strong><mat-icon class="warning-icon">warning</mat-icon>  {{ 'project-tracking.change-process.create.warning-label' | translate}}</strong>
+    <div class="warning-content">
+      <span>{{ 'project-tracking.change-process.create.warning' | translate }}</span>
+    </div>
+
+    <div class="form-actions">
+      <button mat-raised-button color="primary" type="submit">
+        {{ 'global.action.confirm' | translate }}
+      </button>
+    </div>
+  </form>
+</mat-card>
+
+<mat-card class="warning-message">
+
+</mat-card>

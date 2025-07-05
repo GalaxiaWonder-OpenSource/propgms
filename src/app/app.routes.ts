@@ -16,6 +16,7 @@ import {ProjectSettingsTab} from './projects/tabs/project-settings-tab/project-s
 import {ClientLayout} from './projects/layouts/client-layout/client-layout';
 import {ProjectTrackingLayout} from './change/layouts/project-tracking-layout/project-tracking-layout';
 import {SummaryTab} from './change/tabs/summary-tab/summary-tab';
+import {ChangeProcessTab} from './change/tabs/change-process-tab/change-process-tab';
 
 export const routes: Routes = [
   {
@@ -67,7 +68,8 @@ export const routes: Routes = [
     component: ProjectTrackingLayout,
     children: [
       { path: '', redirectTo: 'summary', pathMatch: 'full'},
-      { path: 'summary', component: SummaryTab }
+      { path: 'summary', component: SummaryTab },
+      { path: 'change-process', component: ChangeProcessTab }
     ]
   },
   { path: '**', redirectTo: 'login' }
