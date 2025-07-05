@@ -19,7 +19,7 @@ import {
 import {ProjectEntityFromResourceAssembler} from '../../../projects/services/project-entity-from-resource-assembler';
 
 @Component({
-  selector: 'app-change-process-tab',
+  selector: 'app-summary-tab',
   imports: [
     MatCardModule,
     TranslatePipe,

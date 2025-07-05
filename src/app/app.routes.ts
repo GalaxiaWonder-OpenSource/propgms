@@ -15,7 +15,7 @@ import {ProjectLayout} from './projects/layouts/project-layout/project-layout';
 import {ProjectSettingsTab} from './projects/tabs/project-settings-tab/project-settings-tab';
 import {ClientLayout} from './projects/layouts/client-layout/client-layout';
 import {ProjectTrackingLayout} from './change/layouts/project-tracking-layout/project-tracking-layout';
-import {SummaryTab} from './change/tabs/change-process-tab/summary-tab';
+import {SummaryTab} from './change/tabs/summary-tab/summary-tab';
 
 export const routes: Routes = [
   {
