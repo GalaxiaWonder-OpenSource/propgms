@@ -6,11 +6,13 @@ import {AppContextService} from '../../../shared/services/app-context-service';
 import {MilestoneService} from '../../services/milestone-service';
 import {MilestoneList} from '../../components/milestone-list/milestone-list';
 import {MilestoneEntityFromResourceAssembler} from '../../services/milestone-entity-from-resource-assembler';
+import {MatButtonModule} from '@angular/material/button';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-client-schedule-tab',
   imports: [
-    MilestoneList
+    MilestoneList, MatButtonModule, TranslatePipe
   ],
   templateUrl: './schedule-tab.html',
   styleUrl: './schedule-tab.css'

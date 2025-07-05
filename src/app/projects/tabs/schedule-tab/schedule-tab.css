@@ -26,3 +26,38 @@
   border-left: 1px solid #ddd;
 }
 
+.flex-layout {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  padding: 24px;
+}
+
+.left-column {
+  flex: 2;
+  overflow-y: auto;
+}
+
+.right-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.big-button {
+  height: 56px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+h1 {
+  text-align: center;
+}
+

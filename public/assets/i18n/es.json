@@ -253,7 +253,13 @@
       "update-failure": "No se pudo actualizar el proyecto. Inténtelo de nuevo."
     },
     "schedule": {
-      "empty-list-message": "Este proyecto no ha registrado hitos aún."
+      "title": "Detalles de hito",
+      "first-column-subtitle": "Lista de hitos",
+      "second-column-subtitle": "Acciones",
+      "empty-list-message": "Este proyecto no ha registrado hitos aún.",
+      "create-milestone": "Nuevo hito",
+      "add-meeting": "Añadir reunión a un hito",
+      "add-task": "Añadir tarea a un hito"
     }
   },
   "client": {

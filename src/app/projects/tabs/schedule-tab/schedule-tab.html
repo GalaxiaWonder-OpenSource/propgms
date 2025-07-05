@@ -1,14 +1,30 @@
 <main>
+  <div>
+    <h1>{{ 'project.schedule.title' | translate}}</h1>
+  </div>
   <div class="flex-layout">
     <div class="left-column">
-      <!-- Placeholder: Milestone list will go here -->
-      <app-milestone-list
-        [milestoneList]="milestoneList"
-      />
+      <h2>{{ 'project.schedule.first-column-subtitle' | translate}}</h2>
+      <app-milestone-list [milestoneList]="milestoneList" />
     </div>
+
     <div class="right-column">
-      <!-- Placeholder: Meetings and tasks for selected milestone -->
-      <h1>XD</h1>
+
+      <h2>{{ 'project.schedule.second-column-subtitle' | translate}}</h2>
+      <div class="action-buttons">
+        <button mat-raised-button color="primary" class="big-button">
+          {{ 'project.schedule.create-milestone' | translate }}
+        </button>
+        <button mat-raised-button color="accent" class="big-button">
+          {{ 'project.schedule.add-meeting' | translate }}
+        </button>
+        <button mat-raised-button color="warn" class="big-button">
+          {{ 'project.schedule.add-task' | translate }}
+        </button>
+      </div>
+
+      <div class="right-placeholder">
+      </div>
     </div>
   </div>
 </main>

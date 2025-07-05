@@ -253,7 +253,13 @@
     "update-success": "Project updated successfully.",
     "update-failure": "Failed to update the project. Please try again.",
     "schedule": {
-      "empty-list-message": "This project hasn't registered a single milestone yet."
+      "title": "Schedule details",
+      "first-column-subtitle": "Milestone list",
+      "second-column-subtitle": "Actions",
+      "empty-list-message": "This project hasn't registered a single milestone yet.",
+      "create-milestone": "New milestone",
+      "add-meeting": "Add meeting to milestone",
+      "add-task": "Add task to milestone"
     }
   },
   "client": {
