@@ -1,0 +1,27 @@
+<mat-card
+  class="project-card"
+  (click)="onClick()"
+>
+  <div class="card-header">
+    <div class="card-title-wrapper">
+      <mat-card-title>{{ project.projectName }}</mat-card-title>
+      <mat-card-subtitle>
+        {{ 'organization.projects.start-date-label' | translate }}:
+        {{ project.startDate | date: 'mediumDate' }}<br />
+        {{ 'organization.projects.end-date-label' | translate }}:
+        {{ project.endDate | date: 'mediumDate' }}
+      </mat-card-subtitle>
+    </div>
+
+    <div class="status-label">
+      <mat-icon class="status-icon">event</mat-icon>
+      {{ 'model.project-status.' + project.status | translate }}
+    </div>
+  </div>
+
+  <mat-card-content>
+    <p class="description">
+      {{ project.description }}
+    </p>
+  </mat-card-content>
+</mat-card>

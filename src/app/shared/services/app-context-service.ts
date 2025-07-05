@@ -3,12 +3,16 @@ import { IamContextService } from '../../iam/services/iam-context-service';
 import {OrganizationContextService} from '../../organizations/services/organization-context-service';
 import {Organization} from '../../organizations/model/organization-entity';
 import {UserAccountType} from '../../iam/model/user-account-type';
+import { ProjectContextService } from '../../projects/services/project-context-service';
+import { Project } from '../../projects/model/project-entity';
+
 
 @Injectable({ providedIn: 'root' })
 export class AppContextService {
   constructor(
     private iamContextService: IamContextService,
-    private organizationContextService: OrganizationContextService
+    private organizationContextService: OrganizationContextService,
+    private projectContextService: ProjectContextService
   ) {}
 
   get token(): string | undefined {
@@ -56,6 +60,18 @@ export class AppContextService {
       this.organizationContextService.setSelected(org);
     } else {
       this.organizationContextService.clear();
+    }
+  }
+
+  get project(): Project | null {
+    return this.projectContextService.getSelected();
+  }
+
+  set project(project: Project | null) {
+    if (project) {
+      this.projectContextService.setSelected(project);
+    } else {
+      this.projectContextService.clear();
     }
   }
 }

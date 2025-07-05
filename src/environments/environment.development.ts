@@ -4,5 +4,6 @@ export const environment = {
   authorizationPath: '/auth',
   organizationPath: '/organizations',
   invitationPath: '/organizations/invitations',
-  organizationMembersPath: '/organizations'
+  organizationMembersPath: '/organizations',
+  projectPath: '/projects'
 };

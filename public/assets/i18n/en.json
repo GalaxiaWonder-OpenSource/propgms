@@ -110,10 +110,27 @@
       "ELECTRICITY": "Electricity",
       "COMMUNICATIONS": "Communications",
       "NON_APPLICABLE": "Non applicable"
+    },
+    "project": {
+      "name": "Project Name",
+      "description": "Description",
+      "start-date": "Start Date",
+      "end-date": "End Date",
+      "organization-id": "Organization ID",
+      "contracting-email": "Contracting Entity Email"
+    },
+    "project-status": {
+      "BASIC_STUDIES": "Basic Studies",
+      "DESIGN_IN_PROCESS": "Design in Process",
+      "UNDER_REVIEW": "Under Review",
+      "CHANGE_REQUESTED": "Change Requested",
+      "CHANGE_PENDING": "Change Pending",
+      "APPROVED": "Approved"
     }
   },
   "worker": {
     "organizations": {
+      "title": "My organizations",
       "empty-list-message": "No organizations have been found.",
       "created-at-label": "Since:",
       "create": {
@@ -174,6 +191,18 @@
       },
       "update-success": "Organization updated successfully.",
       "update-failure": "Failed to update the organization. Please try again."
+    },
+    "projects": {
+      "title": "Organization's projects",
+      "start-date-label": "Start Date",
+      "end-date-label": "End Date",
+      "create-success": "Project created successfully.",
+      "create-failure": "Failed to create project. Please try again."
+    }
+  },
+  "project": {
+    "create": {
+      "title": "Start a new Project"
     }
   }
 }

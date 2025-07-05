@@ -8,7 +8,6 @@ import {InvitationCard} from '../invitation-card/invitation-card';
   selector: 'app-invitation-list',
   standalone: true,
   imports: [
-    TranslatePipe,
     EmptyListMessagePlaceholderComponent,
     InvitationCard
   ],

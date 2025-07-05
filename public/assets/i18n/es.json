@@ -9,7 +9,9 @@
       "accept": "Aceptar",
       "reject": "Rechazar",
       "create": "Crear",
-      "cancel": "Cancelar"
+      "cancel": "Cancelar",
+      "confirm": "Confirmar",
+      "invite": "Invitar"
     }
   },
   "footer": {
@@ -22,31 +24,31 @@
   },
   "auth": {
     "register": {
-      "title": "Regístrate",
+      "title": "Registrarse",
       "form": {
         "personal-data-title": "Información personal",
         "auth-credentials-title": "Información de la cuenta",
         "review-title": "Revisión final",
         "welcome-message": "¡Bienvenido {{name}}! Estás a punto de terminar la creación de tu cuenta.",
-        "summary-message": "Asegúrate de que tus datos personales hayan sido introducidos correctamente.",
-        "client-message": "Esperamos que nuestra herramienta haga tu proyecto más fluido, transparente y exitoso.",
+        "summary-message": "Asegúrate de que tus datos personales han sido ingresados correctamente.",
+        "client-message": "Esperamos que nuestra herramienta haga tu proyecto fluido, transparente y exitoso.",
         "worker-message": "¡Esperamos que nuestra herramienta sea de gran utilidad para tu trabajo!",
         "next-steps-message": "Si todo está correcto, puedes proceder a finalizar el proceso de registro."
       },
-      "back-to-login": "Regresar a login",
+      "back-to-login": "Volver al inicio de sesión",
       "success": "¡Registro exitoso!",
-      "failure": "No se pudo completar el registro. Intenta nuevamente."
+      "failure": "Error en el registro. Por favor, intenta de nuevo."
     },
     "login": {
       "title": "Iniciar sesión",
       "username": "Nombre de usuario",
-      "username-placeholder": "Introduce tu nombre de usuario",
+      "username-placeholder": "Ingresa tu nombre de usuario",
       "password": "Contraseña",
-      "password-placeholder": "Introduce tu contraseña",
-      "submit": "Acceder",
+      "password-placeholder": "Ingresa tu contraseña",
+      "submit": "Ingresar",
       "register-link": "¿No tienes una cuenta? Regístrate",
       "success": "¡Inicio de sesión exitoso!",
-      "failure": "No se pudo iniciar sesión. Intenta nuevamente."
+      "failure": "Error al iniciar sesión. Por favor, intenta de nuevo."
     }
   },
   "model": {
@@ -59,8 +61,9 @@
       "email-example": "juan.perez@ejemplo.com",
       "phone": "Número de teléfono",
       "phone-example": "+51987654321",
-      "professional-id": "Código de colegiado",
-      "professional-id-example": "CIP123456"
+      "professional-id": "ID profesional",
+      "professional-id-example": "CIP123456",
+      "specialty": "Especialidad"
     },
     "user-account": {
       "username": "Nombre de usuario",
@@ -87,32 +90,119 @@
       "Rejected": "Rechazada"
     },
     "organization": {
-      "legal-name": "Razón social",
+      "legal-name": "Nombre legal",
       "legal-name-example": "ABC Tecnologías S.A.",
       "commercial-name": "Nombre comercial",
       "commercial-name-example": "ABC Tech",
       "ruc": "RUC",
       "ruc-example": "20481234567"
+    },
+    "invitation": {
+      "email": "Correo electrónico",
+      "email-example": "juan.perez@ejemplo.com"
+    },
+    "specialty": {
+      "ARCHITECTURE": "Arquitectura",
+      "STRUCTURES": "Estructuras",
+      "HSA": "Salud, Seguridad y Accesibilidad",
+      "TOPOGRAPHY": "Topografía",
+      "SANITATION": "Saneamiento",
+      "ELECTRICITY": "Electricidad",
+      "COMMUNICATIONS": "Comunicaciones",
+      "NON_APPLICABLE": "No aplicable"
+    },
+    "project": {
+      "name": "Nombre del proyecto",
+      "description": "Descripción",
+      "start-date": "Fecha de inicio",
+      "end-date": "Fecha de finalización",
+      "organization-id": "ID de la organización",
+      "contracting-email": "Correo de la entidad contratante"
+    },
+    "project-status": {
+      "BASIC_STUDIES": "Estudios Básicos",
+      "DESIGN_IN_PROCESS": "Diseño en Proceso",
+      "UNDER_REVIEW": "En Revisión",
+      "CHANGE_REQUESTED": "Cambios Solicitados",
+      "CHANGE_PENDING": "Cambios Pendientes",
+      "APPROVED": "Aprobado"
     }
   },
   "worker": {
     "organizations": {
+      "title": "Mis organizaciones",
       "empty-list-message": "No se encontraron organizaciones.",
       "created-at-label": "Desde:",
       "create": {
         "title": "Crear organización"
       },
-      "create-success": "Organización creada con éxito.",
-      "create-failure": "No se pudo crear la organización. Intenta nuevamente."
+      "create-success": "Organización creada exitosamente.",
+      "create-failure": "No se pudo crear la organización. Inténtalo nuevamente."
     },
     "invitations": {
       "empty-list-message": "No se encontraron invitaciones.",
-      "invited-by-label": "De parte de:",
-      "organization-label": "Para la organización:",
-      "reject-success": "Invitación rechazada con éxito.",
-      "reject-failure": "No se pudo rechazar la invitación. Intenta nuevamente.",
-      "accept-success": "Invitación aceptada con éxito.",
-      "accept-failure": "No se pudo aceptar la invitación. Intenta nuevamente."
+      "invited-by-label": "De:",
+      "organization-label": "A la organización:",
+      "reject-success": "Invitación rechazada exitosamente.",
+      "reject-failure": "No se pudo rechazar la invitación. Inténtalo nuevamente.",
+      "accept-success": "Invitación aceptada exitosamente.",
+      "accept-failure": "No se pudo aceptar la invitación. Inténtalo nuevamente."
+    }
+  },
+  "organization": {
+    "members": {
+      "load-failure": "No se pudieron cargar los miembros de la organización. Inténtalo nuevamente.",
+      "delete-success": "Miembro eliminado exitosamente",
+      "delete-failure": "No se pudo eliminar el miembro. Inténtalo nuevamente.",
+      "joined-at-label": "Miembro desde",
+      "remove": {
+        "title": "Eliminar miembro de la organización",
+        "message": "¿Estás seguro de que deseas continuar?"
+      },
+      "person-label": "Enviado a:",
+      "member-list-title": "Miembros de la organización",
+      "invitation-list-title": "Invitaciones pendientes",
+      "invite": {
+        "title": "Invitar a la organización"
+      },
+      "invite-success": "Invitación enviada exitosamente.",
+      "invite-failure": "No se pudo enviar la invitación. Inténtalo nuevamente."
+    },
+    "settings": {
+      "danger-zone": {
+        "title": "ZONA DE PELIGRO",
+        "action": "ELIMINAR ORGANIZACIÓN"
+      },
+      "delete": {
+        "title": "Eliminar organización",
+        "message": "¿Estás seguro de que deseas eliminar la organización?"
+      },
+      "delete-success": "Organización eliminada exitosamente",
+      "delete-failure": "No se pudo eliminar la organización",
+      "edit": {
+        "title": "Editar organización",
+        "legal-name": "Nombre legal",
+        "legal-name-required": "El nombre legal es obligatorio.",
+        "legal-name-too-long": "El nombre legal es demasiado largo.",
+        "commercial-name": "Nombre comercial",
+        "commercial-name-required": "El nombre comercial es obligatorio.",
+        "commercial-name-too-long": "El nombre comercial es demasiado largo.",
+        "save": "Guardar cambios"
+      },
+      "update-success": "Organización actualizada exitosamente.",
+      "update-failure": "No se pudo actualizar la organización. Inténtalo nuevamente."
+    },
+    "projects": {
+      "title": "Proyectos de la organización",
+      "start-date-label": "Fecha de inicio",
+      "end-date-label": "Fecha de finalización",
+      "create-success": "Proyecto creado con éxito.",
+      "create-failure": "No se pudo crear el proyecto. Por favor, inténtalo de nuevo."
+    }
+  },
+  "project": {
+    "create": {
+      "title": "Iniciar un nuevo proyecto"
     }
   }
 }

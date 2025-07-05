@@ -9,7 +9,6 @@ import {OrganizationCard} from '../organization-card/organization-card';
 @Component({
   selector: 'app-organization-list',
   imports: [
-    TranslatePipe,
     EmptyListMessagePlaceholderComponent,
     OrganizationCard
   ],

@@ -12,8 +12,7 @@ import { Invitation } from '../../model/invitation-entity';
     MatCardModule,
     MatButtonModule,
     TranslatePipe,
-    DatePipe,
-    NgIf
+    DatePipe
   ],
   templateUrl: './invitation-card.html',
   styleUrl: './invitation-card.css'

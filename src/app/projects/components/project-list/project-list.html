@@ -1,0 +1,13 @@
+@if (!projectList || projectList.length === 0) {
+  <app-empty-list-message-placeholder
+    layout="worker"
+    tab="projects"
+  />
+} @else {
+  @for (project of projectList; track project.id) {
+    <app-project-card
+      [project]="project"
+      (click)="onClick($event)"
+    />
+  }
+}
