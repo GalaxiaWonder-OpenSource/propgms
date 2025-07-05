@@ -133,6 +133,14 @@
     "change-process": {
       "response": "Respuesta",
       "justification": "Solicitud"
+    },
+    "milestone": {
+      "name": "Nombre",
+      "description": "Descripción",
+      "projectId": "ID del Proyecto",
+      "startDate": "Fecha de Inicio",
+      "endDate": "Fecha de Fin",
+      "details": "Detalles"
     }
   },
   "worker": {
@@ -243,6 +251,20 @@
       "delete-failure": "No se pudo eliminar el proyecto. Inténtelo de nuevo.",
       "update-success": "Proyecto actualizado con éxito.",
       "update-failure": "No se pudo actualizar el proyecto. Inténtelo de nuevo."
+    },
+    "schedule": {
+      "title": "Detalles de hito",
+      "first-column-subtitle": "Lista de hitos",
+      "second-column-subtitle": "Acciones",
+      "empty-list-message": "Este proyecto no ha registrado hitos aún.",
+      "create-milestone": "Nuevo hito",
+      "add-meeting": "Añadir reunión a un hito",
+      "add-task": "Añadir tarea a un hito",
+      "dialog": {
+        "title": "Añadir un nuevo Hito"
+      },
+      "create-success": "Hito añadido exitosamente.",
+      "create-failure": "No se pudo añadir el hito. Inténtelo de nuevo."
     }
   },
   "client": {

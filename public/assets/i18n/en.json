@@ -133,6 +133,14 @@
     "change-process": {
       "response": "Response",
       "justification": "Request"
+    },
+    "milestone": {
+      "name": "Name",
+      "description": "Description",
+      "projectId": "Project ID",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "details": "Details"
     }
   },
   "worker": {
@@ -243,7 +251,21 @@
     "delete-success": "Project deleted successfully.",
     "delete-failure": "Failed to delete the project. Please try again.",
     "update-success": "Project updated successfully.",
-    "update-failure": "Failed to update the project. Please try again."
+    "update-failure": "Failed to update the project. Please try again.",
+    "schedule": {
+      "title": "Schedule details",
+      "first-column-subtitle": "Milestone list",
+      "second-column-subtitle": "Actions",
+      "empty-list-message": "This project hasn't registered a single milestone yet.",
+      "create-milestone": "New milestone",
+      "add-meeting": "Add meeting to milestone",
+      "add-task": "Add task to milestone",
+      "dialog": {
+        "title": "Add a new Milestone"
+      },
+      "create-success": "Milestone added successfully.",
+      "create-failure": "Failed to add new milestone. Please try again."
+    }
   },
   "client": {
     "projects": {

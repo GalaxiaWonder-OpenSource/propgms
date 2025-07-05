@@ -1,33 +1,38 @@
-<h2 mat-dialog-title>{{ 'project.create.title' | translate }}</h2>
+<h2 mat-dialog-title>{{ 'project.schedule.dialog.title' | translate }}</h2>
 
-<mat-dialog-content [formGroup]="projectForm" class="form-wrapper">
+<mat-dialog-content [formGroup]="milestoneForm" class="form-wrapper">
   <div class="vertical-form">
 
     <mat-form-field appearance="fill" class="full-width span-2">
-      <mat-label>{{ 'model.project.name' | translate }}</mat-label>
-      <input matInput formControlName="projectName" />
+      <mat-label>{{ 'model.milestone.name' | translate }}</mat-label>
+      <input matInput formControlName="name" />
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="full-width span-2">
-      <mat-label>{{ 'model.project.description' | translate }}</mat-label>
+      <mat-label>{{ 'model.milestone.description' | translate }}</mat-label>
       <textarea matInput formControlName="description" rows="3"></textarea>
     </mat-form-field>
 
-    <mat-form-field appearance="fill" class="full-width span-2">
-      <mat-label>{{ 'model.project.contracting-email' | translate }}</mat-label>
-      <input matInput formControlName="contractingEntityEmail" />
-    </mat-form-field>
-
     <mat-form-field appearance="fill" class="full-width">
-      <mat-label>{{ 'model.project.start-date' | translate }}</mat-label>
-      <input matInput [matDatepicker]="startPicker" formControlName="startDate" />
+      <mat-label>{{ 'model.milestone.startDate' | translate }}</mat-label>
+      <input
+        matInput
+        [matDatepicker]="startPicker"
+        formControlName="startDate"
+        placeholder="dd/MM/yyyy"
+      />
       <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
       <mat-datepicker #startPicker></mat-datepicker>
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="full-width">
-      <mat-label>{{ 'model.project.end-date' | translate }}</mat-label>
-      <input matInput [matDatepicker]="endPicker" formControlName="endDate" />
+      <mat-label>{{ 'model.milestone.endDate' | translate }}</mat-label>
+      <input
+        matInput
+        [matDatepicker]="endPicker"
+        formControlName="endDate"
+        placeholder="dd/MM/yyyy"
+      />
       <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
       <mat-datepicker #endPicker></mat-datepicker>
     </mat-form-field>
@@ -39,7 +44,7 @@
   <button mat-stroked-button (click)="cancel()">
     {{ 'global.action.cancel' | translate }}
   </button>
-  <button mat-raised-button color="primary" (click)="submitForm()">
+  <button (click)="submit()" mat-raised-button color="primary" type="submit" [disabled]="milestoneForm.invalid">
     {{ 'global.action.create' | translate }}
   </button>
 </mat-dialog-actions>

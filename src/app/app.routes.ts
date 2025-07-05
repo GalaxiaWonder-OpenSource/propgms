@@ -17,8 +17,9 @@ import {ClientLayout} from './projects/layouts/client-layout/client-layout';
 import {ProjectTrackingLayout} from './change/layouts/project-tracking-layout/project-tracking-layout';
 import {SummaryTab} from './change/tabs/summary-tab/summary-tab';
 import {ChangeProcessTab} from './change/tabs/change-process-tab/change-process-tab';
-import {ScheduleTab} from './change/tabs/schedule-tab/schedule-tab';
+import {ClientScheduleTab} from './projects/tabs/client-schedule-tab/client-schedule-tab.component';
 import {FindOrganizationsTab} from './projects/tabs/find-organizations-tab/find-organizations-tab';
+import {ScheduleTab} from './projects/tabs/schedule-tab/schedule-tab';
 
 export const routes: Routes = [
   {
@@ -53,7 +54,8 @@ export const routes: Routes = [
     path: 'projects/:orgId',
     component: ProjectLayout,
     children: [
-      { path: '', redirectTo: 'settings', pathMatch: 'full' },
+      { path: '', redirectTo: 'schedule', pathMatch: 'full' },
+      { path: 'schedule', component: ScheduleTab },
       { path: 'settings', component: ProjectSettingsTab }
     ]
   },
@@ -73,7 +75,7 @@ export const routes: Routes = [
       { path: '', redirectTo: 'summary', pathMatch: 'full'},
       { path: 'summary', component: SummaryTab },
       { path: 'change-process', component: ChangeProcessTab },
-      { path: 'schedule', component: ScheduleTab }
+      { path: 'schedule', component: ClientScheduleTab }
     ]
   },
   { path: '**', redirectTo: 'login' }

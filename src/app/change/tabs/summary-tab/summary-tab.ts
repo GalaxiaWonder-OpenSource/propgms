@@ -48,6 +48,7 @@ export class SummaryTab extends BaseTab implements OnInit {
   ngOnInit() {
     this.project = this.getProjectOrThrow();
     this.reloadOrganization();
+    this.reloadProject();
 
     this.changeProcessService.getByProjectId(this.project.id).subscribe({
       next: (changeProceses) => {
@@ -73,7 +74,7 @@ export class SummaryTab extends BaseTab implements OnInit {
     });
   }
 
-  private temp(): void {
+  private reloadProject(): void {
     this.projectService.getByProjectId(this.project.id).subscribe({
       next: (project) => {
         this.project = ProjectEntityFromResourceAssembler(project);
