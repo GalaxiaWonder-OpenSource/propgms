@@ -8,6 +8,9 @@ import {MilestoneList} from '../../components/milestone-list/milestone-list';
 import {MilestoneEntityFromResourceAssembler} from '../../services/milestone-entity-from-resource-assembler';
 import {MatButtonModule} from '@angular/material/button';
 import {TranslatePipe} from '@ngx-translate/core';
+import {MatDialog} from '@angular/material/dialog';
+import {CreateMilestoneResource} from '../../resources/create-milestone-resource';
+import {CreateMilestoneModal} from '../../components/create-milestone-modal/create-milestone-modal';
 
 @Component({
   selector: 'app-client-schedule-tab',
@@ -21,7 +24,8 @@ export class ScheduleTab extends BaseTab implements OnInit {
   constructor(
     layoutEvents: LayoutEventService,
     appContextService: AppContextService,
-    private milestoneService: MilestoneService
+    private milestoneService: MilestoneService,
+    private dialog: MatDialog
   ) {
     super(layoutEvents, appContextService);
   }
@@ -42,4 +46,31 @@ export class ScheduleTab extends BaseTab implements OnInit {
       }
     });
   }
+
+  openCreateMilestoneDialog(): void {
+    const projectId = this.getProjectOrThrow().id;
+
+    console.log('Project ID:', projectId);
+
+    const dialogRef = this.dialog.open(CreateMilestoneModal, {
+      data: { projectId }
+    });
+
+    dialogRef.afterClosed().subscribe((result: CreateMilestoneResource | undefined) => {
+      if (result) {
+        this.milestoneService.createMilestone(result).subscribe({
+          next: (response) => {
+            this.milestoneList.push(
+              MilestoneEntityFromResourceAssembler(response)
+            );
+            this.emitSnackbar("success", "project.schedule.create-success");
+          },
+          error: (err) => {
+            this.emitSnackbar("error", "project.schedule.create-failure");
+          }
+        });
+      }
+    });
+  }
+
 }

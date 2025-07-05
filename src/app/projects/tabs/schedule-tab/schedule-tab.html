@@ -12,7 +12,12 @@
 
       <h2>{{ 'project.schedule.second-column-subtitle' | translate}}</h2>
       <div class="action-buttons">
-        <button mat-raised-button color="primary" class="big-button">
+        <button
+          mat-raised-button
+          color="primary"
+          class="big-button"
+          (click)="openCreateMilestoneDialog()"
+        >
           {{ 'project.schedule.create-milestone' | translate }}
         </button>
         <button mat-raised-button color="accent" class="big-button">

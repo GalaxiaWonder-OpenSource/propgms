@@ -259,7 +259,12 @@
       "empty-list-message": "This project hasn't registered a single milestone yet.",
       "create-milestone": "New milestone",
       "add-meeting": "Add meeting to milestone",
-      "add-task": "Add task to milestone"
+      "add-task": "Add task to milestone",
+      "dialog": {
+        "title": "Add a new Milestone"
+      },
+      "create-success": "Milestone added successfully.",
+      "create-failure": "Failed to add new milestone. Please try again."
     }
   },
   "client": {

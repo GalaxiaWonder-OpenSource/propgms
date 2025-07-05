@@ -259,7 +259,12 @@
       "empty-list-message": "Este proyecto no ha registrado hitos aún.",
       "create-milestone": "Nuevo hito",
       "add-meeting": "Añadir reunión a un hito",
-      "add-task": "Añadir tarea a un hito"
+      "add-task": "Añadir tarea a un hito",
+      "dialog": {
+        "title": "Añadir un nuevo Hito"
+      },
+      "create-success": "Hito añadido exitosamente.",
+      "create-failure": "No se pudo añadir el hito. Inténtelo de nuevo."
     }
   },
   "client": {
