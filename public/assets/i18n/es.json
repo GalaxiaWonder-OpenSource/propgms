@@ -129,6 +129,10 @@
       "CHANGE_REQUESTED": "Cambios Solicitados",
       "CHANGE_PENDING": "Cambios Pendientes",
       "APPROVED": "Aprobado"
+    },
+    "change-process": {
+      "response": "Respuesta",
+      "justification": "Solicitud"
     }
   },
   "worker": {

@@ -3,7 +3,13 @@
   padding: 1rem;
   border-radius: 12px;
   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
-  transition: box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.change-process-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
 
 .card-header {
