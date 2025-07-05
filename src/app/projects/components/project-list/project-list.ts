@@ -15,6 +15,7 @@ import { ProjectCard } from '../project-card/project-card';
 })
 export class ProjectList {
   @Input() projectList: Project[] = [];
+  @Input() layout!: string;
   @Output() click = new EventEmitter<Project>();
 
   onClick(project: Project): void {

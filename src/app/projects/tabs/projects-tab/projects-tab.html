@@ -1,19 +1,22 @@
 <main>
   <div class="header-row">
     <h1>{{ 'organization.projects.title' | translate }}</h1>
-    <button
-      mat-raised-button
-      color="primary"
-      aria-label="Add Project"
-      (click)="openCreateProjectModal()"
-    >
-      {{ 'global.action.create' | translate }}
-      <mat-icon>add</mat-icon>
-    </button>
+    @if (getAccountTypeOrThrow() === UserAccountType.TYPE_WORKER) {
+      <button
+        mat-raised-button
+        color="primary"
+        aria-label="Add Project"
+        (click)="openCreateProjectModal()"
+      >
+        {{ 'global.action.create' | translate }}
+        <mat-icon>add</mat-icon>
+      </button>
+    }
   </div>
 
   <app-project-list
     [projectList]="projectsList"
+    [layout]="layout"
     (click)="handleClick($event)"
   />
 </main>

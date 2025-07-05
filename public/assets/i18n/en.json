@@ -223,5 +223,10 @@
     "delete-failure": "Failed to delete the project. Please try again.",
     "update-success": "Project updated successfully.",
     "update-failure": "Failed to update the project. Please try again."
+  },
+  "client": {
+    "projects": {
+      "empty-list-message": "You haven't requested any project on the platform yet."
+    }
   }
 }

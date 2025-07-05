@@ -223,5 +223,10 @@
       "update-success": "Proyecto actualizado con éxito.",
       "update-failure": "No se pudo actualizar el proyecto. Inténtelo de nuevo."
     }
+  },
+  "client": {
+    "projects": {
+      "empty-list-message": "You haven't requested any project on the platform yet."
+    }
   }
 }

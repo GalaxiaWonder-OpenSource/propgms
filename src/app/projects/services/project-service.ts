@@ -35,6 +35,12 @@ const endpoints: EndpointConfig[] = [
     method: HttpMethod.DELETE,
     url: `${apiBaseUrl}${resourcePath}/{id}`,
     requiresAuth: true
+  },
+  {
+    name: 'getByContractingEntityPersonId',
+    method: HttpMethod.GET,
+    url: `${apiBaseUrl}${resourcePath}/by-contracting-entity-id/{contractingEntityId}`,
+    requiresAuth: true
   }
 ];
 
@@ -60,5 +66,9 @@ export class ProjectService {
 
   deleteProjectById(id: number): Observable<GenericMessageResource> {
     return this.api['deleteProjectById']({}, { id });
+  }
+
+  getByContractingEntityPersonId(contractingEntityId: number): Observable<ProjectResource[]> {
+    return this.api["getByContractingEntityPersonId"]({}, { contractingEntityId });
   }
 }

@@ -13,6 +13,7 @@ import {OrganizationSettingsTab} from './organizations/tabs/organization-setting
 import {ProjectsTab} from './projects/tabs/projects-tab/projects-tab';
 import {ProjectLayout} from './projects/layouts/project-layout/project-layout';
 import {ProjectSettingsTab} from './projects/tabs/project-settings-tab/project-settings-tab';
+import {ClientLayout} from './projects/layouts/client-layout/client-layout';
 
 export const routes: Routes = [
   {
@@ -48,7 +49,15 @@ export const routes: Routes = [
     component: ProjectLayout,
     children: [
       { path: '', redirectTo: 'settings', pathMatch: 'full' },
-      {path: 'settings', component: ProjectSettingsTab }
+      { path: 'settings', component: ProjectSettingsTab }
+    ]
+  },
+  {
+    path: 'client',
+    component: ClientLayout,
+    children: [
+      { path: '', redirectTo: 'projects', pathMatch: 'full' },
+      { path: 'projects', component: ProjectsTab }
     ]
   },
   { path: '**', redirectTo: 'login' }
