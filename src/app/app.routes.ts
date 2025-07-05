@@ -18,6 +18,7 @@ import {ProjectTrackingLayout} from './change/layouts/project-tracking-layout/pr
 import {SummaryTab} from './change/tabs/summary-tab/summary-tab';
 import {ChangeProcessTab} from './change/tabs/change-process-tab/change-process-tab';
 import {ScheduleTab} from './change/tabs/schedule-tab/schedule-tab';
+import {FindOrganizationsTab} from './projects/tabs/find-organizations-tab/find-organizations-tab';
 
 export const routes: Routes = [
   {
@@ -61,7 +62,8 @@ export const routes: Routes = [
     component: ClientLayout,
     children: [
       { path: '', redirectTo: 'projects', pathMatch: 'full' },
-      { path: 'projects', component: ProjectsTab }
+      { path: 'projects', component: ProjectsTab },
+      { path: 'organizations', component: FindOrganizationsTab }
     ]
   },
   {

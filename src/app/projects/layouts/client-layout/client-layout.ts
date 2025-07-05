@@ -5,6 +5,7 @@ import { LayoutEventService } from '../../../shared/services/layout-event-servic
 import { SnackbarService } from '../../../shared/services/snackbar-service';
 import { NavigationBarComponent } from '../../../public/components/navigation-bar/navigation-bar';
 import { TranslateService } from '@ngx-translate/core';
+import {NavItem, NavItemCondition} from '../../../public/model/navigation-item';
 
 @Component({
   selector: 'app-client-layout',
@@ -22,4 +23,9 @@ export class ClientLayout extends BaseLayout {
   ) {
     super(layoutEvents, router, snackbar, translate);
   }
+
+  clientNavItems: NavItem[] = [
+    { label: 'Projects', route: 'projects', icon: 'work' },
+    { label: 'Find organizations', route: 'organizations', icon: 'corporate_fare' }
+  ];
 }
