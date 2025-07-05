@@ -1,0 +1,10 @@
+@if (messagePath) {
+  <mat-card class="coming-soon-card">
+    <div class="one-liner">
+      <h1>{{ messagePath | translate }}</h1>
+      <mat-icon class="icon pulse">rocket_launch</mat-icon>
+    </div>
+
+    <p>{{ 'common.coming-soon.sub-text' | translate }}</p>
+  </mat-card>
+}

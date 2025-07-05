@@ -1,0 +1,50 @@
+.coming-soon-card {
+  text-align: center;
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 6px rgba(0,0,0,0.2);
+}
+
+.icon {
+  color: #3f51b5;
+  animation: pulse 2s infinite;
+}
+
+.bar {
+  margin: 1.5rem 0;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+.one-liner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.one-liner * {
+  font-size: 4rem;
+  width: auto;
+  height: auto;
+  align-self: center;
+}
+
+@media (max-width: 768px) {
+  .one-liner {
+    flex-direction: column-reverse !important;
+  }
+
+  .one-liner * {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .one-liner * {
+    font-size: 3rem;
+  }
+}

@@ -89,7 +89,7 @@ export class OrganizationsTab extends BaseTab implements OnInit {
   handleClick(org: Organization) {
     if (!org.id) return;
 
-    this.appContext.organization = org;
+    this.setOrganization(org);
     this.switchLayout(`/organizations/${org.id}`);
   }
 }

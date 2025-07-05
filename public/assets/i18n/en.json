@@ -95,7 +95,9 @@
       "commercial-name": "Commercial name",
       "commercial-name-example": "ABC Tech",
       "ruc": "TIN",
-      "ruc-example": "20481234567"
+      "ruc-example": "20481234567",
+      "status": "Organization status",
+      "created-at": "Created at"
     },
     "invitation": {
       "email": "Email",
@@ -117,7 +119,8 @@
       "start-date": "Start Date",
       "end-date": "End Date",
       "organization-id": "Organization ID",
-      "contracting-email": "Contracting Entity Email"
+      "contracting-email": "Contracting Entity Email",
+      "status": "Project status"
     },
     "project-status": {
       "BASIC_STUDIES": "Basic Studies",
@@ -126,6 +129,10 @@
       "CHANGE_REQUESTED": "Change Requested",
       "CHANGE_PENDING": "Change Pending",
       "APPROVED": "Approved"
+    },
+    "change-process": {
+      "response": "Response",
+      "justification": "Request"
     }
   },
   "worker": {
@@ -223,5 +230,42 @@
     "delete-failure": "Failed to delete the project. Please try again.",
     "update-success": "Project updated successfully.",
     "update-failure": "Failed to update the project. Please try again."
+  },
+  "client": {
+    "projects": {
+      "title": "Your ongoing projects",
+      "empty-list-message": "You haven't requested any project on the platform yet."
+    },
+    "organizations": {
+      "coming-soon-title": "Find project consulting organizations"
+    }
+  },
+  "project-tracking": {
+    "summary": {
+      "title": "Project's Summary",
+      "project-subtitle": "Project's Information",
+      "organization-subtitle": "Organization's Information",
+      "history-title": "Change Process History",
+      "empty-list-message": "No Change Process have been submitted yet."
+    },
+    "change-process": {
+      "create-success": "Change request created successfully.",
+      "create-failure": "Failed to create change request. Please try again.",
+      "create": {
+        "title": "Enter the details of yor request",
+        "description": "This details will start a Change Process that will be reviewed by the contractor of the organization in charge of your project. Based on their expertise, they may determine if the request shall proceed and under what conditions.",
+        "warning": "A change process cannot be started if there is currently a pending one.",
+        "warning-label": "WARNING"
+      },
+      "title": "Start a Change Process"
+    },
+    "schedule": {
+      "coming-soon-title": "Schedule"
+    }
+  },
+  "common": {
+    "coming-soon": {
+      "sub-text": "This functionality isn't here yet... But it will be soon! Stay around!"
+    }
   }
 }

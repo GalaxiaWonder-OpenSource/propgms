@@ -1,16 +1,16 @@
 import {Component, OnInit} from '@angular/core';
-import {TranslatePipe, TranslateService} from '@ngx-translate/core';
+import {TranslatePipe} from '@ngx-translate/core';
 
-import { BaseTab } from '../../../shared/components/base-tab';
-import { LoginForm } from '../../components/login-form/login-form';
+import {BaseTab} from '../../../shared/components/base-tab';
+import {LoginForm} from '../../components/login-form/login-form';
 
-import { UserAccount } from '../../model/user-account';
-import { AuthenticationService } from '../../services/authentication-service';
-import { LayoutEventService } from '../../../shared/services/layout-event-service';
-import { AppContextService } from '../../../shared/services/app-context-service';
+import {UserAccount} from '../../model/user-account';
+import {AuthenticationService} from '../../services/authentication-service';
+import {LayoutEventService} from '../../../shared/services/layout-event-service';
+import {AppContextService} from '../../../shared/services/app-context-service';
 
-import { SignInResourceFromEntityAssembler } from '../../services/sign-in-resource-from-entity-assembler';
-import { SignInResponseResource } from '../../resources/sign-in-response-resource';
+import {SignInResourceFromEntityAssembler} from '../../services/sign-in-resource-from-entity-assembler';
+import {SignInResponseResource} from '../../resources/sign-in-response-resource';
 
 import {UserAccountType} from '../../model/user-account-type';
 
@@ -32,7 +32,7 @@ export class LoginTab extends BaseTab implements OnInit {
   }
 
   ngOnInit() {
-    if(this.appContext.personId && this.appContext.token && this.appContext.accountType) {
+    if(this.getPersonIdOrThrow() && this.getTokenOrThrow() && this.getAccountTypeOrThrow()) {
       this.redirectAfterLogin();
     }
   }
@@ -64,6 +64,10 @@ export class LoginTab extends BaseTab implements OnInit {
     switch (accountType) {
       case UserAccountType.TYPE_WORKER: {
         this.switchLayout('/worker');
+        break;
+      }
+      case UserAccountType.TYPE_CLIENT: {
+        this.switchLayout("/client")
         break;
       }
       default: {

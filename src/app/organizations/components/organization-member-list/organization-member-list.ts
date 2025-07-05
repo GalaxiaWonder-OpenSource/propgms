@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 
-import { EmptyListMessagePlaceholderComponent } from '../../../public/components/empty-list-message-placeholder/empty-list-message-placeholder';
+import { EmptyListMessagePlaceholder } from '../../../public/components/empty-list-message-placeholder/empty-list-message-placeholder';
 import { OrganizationMemberCard } from '../organization-member-card/organization-member-card';
 import {OrganizationMember} from '../../model/organization-member-entity';
 
@@ -11,7 +11,7 @@ import {OrganizationMember} from '../../model/organization-member-entity';
   templateUrl: 'organization-member-list.html',
   styleUrl: 'organization-member-list.css',
   imports: [
-    EmptyListMessagePlaceholderComponent,
+    EmptyListMessagePlaceholder,
     OrganizationMemberCard
   ]
 })

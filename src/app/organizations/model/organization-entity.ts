@@ -2,7 +2,7 @@ import {OrganizationMemberType} from './organization-member-type';
 import {OrganizationStatus} from './organization-status';
 
 export class Organization {
-  // Display only fields, not inherently from the domain model
+  // Display only fields, not inherently from the domain resources
   public currentUsersRole: OrganizationMemberType | undefined
 
   constructor(

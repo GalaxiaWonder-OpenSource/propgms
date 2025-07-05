@@ -1,14 +1,14 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import { Invitation } from '../../model/invitation-entity';
 import { TranslatePipe } from '@ngx-translate/core';
-import { EmptyListMessagePlaceholderComponent } from '../../../public/components/empty-list-message-placeholder/empty-list-message-placeholder';
+import { EmptyListMessagePlaceholder } from '../../../public/components/empty-list-message-placeholder/empty-list-message-placeholder';
 import {InvitationCard} from '../invitation-card/invitation-card';
 
 @Component({
   selector: 'app-invitation-list',
   standalone: true,
   imports: [
-    EmptyListMessagePlaceholderComponent,
+    EmptyListMessagePlaceholder,
     InvitationCard
   ],
   templateUrl: './invitation-list.html',

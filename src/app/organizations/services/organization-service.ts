@@ -35,6 +35,12 @@ const endpoints: EndpointConfig[] = [
     method: HttpMethod.PATCH,
     url: `${apiBaseUrl}${resourcePath}/{id}`,
     requiresAuth: true
+  },
+  {
+    name: 'getByOrganizationId',
+    method: HttpMethod.GET,
+    url: `${apiBaseUrl}${resourcePath}/{id}`,
+    requiresAuth: true
   }
 ];
 
@@ -60,5 +66,9 @@ export class OrganizationService {
 
   updateOrganization(resource: UpdateOrganizationResource, id: number): Observable<GenericMessageResource> {
     return this.api["updateOrganization"](resource, {id});
+  }
+
+  getByOrganizationId(id: number): Observable<OrganizationResource> {
+    return this.api["getByOrganizationId"]({}, {id});
   }
 }

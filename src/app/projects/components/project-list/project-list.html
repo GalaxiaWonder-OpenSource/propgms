@@ -1,6 +1,6 @@
 @if (!projectList || projectList.length === 0) {
   <app-empty-list-message-placeholder
-    layout="organization"
+    [layout]="layout"
     tab="projects"
   />
 } @else {

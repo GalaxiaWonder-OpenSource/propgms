@@ -4,29 +4,29 @@
   <div class="vertical-form">
 
     <mat-form-field appearance="fill" class="full-width span-2">
-      <mat-label>{{ 'model.project.name' | translate }}</mat-label>
+      <mat-label>{{ 'resources.project.name' | translate }}</mat-label>
       <input matInput formControlName="projectName" />
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="full-width span-2">
-      <mat-label>{{ 'model.project.description' | translate }}</mat-label>
+      <mat-label>{{ 'resources.project.description' | translate }}</mat-label>
       <textarea matInput formControlName="description" rows="3"></textarea>
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="full-width span-2">
-      <mat-label>{{ 'model.project.contracting-email' | translate }}</mat-label>
+      <mat-label>{{ 'resources.project.contracting-email' | translate }}</mat-label>
       <input matInput formControlName="contractingEntityEmail" />
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="full-width">
-      <mat-label>{{ 'model.project.start-date' | translate }}</mat-label>
+      <mat-label>{{ 'resources.project.start-date' | translate }}</mat-label>
       <input matInput [matDatepicker]="startPicker" formControlName="startDate" />
       <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
       <mat-datepicker #startPicker></mat-datepicker>
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="full-width">
-      <mat-label>{{ 'model.project.end-date' | translate }}</mat-label>
+      <mat-label>{{ 'resources.project.end-date' | translate }}</mat-label>
       <input matInput [matDatepicker]="endPicker" formControlName="endDate" />
       <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
       <mat-datepicker #endPicker></mat-datepicker>
