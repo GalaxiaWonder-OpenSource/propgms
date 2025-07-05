@@ -74,7 +74,7 @@ export class RegisterForm {
     specialty: [null]
   });
 
-  /** Event that emits the data of the form using the {@link Person} and {@link UserAccount} model. */
+  /** Event that emits the data of the form using the {@link Person} and {@link UserAccount} resources. */
   @Output() registerSubmit = new EventEmitter<{ person: Person; account: UserAccount }>();
 
   /** Emits the directive to move into the login tab. */

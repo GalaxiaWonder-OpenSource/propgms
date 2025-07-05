@@ -95,7 +95,9 @@
       "commercial-name": "Commercial name",
       "commercial-name-example": "ABC Tech",
       "ruc": "TIN",
-      "ruc-example": "20481234567"
+      "ruc-example": "20481234567",
+      "status": "Organization status",
+      "created-at": "Created at"
     },
     "invitation": {
       "email": "Email",
@@ -117,7 +119,8 @@
       "start-date": "Start Date",
       "end-date": "End Date",
       "organization-id": "Organization ID",
-      "contracting-email": "Contracting Entity Email"
+      "contracting-email": "Contracting Entity Email",
+      "status": "Project status"
     },
     "project-status": {
       "BASIC_STUDIES": "Basic Studies",
@@ -126,6 +129,10 @@
       "CHANGE_REQUESTED": "Change Requested",
       "CHANGE_PENDING": "Change Pending",
       "APPROVED": "Approved"
+    },
+    "change-process": {
+      "response": "Response",
+      "justification": "Request"
     }
   },
   "worker": {
@@ -226,7 +233,17 @@
   },
   "client": {
     "projects": {
+      "title": "Your ongoing projects",
       "empty-list-message": "You haven't requested any project on the platform yet."
+    }
+  },
+  "project-tracking": {
+    "summary": {
+      "title": "Project's Summary",
+      "project-subtitle": "Project's Information",
+      "organization-subtitle": "Organization's Information",
+      "history-title": "Change Process History",
+      "empty-list-message": "No Change Process have been submitted yet."
     }
   }
 }

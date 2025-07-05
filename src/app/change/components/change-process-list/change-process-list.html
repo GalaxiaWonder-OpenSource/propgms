@@ -1,0 +1,12 @@
+@if (!changeProcessList || changeProcessList.length === 0) {
+  <app-empty-list-message-placeholder
+    layout="project-tracking"
+    tab="summary"
+  />
+} @else {
+  @for (changeProcess of changeProcessList; track changeProcess.projectId) {
+    <app-change-process-card
+      [changeProcess]="changeProcess"
+    />
+  }
+}

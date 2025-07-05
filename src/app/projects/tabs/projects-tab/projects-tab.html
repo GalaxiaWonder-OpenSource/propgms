@@ -1,7 +1,7 @@
 <main>
   <div class="header-row">
-    <h1>{{ 'organization.projects.title' | translate }}</h1>
     @if (getAccountTypeOrThrow() === UserAccountType.TYPE_WORKER) {
+      <h1>{{ 'organization.projects.title' | translate }}</h1>
       <button
         mat-raised-button
         color="primary"
@@ -11,6 +11,8 @@
         {{ 'global.action.create' | translate }}
         <mat-icon>add</mat-icon>
       </button>
+    } @else {
+      <h1>{{ 'client.projects.title' | translate }}</h1>
     }
   </div>
 

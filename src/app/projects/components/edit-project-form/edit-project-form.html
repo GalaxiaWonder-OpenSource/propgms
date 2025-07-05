@@ -17,7 +17,7 @@
         <mat-select formControlName="status">
           @for (status of statuses; track status) {
             <mat-option [value]="status">
-              {{ ('model.project-status.' + status) | translate }}
+              {{ ('resources.project-status.' + status) | translate }}
             </mat-option>
           }
         </mat-select>

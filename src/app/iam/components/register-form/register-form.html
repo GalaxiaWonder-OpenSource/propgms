@@ -6,21 +6,21 @@
         <ng-template matStepLabel>{{ 'auth.register.form.auth-credentials-title' | translate }}</ng-template>
 
         <mat-form-field appearance="fill">
-          <mat-label>{{ 'model.user-account.username' | translate }}</mat-label>
-          <input matInput formControlName="username" [placeholder]="'model.user-account.username-example' | translate">
+          <mat-label>{{ 'resources.user-account.username' | translate }}</mat-label>
+          <input matInput formControlName="username" [placeholder]="'resources.user-account.username-example' | translate">
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-          <mat-label>{{ 'model.user-account.password' | translate }}</mat-label>
-          <input matInput type="password" formControlName="password" [placeholder]="'model.user-account.password-example' | translate">
+          <mat-label>{{ 'resources.user-account.password' | translate }}</mat-label>
+          <input matInput type="password" formControlName="password" [placeholder]="'resources.user-account.password-example' | translate">
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-          <mat-label>{{ 'model.user-account.type' | translate }}</mat-label>
+          <mat-label>{{ 'resources.user-account.type' | translate }}</mat-label>
           <mat-select formControlName="type">
             @for (type of accountTypes; track type) {
               <mat-option [value]="type">
-                {{ ('model.user-account-type.' + type) | translate }}
+                {{ ('resources.user-account-type.' + type) | translate }}
               </mat-option>
             }
           </mat-select>
@@ -40,32 +40,32 @@
         <ng-template matStepLabel>{{ 'auth.register.form.personal-data-title' | translate }}</ng-template>
 
         <mat-form-field appearance="fill">
-          <mat-label>{{ 'model.person.first-name' | translate }}</mat-label>
-          <input matInput formControlName="firstname" [placeholder]="'model.person.first-name-example' | translate">
+          <mat-label>{{ 'resources.person.first-name' | translate }}</mat-label>
+          <input matInput formControlName="firstname" [placeholder]="'resources.person.first-name-example' | translate">
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-          <mat-label>{{ 'model.person.last-name' | translate }}</mat-label>
-          <input matInput formControlName="lastname" [placeholder]="'model.person.last-name-example' | translate">
+          <mat-label>{{ 'resources.person.last-name' | translate }}</mat-label>
+          <input matInput formControlName="lastname" [placeholder]="'resources.person.last-name-example' | translate">
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-          <mat-label>{{ 'model.person.email' | translate }}</mat-label>
-          <input matInput formControlName="email" [placeholder]="'model.person.email-example' | translate">
+          <mat-label>{{ 'resources.person.email' | translate }}</mat-label>
+          <input matInput formControlName="email" [placeholder]="'resources.person.email-example' | translate">
         </mat-form-field>
 
         @if(accountFormGroup.get('type')?.value === UserAccountType.TYPE_WORKER) {
           <mat-form-field appearance="fill">
-            <mat-label>{{ 'model.person.professional-id' | translate }}</mat-label>
-            <input matInput formControlName="professionalId" [placeholder]="'model.person.professional-id-example' | translate">
+            <mat-label>{{ 'resources.person.professional-id' | translate }}</mat-label>
+            <input matInput formControlName="professionalId" [placeholder]="'resources.person.professional-id-example' | translate">
           </mat-form-field>
 
           <mat-form-field appearance="fill">
-            <mat-label>{{ 'model.person.specialty' | translate }}</mat-label>
+            <mat-label>{{ 'resources.person.specialty' | translate }}</mat-label>
             <mat-select formControlName="specialty">
               @for (specialty of specialties; track specialty) {
                 <mat-option [value]="specialty">
-                  {{ ('model.specialty.' + specialty) | translate }}
+                  {{ ('resources.specialty.' + specialty) | translate }}
                 </mat-option>
               }
             </mat-select>
@@ -73,8 +73,8 @@
         }
 
         <mat-form-field appearance="fill">
-          <mat-label>{{ 'model.person.phone' | translate }}</mat-label>
-          <input matInput formControlName="phone" [placeholder]="'model.person.phone-example' | translate">
+          <mat-label>{{ 'resources.person.phone' | translate }}</mat-label>
+          <input matInput formControlName="phone" [placeholder]="'resources.person.phone-example' | translate">
         </mat-form-field>
 
         <div class="form-actions">
@@ -106,21 +106,21 @@
       <p>{{ 'auth.register.form.summary-message' | translate }}</p>
       <ul>
         <li>
-          <strong>{{ 'model.person.email' | translate }}:</strong>
+          <strong>{{ 'resources.person.email' | translate }}:</strong>
           {{ personalFormGroup.get('email')?.value }}
         </li>
         <li>
-          <strong>{{ 'model.person.phone' | translate }}:</strong>
+          <strong>{{ 'resources.person.phone' | translate }}:</strong>
           {{ personalFormGroup.get('phone')?.value }}
         </li>
         @if (accountFormGroup.get('type')?.value === UserAccountType.TYPE_WORKER) {
           <li>
-            <strong>{{ 'model.person.professional-id' | translate }}:</strong>
+            <strong>{{ 'resources.person.professional-id' | translate }}:</strong>
             {{ personalFormGroup.get('professionalId')?.value || '—' }}
           </li>
           <li>
-            <strong>{{ 'model.person.specialty' | translate }}:</strong>
-            {{ ('model.specialty.' + personalFormGroup.get('specialty')?.value) | translate }}
+            <strong>{{ 'resources.person.specialty' | translate }}:</strong>
+            {{ ('resources.specialty.' + personalFormGroup.get('specialty')?.value) | translate }}
           </li>
         }
       </ul>

@@ -32,7 +32,7 @@ export class LoginForm {
     password: ['', Validators.required]
   });
 
-  /** Emits the form values as a UserAccount model on submission. */
+  /** Emits the form values as a UserAccount resources on submission. */
   @Output() loginSubmit = new EventEmitter<UserAccount>();
 
   /** Emits the directive to move into the register tab. */

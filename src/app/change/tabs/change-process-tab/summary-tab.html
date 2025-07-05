@@ -1,0 +1,64 @@
+<main>
+  <div>
+    <h1>{{ 'project-tracking.summary.title' | translate }}</h1>
+  </div>
+
+  <div class="flex-div">
+    <section class="main-section">
+      <mat-card class="organization-card">
+        <mat-card-header>
+          <mat-card-title>
+            <div class="status-title-row">
+              <div>
+                <h2><strong>{{ organization.commercialName }}</strong></h2>
+              </div>
+              <div>
+                <span class="status-label" [ngClass]="organization.status.toLowerCase()">
+                  {{ 'model.organization-status.' + organization.status | translate }}
+                </span>
+              </div>
+            </div>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p><strong>{{ 'model.organization.legal-name' | translate }}:</strong> {{ organization.legalName }}</p>
+          <p><strong>{{ 'model.organization.ruc' | translate }}:</strong> {{ organization.ruc }}</p>
+          <p><strong>{{ 'model.organization.created-at' | translate }}:</strong> {{ organization.createdAt | date:'longDate' }}</p>
+        </mat-card-content>
+      </mat-card>
+
+      <div class="bottom-subsection">
+        <h3>{{ 'project-tracking.summary.history-title' | translate }}</h3>
+        <app-change-process-list
+          [changeProcessList]="latestTwoChangeProcess"
+        />
+      </div>
+    </section>
+
+    <section>
+      <mat-card class="project-card">
+        <mat-card-header>
+          <mat-card-title>
+            <div class="status-title-row">
+              <div>
+                <h2><strong>{{ project.projectName }}</strong></h2>
+              </div>
+              <div>
+                <span class="status-label" [ngClass]="project.status.toLowerCase().replace('_', '-')">
+                  {{ 'model.project-status.' + project.status | translate }}
+                </span>
+              </div>
+            </div>
+          </mat-card-title>
+
+        </mat-card-header>
+        <mat-card-content>
+          <p><strong>{{ 'model.project.description' | translate }}:</strong> {{ project.description }}</p>
+          <p><strong>{{ 'model.project.status' | translate }}:</strong> {{ 'model.project-status.' + project.status  | translate }}</p>
+          <p><strong>{{ 'model.project.start-date' | translate }}:</strong> {{ project.startDate | date:'longDate' }}</p>
+          <p><strong>{{ 'model.project.end-date' | translate }}:</strong> {{ project.endDate | date:'longDate' }}</p>
+        </mat-card-content>
+      </mat-card>
+    </section>
+  </div>
+</main>

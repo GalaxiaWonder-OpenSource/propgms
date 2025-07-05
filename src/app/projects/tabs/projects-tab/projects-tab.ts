@@ -14,6 +14,7 @@ import {MatDialog} from '@angular/material/dialog';
 import {CreateProjectResource} from '../../resources/create-project-resource';
 import {CreateProjectModal} from '../../components/create-project-modal/create-project-modal';
 import {UserAccountType} from '../../../iam/model/user-account-type';
+import {ProjectEntityFromResourceAssembler} from '../../services/project-entity-from-resource-assembler';
 
 @Component({
   selector: 'app-projects-tab',
@@ -49,7 +50,9 @@ export class ProjectsTab extends BaseTab implements OnInit {
         this.layout = "organization"
         this.projectService.getByTeamMemberPersonId(personId).subscribe({
           next: (projects) => {
-            this.projectsList = projects || [];
+            this.projectsList = (projects).map(project =>
+              ProjectEntityFromResourceAssembler(project)
+            );
             if (!projects?.length) {
               console.warn('No projects returned from backend for current user.');
             }

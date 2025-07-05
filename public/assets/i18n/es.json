@@ -95,7 +95,9 @@
       "commercial-name": "Nombre comercial",
       "commercial-name-example": "ABC Tech",
       "ruc": "RUC",
-      "ruc-example": "20481234567"
+      "ruc-example": "20481234567",
+      "status": "Estado de la organización",
+      "created-at": "Creada el"
     },
     "invitation": {
       "email": "Correo electrónico",
@@ -117,7 +119,8 @@
       "start-date": "Fecha de inicio",
       "end-date": "Fecha de finalización",
       "organization-id": "ID de la organización",
-      "contracting-email": "Correo de la entidad contratante"
+      "contracting-email": "Correo de la entidad contratante",
+      "status": "Estado del proyecto"
     },
     "project-status": {
       "BASIC_STUDIES": "Estudios Básicos",
@@ -226,7 +229,16 @@
   },
   "client": {
     "projects": {
-      "empty-list-message": "You haven't requested any project on the platform yet."
+      "title": "Tus proyectos en desarrollo",
+      "empty-list-message": "No has solicitado ningún proyecto en la plataforma aún."
+    }
+  },
+  "project-tracking": {
+    "summary": {
+      "title": "Resumen del Proyecto",
+      "project-subtitle": "Información del proyecto",
+      "organization-subtitle": "Información de la organización",
+      "history-title": "Historial de proceso de cambio"
     }
   }
 }

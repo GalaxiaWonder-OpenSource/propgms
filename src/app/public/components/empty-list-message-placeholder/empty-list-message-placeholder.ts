@@ -14,7 +14,7 @@ import {MatCardModule} from '@angular/material/card';
   ],
   styleUrls: ['./empty-list-message-placeholder.css']
 })
-export class EmptyListMessagePlaceholderComponent {
+export class EmptyListMessagePlaceholder {
   @Input() layout!: string;
   @Input() tab!: string;
 

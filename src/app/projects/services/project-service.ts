@@ -41,6 +41,12 @@ const endpoints: EndpointConfig[] = [
     method: HttpMethod.GET,
     url: `${apiBaseUrl}${resourcePath}/by-contracting-entity-id/{contractingEntityId}`,
     requiresAuth: true
+  },
+  {
+    name: 'getByProjectId',
+    method: HttpMethod.GET,
+    url: `${apiBaseUrl}${resourcePath}/{id}`,
+    requiresAuth: true
   }
 ];
 
@@ -70,5 +76,9 @@ export class ProjectService {
 
   getByContractingEntityPersonId(contractingEntityId: number): Observable<ProjectResource[]> {
     return this.api["getByContractingEntityPersonId"]({}, { contractingEntityId });
+  }
+
+  getByProjectId(id: number): Observable<ProjectResource> {
+    return this.api["getByProjectId"]({}, {id});
   }
 }
