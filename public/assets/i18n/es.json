@@ -235,6 +235,9 @@
     "projects": {
       "title": "Tus proyectos en desarrollo",
       "empty-list-message": "No has solicitado ningún proyecto en la plataforma aún."
+    },
+    "organizations": {
+      "coming-soon-title": "Descubre organizaciones de consultoría"
     }
   },
   "project-tracking": {
