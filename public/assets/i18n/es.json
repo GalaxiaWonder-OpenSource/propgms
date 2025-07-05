@@ -136,6 +136,10 @@
     }
   },
   "worker": {
+    "nav": {
+      "organizations": "Organizaciones",
+      "invitations": "Invitaciones"
+    },
     "organizations": {
       "title": "Mis organizaciones",
       "empty-list-message": "No se encontraron organizaciones.",
@@ -157,6 +161,11 @@
     }
   },
   "organization": {
+    "nav": {
+      "projects": "Proyectos",
+      "members": "Miembros de Organización",
+      "settings": "Ajustes"
+    },
     "members": {
       "load-failure": "No se pudieron cargar los miembros de la organización. Inténtalo nuevamente.",
       "delete-success": "Miembro eliminado exitosamente",
@@ -209,6 +218,11 @@
     }
   },
   "project": {
+    "nav": {
+      "schedule": "Calendarización",
+      "team-members": "Miembros de Equipo",
+      "settings": "Ajustes"
+    },
     "edit": {
       "save": "Guardar cambios",
       "title": "Editar proyecto"
@@ -238,9 +252,18 @@
     },
     "organizations": {
       "coming-soon-title": "Descubre organizaciones de consultoría"
+    },
+    "nav": {
+      "projects": "Proyectos",
+      "organizations": "Descubrir organizaciones"
     }
   },
   "project-tracking": {
+    "nav": {
+      "summary": "Resumen",
+      "change-process": "Proceso de Cambio",
+      "schedule": "Calendarización"
+    },
     "summary": {
       "title": "Resumen del Proyecto",
       "project-subtitle": "Información del proyecto",

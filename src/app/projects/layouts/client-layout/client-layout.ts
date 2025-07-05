@@ -25,7 +25,7 @@ export class ClientLayout extends BaseLayout {
   }
 
   clientNavItems: NavItem[] = [
-    { label: 'Projects', route: 'projects', icon: 'work' },
-    { label: 'Find organizations', route: 'organizations', icon: 'corporate_fare' }
+    { label: 'client.nav.projects', route: 'projects', icon: 'work' },
+    { label: 'client.nav.organizations', route: 'organizations', icon: 'corporate_fare' }
   ];
 }

@@ -136,6 +136,10 @@
     }
   },
   "worker": {
+    "nav": {
+      "organizations": "Organizations",
+      "invitations": "Invitations"
+    },
     "organizations": {
       "title": "My organizations",
       "empty-list-message": "No organizations have been found.",
@@ -157,6 +161,11 @@
     }
   },
   "organization": {
+    "nav": {
+      "projects": "Projects",
+      "members": "Organization Members",
+      "settings": "Settings"
+    },
     "members": {
       "load-failure": "Failed to load organization members. Please try again.",
       "delete-success": "Organization member removed successfully",
@@ -209,6 +218,11 @@
     }
   },
   "project": {
+    "nav": {
+      "schedule": "Schedule",
+      "team-members": "Project Team Members",
+      "settings": "Settings"
+    },
     "edit": {
       "save": "Save changes",
       "title": "Edit project"
@@ -238,9 +252,18 @@
     },
     "organizations": {
       "coming-soon-title": "Find project consulting organizations"
+    },
+    "nav": {
+      "projects": "Projects",
+      "organizations": "Discover organizations"
     }
   },
   "project-tracking": {
+    "nav": {
+      "summary": "Summary",
+      "change-process": "Change Process",
+      "schedule": "Schedule"
+    },
     "summary": {
       "title": "Project's Summary",
       "project-subtitle": "Project's Information",

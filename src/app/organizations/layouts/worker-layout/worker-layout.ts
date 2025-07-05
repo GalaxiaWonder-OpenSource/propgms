@@ -25,7 +25,7 @@ export class WorkerLayout extends BaseLayout {
   }
 
   workerNavItems: NavItem[] = [
-    { label: 'Organizations', route: 'organizations', icon: 'apartment' },
-    { label: 'Invitations', route: 'invitations', icon: 'mail' }
+    { label: 'worker.nav.organizations', route: 'organizations', icon: 'apartment' },
+    { label: 'worker.nav.invitations', route: 'invitations', icon: 'mail' }
   ];
 }

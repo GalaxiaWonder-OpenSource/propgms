@@ -27,8 +27,8 @@ export class ProjectTrackingLayout extends BaseLayout {
   }
 
   projectTrackingNavItems: NavItem[] = [
-    { label: 'Summary', route: 'summary', icon: 'summarize' },
-    { label: 'Change Process', route: 'change-process', icon: 'change_circle' },
-    { label: 'Schedule', route: 'schedule', icon: 'event' }
+    { label: 'project-tracking.nav.summary', route: 'summary', icon: 'summarize' },
+    { label: 'project-tracking.nav.change-process', route: 'change-process', icon: 'change_circle' },
+    { label: 'project-tracking.nav.schedule', route: 'schedule', icon: 'event' }
   ];
 }

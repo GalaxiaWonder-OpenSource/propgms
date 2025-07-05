@@ -25,8 +25,8 @@ export class ProjectLayout extends BaseLayout {
   }
 
   projectNavItems: NavItem[] = [
-    { label: 'Schedule', route: 'schedule', icon: 'event' },
-    { label: 'Team Members', route: 'team', icon: 'group' },
-    { label: 'Settings', route: 'settings', icon: 'settings', condition: NavItemCondition.MUST_BE_OWNER }
+    { label: 'project.nav.schedule', route: 'schedule', icon: 'event' },
+    { label: 'project.nav.team-members', route: 'team', icon: 'group' },
+    { label: 'project.nav.settings', route: 'settings', icon: 'settings', condition: NavItemCondition.MUST_BE_OWNER }
   ];
 }

@@ -25,8 +25,8 @@ export class OrganizationLayout extends BaseLayout {
   }
 
   organizationNavItems: NavItem[] = [
-    { label: 'Projects', route: 'projects', icon: 'work' },
-    { label: 'Members', route: 'members', icon: 'group' },
-    { label: 'Settings', route: 'settings', icon: 'settings', condition: NavItemCondition.MUST_BE_OWNER}
+    { label: 'organization.nav.projects', route: 'projects', icon: 'work' },
+    { label: 'organization.nav.members', route: 'members', icon: 'group' },
+    { label: 'organization.nav.settings', route: 'settings', icon: 'settings', condition: NavItemCondition.MUST_BE_OWNER}
   ];
 }

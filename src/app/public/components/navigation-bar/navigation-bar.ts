@@ -9,6 +9,7 @@ import {AppContextService} from '../../../shared/services/app-context-service';
 import {LanguageSwitcherComponent} from '../language-switcher/language-switcher';
 import {Router} from '@angular/router';
 import {UserAccountType} from '../../../iam/model/user-account-type';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -20,7 +21,8 @@ import {UserAccountType} from '../../../iam/model/user-account-type';
     MatIconModule,
     MatButtonModule,
     MatMenuModule,
-    LanguageSwitcherComponent
+    LanguageSwitcherComponent,
+    TranslatePipe
   ]
 })
 export class NavigationBarComponent {
