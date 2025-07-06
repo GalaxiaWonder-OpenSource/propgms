@@ -11,6 +11,9 @@ import {TranslatePipe} from '@ngx-translate/core';
 import {MatDialog} from '@angular/material/dialog';
 import {CreateMilestoneResource} from '../../resources/create-milestone-resource';
 import {CreateMilestoneModal} from '../../components/create-milestone-modal/create-milestone-modal';
+import { Task } from '../../model/task-entity';
+import {TaskService} from '../../services/task-service';
+import {TaskEntityFromResourceAssembler} from '../../services/task-entity-from-resource-assmbler';
 
 @Component({
   selector: 'app-client-schedule-tab',
@@ -25,12 +28,15 @@ export class ScheduleTab extends BaseTab implements OnInit {
     layoutEvents: LayoutEventService,
     appContextService: AppContextService,
     private milestoneService: MilestoneService,
+    private taskService: TaskService,
     private dialog: MatDialog
   ) {
     super(layoutEvents, appContextService);
   }
 
   protected milestoneList!: Milestone[];
+  tasksByMilestone: { [milestoneId: number]: Task[] } = {};
+  selectedTasks: Task[] = [];
 
   ngOnInit() {
     const project = this.getProjectOrThrow();
@@ -51,7 +57,7 @@ export class ScheduleTab extends BaseTab implements OnInit {
     const projectId = this.getProjectOrThrow().id;
 
     const dialogRef = this.dialog.open(CreateMilestoneModal, {
-      data: { projectId }
+      data: {projectId}
     });
 
     dialogRef.afterClosed().subscribe((result: CreateMilestoneResource | undefined) => {
@@ -71,4 +77,17 @@ export class ScheduleTab extends BaseTab implements OnInit {
     });
   }
 
+  onMilestoneClicked(milestoneId: number): void {
+    this.taskService.getByMilestoneId(milestoneId).subscribe({
+      next: (tasks) => {
+        console.log(tasks);
+        this.tasksByMilestone[milestoneId] = tasks.map(task =>
+          TaskEntityFromResourceAssembler(task)
+        );
+      },
+      error: () => {
+        this.emitSnackbar('error', 'project.schedule.tasks-fetch-failure');
+      }
+    });
+  }
 }

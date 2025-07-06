@@ -61,3 +61,18 @@ h1 {
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  .flex-layout {
+    flex-direction: column-reverse;
+  }
+
+  .left-column,
+  .right-column {
+    width: 100%;
+  }
+
+  .left-column {
+    overflow-y: visible;
+  }
+}
+

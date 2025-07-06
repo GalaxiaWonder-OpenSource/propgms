@@ -5,7 +5,11 @@
   <div class="flex-layout">
     <div class="left-column">
       <h2>{{ 'project.schedule.first-column-subtitle' | translate}}</h2>
-      <app-milestone-list [milestoneList]="milestoneList" />
+      <app-milestone-list
+        [milestoneList]="milestoneList"
+        [tasksByMilestone]="tasksByMilestone"
+        (milestoneLoadTasks)="onMilestoneClicked($event)"
+      />
     </div>
 
     <div class="right-column">
@@ -20,12 +24,15 @@
         >
           {{ 'project.schedule.create-milestone' | translate }}
         </button>
-        <button mat-raised-button color="accent" class="big-button">
-          {{ 'project.schedule.add-meeting' | translate }}
-        </button>
+
         <button mat-raised-button color="warn" class="big-button">
           {{ 'project.schedule.add-task' | translate }}
         </button>
+        <!--
+        <button mat-raised-button color="accent" class="big-button">
+          {{ 'project.schedule.add-meeting' | translate }}
+        </button>
+        -->
       </div>
 
       <div class="right-placeholder">

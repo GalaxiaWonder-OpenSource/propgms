@@ -1,4 +1,4 @@
-<mat-card class="milestone-card" (click)="toggleExpanded()">
+<mat-card class="milestone-card" (click)="onClick()">
   <div class="card-header">
     <div class="card-title-group">
       <mat-card-title>
@@ -15,13 +15,42 @@
   </div>
 
   <mat-card-content class="card-content">
-    @if(expanded()) {
+
+    @if (expanded()) {
       <div class="expanded-content">
-        <p><strong>{{ 'model.milestone.details' | translate }}</strong></p>
-        <p>[Static placeholder for meetings/tasks]</p>
+
+        @if (taskList.length > 0) {
+          <p><strong>{{ 'project.schedule.task-label' | translate }}</strong></p>
+          <ol class="task-list">
+            @for (task of taskList; track task.id) {
+              <li class="task-item">
+                <div class="task-header">
+                  <strong>{{ task.name }}</strong>
+                  <span class="status-badge">{{ task.status }}</span>
+                </div>
+                <div class="task-dates">
+                  {{ task.startDate | date }} → {{ task.endDate | date }}
+                </div>
+                <div class="task-meta">
+                  <em>{{ task.specialty }}</em>
+                  @if (task.personId !== null) {
+                    – {{ 'project.schedule.assigned' | translate }}: #{{ task.personId }}
+                  }
+                </div>
+                <div class="task-description">
+                  {{ task.description }}
+                </div>
+              </li>
+            }
+          </ol>
+        } @else {
+          <p>{{ 'project.schedule.no-tasks' | translate }}</p>
+        }
+
         <mat-icon class="collapse-arrow-bottom">expand_less</mat-icon>
       </div>
     }
+
   </mat-card-content>
 
   @if (!expanded()) {

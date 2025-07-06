@@ -6,7 +6,11 @@
 } @else {
   <div class="milestone-list-container">
     @for (milestone of milestoneList; track milestone.id) {
-      <app-milestone-card [milestone]="milestone" />
+      <app-milestone-card
+        [milestone]="milestone"
+        [taskList]="tasksByMilestone[milestone.id] || []"
+        (loadTasks)="onMilestoneSelect($event)"
+      />
     }
   </div>
 }

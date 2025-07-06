@@ -105,3 +105,29 @@
     opacity: 1;
   }
 }
+
+.task-item {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.task-dates,
+.task-meta,
+.task-description {
+  font-size: 0.9em;
+  color: #555;
+}
+
+.status-badge {
+  background: #e0e0e0;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.8em;
+}
+

@@ -264,7 +264,10 @@
         "title": "Add a new Milestone"
       },
       "create-success": "Milestone added successfully.",
-      "create-failure": "Failed to add new milestone. Please try again."
+      "create-failure": "Failed to add new milestone. Please try again.",
+      "task-label": "List of tasks:",
+      "no-tasks": "No tasks found for this milestone.",
+      "tasks-fetch-failure": "Failed to load tasks. Please try again."
     }
   },
   "client": {
