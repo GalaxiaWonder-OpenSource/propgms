@@ -1,0 +1,26 @@
+<footer class="footer">
+  <div class="footer-columns">
+
+    <div class="footer-brand">
+      <img src="{{ logoSource }}" alt="PROP GMS Application logo" class="footer-logo" />
+      <p class="footer-brand-name">{{ 'global.startup-name' | translate}}</p>
+    </div>
+
+    <div class="footer-double-column">
+      <div class="footer-column">
+        <h4>{{ 'footer.about' | translate }}</h4>
+        <a href="#">{{ 'footer.faq' | translate }}</a>
+        <a href="#">{{ 'footer.privacy-policy' | translate }}</a>
+        <a href="#">{{ 'footer.terms-and-conditions' | translate }}</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>{{ 'footer.contact' | translate }}</h4>
+        <a [href]="'tel:' + contact.phone">{{ contact.phone }}</a>
+        <a [href]="'mailto:' + contact.email">{{ contact.email }}</a>
+        <a [innerHTML]="contact.address"></a>
+      </div>
+    </div>
+
+  </div>
+</footer>

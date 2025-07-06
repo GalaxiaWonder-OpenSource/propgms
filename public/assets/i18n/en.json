@@ -1,0 +1,332 @@
+{
+  "global": {
+    "startup-name": "Galaxia Wonder",
+    "product-name": "PROP GMS",
+    "action": {
+      "next": "Next",
+      "back": "Back",
+      "register": "Register",
+      "accept": "Accept",
+      "reject": "Reject",
+      "create": "Create",
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "invite": "Invite"
+    }
+  },
+  "footer": {
+    "about": "Learn About Us",
+    "faq": "FAQ",
+    "privacy-policy": "Privacy Policy",
+    "terms-and-conditions": "Terms and Conditions",
+    "contact": "Contact Us",
+    "rights": "All rights reserved."
+  },
+  "auth": {
+    "register": {
+      "title": "Sign Up",
+      "form": {
+        "personal-data-title": "Personal information",
+        "auth-credentials-title": "Account information",
+        "review-title": "Final check-in",
+        "welcome-message": "¡Welcome {{name}}! You're about to finish your account creation.",
+        "summary-message": "Make sure your personal data has been introduced properly.",
+        "client-message": "We hope our tool makes your project smooth, transparent, and successful.",
+        "worker-message": "We hope our tool is of great utility for your work!",
+        "next-steps-message": "If everything is correct, you may proceed to finish the registration process."
+      },
+      "back-to-login": "Back to login",
+      "success": "Sign up successful!",
+      "failure": "Sign up failed. Please try again."
+    },
+    "login": {
+      "title": "Sign In",
+      "username": "Username",
+      "username-placeholder": "Enter your username",
+      "password": "Password",
+      "password-placeholder": "Enter your password",
+      "submit": "Log In",
+      "register-link": "Don't have an account? Sign up",
+      "success": "Sign in successful!",
+      "failure": "Sign in failed. Please try again."
+    }
+  },
+  "model": {
+    "task": {
+      "name": "Task name",
+      "description": "Description",
+      "start-date": "Start date",
+      "end-date": "End date",
+      "specialty": "Specialty",
+      "milestone": "Milestone"
+    },
+    "person": {
+      "first-name": "First Name",
+      "first-name-example": "John",
+      "last-name": "Last Name",
+      "last-name-example": "Doe",
+      "email": "Email Address",
+      "email-example": "john.doe@example.com",
+      "phone": "Phone Number",
+      "phone-example": "+51987654321",
+      "professional-id": "Professional ID",
+      "professional-id-example": "CIP123456",
+      "specialty": "Specialty"
+    },
+    "user-account": {
+      "username": "Username",
+      "username-example": "johndoe",
+      "password": "Password",
+      "password-example": "••••••••",
+      "type": "User Account Type"
+    },
+    "user-account-type": {
+      "TYPE_WORKER": "Worker",
+      "TYPE_CLIENT": "Client"
+    },
+    "organization-status": {
+      "ACTIVE": "Active",
+      "INACTIVE": "Inactive"
+    },
+    "organization-member-type": {
+      "CONTRACTOR": "Contractor",
+      "WORKER": "Worker"
+    },
+    "invitation-status": {
+      "PENDING": "Pending",
+      "ACCEPTED": "Accepted",
+      "Rejected": "Rejected"
+    },
+    "organization": {
+      "legal-name": "Legal name",
+      "legal-name-example": "ABC Technologies S.A.",
+      "commercial-name": "Commercial name",
+      "commercial-name-example": "ABC Tech",
+      "ruc": "TIN",
+      "ruc-example": "20481234567",
+      "status": "Organization status",
+      "created-at": "Created at"
+    },
+    "invitation": {
+      "email": "Email",
+      "email-example": "john.doe@example.com"
+    },
+    "specialty": {
+      "ARCHITECTURE": "Architecture",
+      "STRUCTURES": "Structures",
+      "HSA": "Health, Safety and Accessibility",
+      "TOPOGRAPHY": "Topography",
+      "SANITATION": "Sanitation",
+      "ELECTRICITY": "Electricity",
+      "COMMUNICATIONS": "Communications",
+      "NON_APPLICABLE": "Non applicable"
+    },
+    "project": {
+      "name": "Project Name",
+      "description": "Description",
+      "start-date": "Start Date",
+      "end-date": "End Date",
+      "organization-id": "Organization ID",
+      "contracting-email": "Contracting Entity Email",
+      "status": "Project status"
+    },
+    "project-status": {
+      "BASIC_STUDIES": "Basic Studies",
+      "DESIGN_IN_PROCESS": "Design in Process",
+      "UNDER_REVIEW": "Under Review",
+      "CHANGE_REQUESTED": "Change Requested",
+      "CHANGE_PENDING": "Change Pending",
+      "APPROVED": "Approved"
+    },
+    "change-process": {
+      "response": "Response",
+      "justification": "Request"
+    },
+    "milestone": {
+      "name": "Name",
+      "description": "Description",
+      "projectId": "Project ID",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "details": "Details"
+    }
+  },
+  "worker": {
+    "nav": {
+      "organizations": "Organizations",
+      "invitations": "Invitations"
+    },
+    "organizations": {
+      "title": "My organizations",
+      "empty-list-message": "No organizations have been found.",
+      "created-at-label": "Since:",
+      "create": {
+        "title": "Create Organization"
+      },
+      "create-success": "Organization created successfully.",
+      "create-failure": "Failed to create organization. Please try again."
+    },
+    "invitations": {
+      "empty-list-message": "No invitations have been found.",
+      "invited-by-label": "From:",
+      "organization-label": "To the organization:",
+      "reject-success": "Invitation rejected successfully.",
+      "reject-failure": "Failed to reject invitation. Please try again.",
+      "accept-success": "Invitation accepted successfully.",
+      "accept-failure": "Failed to accept invitation. Please try again."
+    }
+  },
+  "organization": {
+    "nav": {
+      "projects": "Projects",
+      "members": "Organization Members",
+      "settings": "Settings"
+    },
+    "members": {
+      "load-failure": "Failed to load organization members. Please try again.",
+      "delete-success": "Organization member removed successfully",
+      "delete-failure": "Failed to remove organization member. Please try again.",
+      "joined-at-label": "Member since",
+      "remove": {
+        "title": "Remove member from organization",
+        "message": "Are you sure you want to proceed?"
+      },
+      "person-label": "Sent to:",
+      "member-list-title": "Organization members",
+      "invitation-list-title": "Pending invitations",
+      "invite": {
+        "title": "Invite to Organization"
+      },
+      "invite-success": "Invitation sent successfully.",
+      "invite-failure": "Failed to send invitation. Please try again."
+    },
+    "settings": {
+      "danger-zone": {
+        "title": "DANGER ZONE",
+        "action": "DELETE ORGANIZATION"
+      },
+      "delete": {
+        "title": "Delete Organization",
+        "message": "Are you sure you want to delete the organization"
+      },
+      "delete-success": "Deleted organization successfully",
+      "delete-failure": "Unable to delete organization",
+      "edit": {
+        "title": "Edit organization",
+        "legal-name": "Legal name",
+        "legal-name-required": "Legal name is required.",
+        "legal-name-too-long": "Legal name is too long.",
+        "commercial-name": "Commercial name",
+        "commercial-name-required": "Commercial name is required.",
+        "commercial-name-too-long": "Commercial name is too long.",
+        "save": "Save changes"
+      },
+      "update-success": "Organization updated successfully.",
+      "update-failure": "Failed to update the organization. Please try again."
+    },
+    "projects": {
+      "title": "Organization's projects",
+      "start-date-label": "Start Date",
+      "end-date-label": "End Date",
+      "create-success": "Project created successfully.",
+      "create-failure": "Failed to create project. Please try again.",
+      "empty-list-message": "You are currently not a member of any project team in the organization."
+    }
+  },
+  "project": {
+    "nav": {
+      "schedule": "Schedule",
+      "team-members": "Project Team Members",
+      "settings": "Settings"
+    },
+    "edit": {
+      "save": "Save changes",
+      "title": "Edit project"
+    },
+    "create": {
+      "title": "Start a new Project"
+    },
+    "settings": {
+      "danger-zone": {
+        "title": "DANGER ZONE",
+        "action": "DELETE PROJECT"
+      },
+      "delete": {
+        "title": "Delete project?",
+        "message": "This action cannot be undone. Are you sure you want to delete this project?"
+      }
+    },
+    "delete-success": "Project deleted successfully.",
+    "delete-failure": "Failed to delete the project. Please try again.",
+    "update-success": "Project updated successfully.",
+    "update-failure": "Failed to update the project. Please try again.",
+    "schedule": {
+      "title": "Schedule details",
+      "first-column-subtitle": "Milestone list",
+      "second-column-subtitle": "Actions",
+      "empty-list-message": "This project hasn't registered a single milestone yet.",
+      "create-milestone": "New milestone",
+      "add-meeting": "Add meeting to milestone",
+      "add-task": "Add task to milestone",
+      "dialog": {
+        "title": "Add a new Milestone"
+      },
+      "create-success": "Milestone added successfully.",
+      "create-failure": "Failed to add new milestone. Please try again.",
+      "task-label": "List of tasks:",
+      "no-tasks": "No tasks found for this milestone.",
+      "tasks-fetch-failure": "Failed to load tasks. Please try again.",
+      "task-dialog": {
+        "title": "Add new Task"
+      },
+      "task-create-success": "Task created successfully.",
+      "task-create-failure": "Failed to create task. Please try again."
+    }
+  },
+  "client": {
+    "projects": {
+      "title": "Your ongoing projects",
+      "empty-list-message": "You haven't requested any project on the platform yet."
+    },
+    "organizations": {
+      "coming-soon-title": "Find project consulting organizations"
+    },
+    "nav": {
+      "projects": "Projects",
+      "organizations": "Discover organizations"
+    }
+  },
+  "project-tracking": {
+    "nav": {
+      "summary": "Summary",
+      "change-process": "Change Process",
+      "schedule": "Schedule"
+    },
+    "summary": {
+      "title": "Project's Summary",
+      "project-subtitle": "Project's Information",
+      "organization-subtitle": "Organization's Information",
+      "history-title": "Change Process History",
+      "empty-list-message": "No Change Process have been submitted yet."
+    },
+    "change-process": {
+      "create-success": "Change request created successfully.",
+      "create-failure": "Failed to create change request. Please try again.",
+      "create": {
+        "title": "Enter the details of yor request",
+        "description": "This details will start a Change Process that will be reviewed by the contractor of the organization in charge of your project. Based on their expertise, they may determine if the request shall proceed and under what conditions.",
+        "warning": "A change process cannot be started if there is currently a pending one.",
+        "warning-label": "WARNING"
+      },
+      "title": "Start a Change Process"
+    },
+    "schedule": {
+      "coming-soon-title": "Schedule"
+    }
+  },
+  "common": {
+    "coming-soon": {
+      "sub-text": "This functionality isn't here yet... But it will be soon! Stay around!"
+    }
+  }
+}

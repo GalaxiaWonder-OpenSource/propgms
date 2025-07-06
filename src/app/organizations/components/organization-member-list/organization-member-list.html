@@ -1,0 +1,14 @@
+@if (!organizationMemberList || organizationMemberList.length === 0) {
+  <app-empty-list-message-placeholder
+    layout="worker"
+    tab="organizations"
+  />
+} @else {
+  @for (organizationMember of organizationMemberList; track organizationMember.id) {
+    <app-organization-member-card
+      [organizationMember]="organizationMember"
+      [showActions]="showActions"
+      (remove)="onRemove($event)"
+    />
+  }
+}

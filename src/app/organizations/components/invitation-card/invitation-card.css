@@ -1,0 +1,67 @@
+:root {
+  --error-color: #B62324;
+  --success-color: #52B69A;
+}
+
+.invitation-card {
+  max-width: 400px;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.invitation-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.card-header-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.org-label {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.org-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.action-buttons .accept-btn:hover {
+  border-color: var(--success-color);
+  color: var(--success-color);
+  cursor: pointer;
+}
+
+.action-buttons .reject-btn:hover {
+  border-color: var(--error-color);
+  color: var(--error-color);
+  cursor: pointer;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.status-label {
+  font-size: 0.85rem;
+  color: #666;
+}

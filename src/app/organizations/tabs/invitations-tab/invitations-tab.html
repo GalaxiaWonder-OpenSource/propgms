@@ -1,0 +1,8 @@
+<main>
+  <app-invitation-list
+    [invitationList]="invitationsList"
+    [showActions]="true"
+    (accept)="handleAccept($event)"
+    (reject)="handleReject($event)"
+  />
+</main>

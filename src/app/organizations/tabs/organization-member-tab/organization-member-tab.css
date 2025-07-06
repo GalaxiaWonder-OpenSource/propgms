@@ -1,0 +1,34 @@
+main {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.flex-div {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-div section:nth-child(1) {
+  flex: 2;
+}
+
+.flex-div section:nth-child(2) {
+  flex: 1;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .flex-div {
+    flex-direction: column;
+  }
+
+  .flex-div section {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}

@@ -1,0 +1,133 @@
+.milestone-card {
+  margin: 16px 0;
+  cursor: pointer;
+  border-radius: 12px;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.milestone-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16px;
+}
+
+.card-title-group {
+  flex: 1;
+}
+
+.card-dates {
+  background-color: #e3f2fd;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: #0d47a1;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+  padding: 0 16px 16px;
+}
+
+.expanded-content {
+  position: relative;
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px solid #ccc;
+  animation: expandFade 1s ease-in-out;
+  min-height: 80px;
+}
+
+.card-title-group mat-card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1a237e;
+  margin-bottom: 4px;
+}
+
+.expand-arrow-bottom {
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+  font-size: 36px;
+  width: auto;
+  height: auto;
+  color: rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
+  pointer-events: none;
+}
+
+
+.expand-arrow-bottom {
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+  font-size: 36px;
+  color: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  transition: transform 0.2s ease;
+}
+
+.collapse-arrow-bottom {
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+  font-size: 36px;
+  color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  animation: fadeInArrow 0.3s ease forwards;
+  animation-delay: 0.25s;
+  pointer-events: none;
+}
+
+@keyframes expandFade {
+  from {
+    opacity: 0;
+    transform: scaleY(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes fadeInArrow {
+  to {
+    opacity: 1;
+  }
+}
+
+.task-item {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.task-dates,
+.task-meta,
+.task-description {
+  font-size: 0.9em;
+  color: #555;
+}
+
+.status-badge {
+  background: #e0e0e0;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.8em;
+}
+

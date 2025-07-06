@@ -1,0 +1,42 @@
+<h2 mat-dialog-title>{{ 'worker.organizations.create.title' | translate }}</h2>
+
+<mat-dialog-content [formGroup]="orgForm" class="form-wrapper">
+  <div class="vertical-form">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>{{ 'model.organization.legal-name' | translate }}</mat-label>
+      <input
+        matInput
+        formControlName="legalName"
+        [placeholder]="'model.organization.legal-name-example' | translate"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>{{ 'model.organization.commercial-name' | translate }}</mat-label>
+      <input
+        matInput
+        formControlName="commercialName"
+        [placeholder]="'model.organization.commercial-name-example' | translate"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>{{ 'model.organization.ruc' | translate }}</mat-label>
+      <input
+        matInput
+        formControlName="ruc"
+        maxlength="11"
+        [placeholder]="'model.organization.ruc-example' | translate"
+      />
+    </mat-form-field>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" class="form-actions">
+  <button mat-stroked-button (click)="cancel()">
+    {{ 'global.action.cancel' | translate }}
+  </button>
+  <button mat-raised-button color="primary" (click)="submitForm()">
+    {{ 'global.action.create' | translate }}
+  </button>
+</mat-dialog-actions>

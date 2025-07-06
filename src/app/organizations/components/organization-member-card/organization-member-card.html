@@ -1,0 +1,44 @@
+<mat-card class="organization-card">
+  <div class="card-header">
+    <div class="card-title-wrapper">
+      <mat-card-title>{{ organizationMember.fullName }}</mat-card-title>
+      <mat-card-subtitle>
+        {{ 'organization.members.joined-at-label' | translate }}:
+        {{ organizationMember.joinedAt | date: 'longDate' }}
+      </mat-card-subtitle>
+    </div>
+
+    <div
+      class="member-type-label"
+      [ngClass]="{
+        'contractor': organizationMember.memberType === 'CONTRACTOR',
+        'worker': organizationMember.memberType === 'WORKER',
+        'admin': organizationMember.memberType === 'ADMIN'
+      }"
+    >
+      <mat-icon class="role-icon">
+        {{
+          organizationMember.memberType === 'CONTRACTOR'
+            ? 'handshake'
+            : organizationMember.memberType === 'WORKER'
+              ? 'engineering'
+              : 'admin_panel_settings'
+        }}
+      </mat-icon>
+      {{ 'model.organization-member-type.' + organizationMember.memberType | translate }}
+    </div>
+  </div>
+
+  @if (showActions && organizationMember.memberType !== OrganizationMemberType.CONTRACTOR) {
+    <div class="actions">
+      <button
+        mat-icon-button
+        color="warn"
+        aria-label="Remove member"
+        (click)="confirmRemoval()"
+      >
+        <mat-icon>person_remove</mat-icon>
+      </button>
+    </div>
+  }
+</mat-card>

@@ -1,0 +1,15 @@
+@if (!invitationList || invitationList.length === 0) {
+  <app-empty-list-message-placeholder
+    layout="worker"
+    tab="invitations"
+  />
+} @else {
+  @for (invitation of invitationList; track invitation.id) {
+    <app-invitation-card
+      [invitation]="invitation"
+      [showActions]="showActions"
+      (accept)="onAccept($event)"
+      (reject)="onReject($event)"
+    />
+  }
+}

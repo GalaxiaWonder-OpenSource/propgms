@@ -1,0 +1,30 @@
+<mat-card
+  class="change-process-card"
+  [ngClass]="{
+    'pending': changeProcess.status === ChangeProcessStatus.PENDING,
+    'approved': changeProcess.status === ChangeProcessStatus.APPROVED,
+    'rejected': changeProcess.status === ChangeProcessStatus.REJECTED
+  }"
+>
+  <div class="card-header">
+    <div class="card-title-wrapper">
+      <mat-card-title>{{ changeProcess.origin }}</mat-card-title>
+    </div>
+
+    <div class="status-label" [ngClass]="changeProcess.status.toLowerCase()">
+      <mat-icon class="status-icon">
+        {{
+          changeProcess.status === ChangeProcessStatus.APPROVED ? 'check_circle' :
+            changeProcess.status === ChangeProcessStatus.REJECTED ? 'cancel' :
+              'hourglass_empty'
+        }}
+      </mat-icon>
+      {{ changeProcess.status }}
+    </div>
+  </div>
+
+  <mat-card-content>
+    <p class="justification"><strong>{{ 'model.change-process.justification' | translate}}:</strong> {{ changeProcess.justification }}</p>
+    <p><strong>{{ 'model.change-process.response' | translate}}:</strong> {{ changeProcess.response }}</p>
+  </mat-card-content>
+</mat-card>

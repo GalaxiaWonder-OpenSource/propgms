@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; margin: 0; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:root {
+  --brand-primary: #22396B;
+  --brand-accent: #FAB900;
+  --brand-bg: #E1E8EC;
+  --brand-text: #0C0C20;
+
+  --error-color: #B62324;
+  --success-color: #52B69A;
+  --info-color: #1e88e5;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  display: block;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
