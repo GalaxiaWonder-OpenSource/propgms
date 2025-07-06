@@ -14,6 +14,8 @@ import {CreateMilestoneModal} from '../../components/create-milestone-modal/crea
 import { Task } from '../../model/task-entity';
 import {TaskService} from '../../services/task-service';
 import {TaskEntityFromResourceAssembler} from '../../services/task-entity-from-resource-assmbler';
+import {CreateTaskModal} from '../../components/create-task-modal/create-task-modal';
+import {CreateTaskResource} from '../../resources/create-task-resource';
 
 @Component({
   selector: 'app-client-schedule-tab',
@@ -87,6 +89,26 @@ export class ScheduleTab extends BaseTab implements OnInit {
       },
       error: () => {
         this.emitSnackbar('error', 'project.schedule.tasks-fetch-failure');
+      }
+    });
+  }
+
+  openCreateTaskDialog(): void {
+    const dialogRef = this.dialog.open(CreateTaskModal, {
+      data: { milestones: this.milestoneList }
+    });
+
+    dialogRef.afterClosed().subscribe((result: CreateTaskResource | undefined) => {
+      if (result) {
+        this.taskService.createTask(result).subscribe({
+          next: (response) => {
+            this.tasksByMilestone[result.milestoneId].push(TaskEntityFromResourceAssembler(response));
+            this.emitSnackbar("success", "project.schedule.task-create-success");
+          },
+          error: () => {
+            this.emitSnackbar("error", "project.schedule.task-create-failure");
+          }
+        });
       }
     });
   }

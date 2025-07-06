@@ -52,6 +52,14 @@
     }
   },
   "model": {
+    "task": {
+      "name": "Task name",
+      "description": "Description",
+      "start-date": "Start date",
+      "end-date": "End date",
+      "specialty": "Specialty",
+      "milestone": "Milestone"
+    },
     "person": {
       "first-name": "First Name",
       "first-name-example": "John",
@@ -267,7 +275,12 @@
       "create-failure": "Failed to add new milestone. Please try again.",
       "task-label": "List of tasks:",
       "no-tasks": "No tasks found for this milestone.",
-      "tasks-fetch-failure": "Failed to load tasks. Please try again."
+      "tasks-fetch-failure": "Failed to load tasks. Please try again.",
+      "task-dialog": {
+        "title": "Add new Task"
+      },
+      "task-create-success": "Task created successfully.",
+      "task-create-failure": "Failed to create task. Please try again."
     }
   },
   "client": {

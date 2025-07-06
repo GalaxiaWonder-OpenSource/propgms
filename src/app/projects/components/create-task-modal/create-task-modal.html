@@ -1,0 +1,62 @@
+<h2 mat-dialog-title>{{ 'project.schedule.task-dialog.title' | translate }}</h2>
+
+<mat-dialog-content [formGroup]="taskForm" class="form-wrapper">
+  <div class="vertical-form">
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>{{ 'model.task.name' | translate }}</mat-label>
+      <input matInput formControlName="name" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>{{ 'model.task.description' | translate }}</mat-label>
+      <textarea matInput formControlName="description" rows="3"></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>{{ 'model.task.milestone' | translate }}</mat-label>
+      <mat-select formControlName="milestoneId">
+        @for(milestone of data.milestones; track milestone) {
+          <mat-option [value]="milestone.id">
+            {{ milestone.name }}
+          </mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>{{ 'model.task.start-date' | translate }}</mat-label>
+      <input matInput [matDatepicker]="startPicker" formControlName="startDate" />
+      <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+      <mat-datepicker #startPicker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>{{ 'model.task.end-date' | translate }}</mat-label>
+      <input matInput [matDatepicker]="endPicker" formControlName="endDate" />
+      <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+      <mat-datepicker #endPicker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>{{ 'model.task.specialty' | translate }}</mat-label>
+      <mat-select formControlName="specialty">
+        @for(specialty of specialtyValues; track specialty) {
+          <mat-option [value]="specialty">
+            {{ 'model.specialty.' + specialty | translate }}
+          </mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" class="form-actions">
+  <button mat-stroked-button (click)="cancel()">
+    {{ 'global.action.cancel' | translate }}
+  </button>
+  <button mat-raised-button color="primary" (click)="submit()" [disabled]="taskForm.invalid">
+    {{ 'global.action.create' | translate }}
+  </button>
+</mat-dialog-actions>

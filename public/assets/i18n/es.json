@@ -30,14 +30,14 @@
         "auth-credentials-title": "Información de la cuenta",
         "review-title": "Revisión final",
         "welcome-message": "¡Bienvenido {{name}}! Estás a punto de terminar la creación de tu cuenta.",
-        "summary-message": "Asegúrate de que tus datos personales han sido ingresados correctamente.",
-        "client-message": "Esperamos que nuestra herramienta haga tu proyecto fluido, transparente y exitoso.",
+        "summary-message": "Asegúrate de haber introducido correctamente tus datos personales.",
+        "client-message": "Esperamos que nuestra herramienta haga que tu proyecto sea fluido, transparente y exitoso.",
         "worker-message": "¡Esperamos que nuestra herramienta sea de gran utilidad para tu trabajo!",
-        "next-steps-message": "Si todo está correcto, puedes proceder a finalizar el proceso de registro."
+        "next-steps-message": "Si todo es correcto, puedes proceder a finalizar el proceso de registro."
       },
       "back-to-login": "Volver al inicio de sesión",
       "success": "¡Registro exitoso!",
-      "failure": "Error en el registro. Por favor, intenta de nuevo."
+      "failure": "El registro falló. Por favor, inténtalo nuevamente."
     },
     "login": {
       "title": "Iniciar sesión",
@@ -45,17 +45,25 @@
       "username-placeholder": "Ingresa tu nombre de usuario",
       "password": "Contraseña",
       "password-placeholder": "Ingresa tu contraseña",
-      "submit": "Ingresar",
-      "register-link": "¿No tienes una cuenta? Regístrate",
+      "submit": "Iniciar sesión",
+      "register-link": "¿No tienes cuenta? Regístrate",
       "success": "¡Inicio de sesión exitoso!",
-      "failure": "Error al iniciar sesión. Por favor, intenta de nuevo."
+      "failure": "Error al iniciar sesión. Por favor, inténtalo nuevamente."
     }
   },
   "model": {
+    "task": {
+      "name": "Nombre de la tarea",
+      "description": "Descripción",
+      "start-date": "Fecha de inicio",
+      "end-date": "Fecha de fin",
+      "specialty": "Especialidad",
+      "milestone": "Hito"
+    },
     "person": {
-      "first-name": "Nombre",
+      "first-name": "Nombres",
       "first-name-example": "Juan",
-      "last-name": "Apellido",
+      "last-name": "Apellidos",
       "last-name-example": "Pérez",
       "email": "Correo electrónico",
       "email-example": "juan.perez@ejemplo.com",
@@ -70,15 +78,15 @@
       "username-example": "juanperez",
       "password": "Contraseña",
       "password-example": "••••••••",
-      "type": "Tipo de cuenta"
+      "type": "Tipo de cuenta de usuario"
     },
     "user-account-type": {
       "TYPE_WORKER": "Trabajador",
       "TYPE_CLIENT": "Cliente"
     },
     "organization-status": {
-      "ACTIVE": "Activa",
-      "INACTIVE": "Inactiva"
+      "ACTIVE": "Activo",
+      "INACTIVE": "Inactivo"
     },
     "organization-member-type": {
       "CONTRACTOR": "Contratista",
@@ -86,18 +94,18 @@
     },
     "invitation-status": {
       "PENDING": "Pendiente",
-      "ACCEPTED": "Aceptada",
-      "Rejected": "Rechazada"
+      "ACCEPTED": "Aceptado",
+      "Rejected": "Rechazado"
     },
     "organization": {
-      "legal-name": "Nombre legal",
+      "legal-name": "Razón social",
       "legal-name-example": "ABC Tecnologías S.A.",
       "commercial-name": "Nombre comercial",
       "commercial-name-example": "ABC Tech",
       "ruc": "RUC",
       "ruc-example": "20481234567",
       "status": "Estado de la organización",
-      "created-at": "Creada el"
+      "created-at": "Fecha de creación"
     },
     "invitation": {
       "email": "Correo electrónico",
@@ -111,13 +119,13 @@
       "SANITATION": "Saneamiento",
       "ELECTRICITY": "Electricidad",
       "COMMUNICATIONS": "Comunicaciones",
-      "NON_APPLICABLE": "No aplicable"
+      "NON_APPLICABLE": "No aplica"
     },
     "project": {
       "name": "Nombre del proyecto",
       "description": "Descripción",
       "start-date": "Fecha de inicio",
-      "end-date": "Fecha de finalización",
+      "end-date": "Fecha de fin",
       "organization-id": "ID de la organización",
       "contracting-email": "Correo de la entidad contratante",
       "status": "Estado del proyecto"
@@ -126,8 +134,8 @@
       "BASIC_STUDIES": "Estudios Básicos",
       "DESIGN_IN_PROCESS": "Diseño en Proceso",
       "UNDER_REVIEW": "En Revisión",
-      "CHANGE_REQUESTED": "Cambios Solicitados",
-      "CHANGE_PENDING": "Cambios Pendientes",
+      "CHANGE_REQUESTED": "Cambio Solicitado",
+      "CHANGE_PENDING": "Cambio Pendiente",
       "APPROVED": "Aprobado"
     },
     "change-process": {
@@ -137,9 +145,9 @@
     "milestone": {
       "name": "Nombre",
       "description": "Descripción",
-      "projectId": "ID del Proyecto",
-      "startDate": "Fecha de Inicio",
-      "endDate": "Fecha de Fin",
+      "projectId": "ID del proyecto",
+      "startDate": "Fecha de inicio",
+      "endDate": "Fecha de fin",
       "details": "Detalles"
     }
   },
@@ -155,29 +163,29 @@
       "create": {
         "title": "Crear organización"
       },
-      "create-success": "Organización creada exitosamente.",
+      "create-success": "Organización creada con éxito.",
       "create-failure": "No se pudo crear la organización. Inténtalo nuevamente."
     },
     "invitations": {
       "empty-list-message": "No se encontraron invitaciones.",
-      "invited-by-label": "De:",
-      "organization-label": "A la organización:",
-      "reject-success": "Invitación rechazada exitosamente.",
+      "invited-by-label": "De parte de:",
+      "organization-label": "Para la organización:",
+      "reject-success": "Invitación rechazada con éxito.",
       "reject-failure": "No se pudo rechazar la invitación. Inténtalo nuevamente.",
-      "accept-success": "Invitación aceptada exitosamente.",
+      "accept-success": "Invitación aceptada con éxito.",
       "accept-failure": "No se pudo aceptar la invitación. Inténtalo nuevamente."
     }
   },
   "organization": {
     "nav": {
       "projects": "Proyectos",
-      "members": "Miembros de Organización",
-      "settings": "Ajustes"
+      "members": "Miembros de la organización",
+      "settings": "Configuración"
     },
     "members": {
-      "load-failure": "No se pudieron cargar los miembros de la organización. Inténtalo nuevamente.",
-      "delete-success": "Miembro eliminado exitosamente",
-      "delete-failure": "No se pudo eliminar el miembro. Inténtalo nuevamente.",
+      "load-failure": "Error al cargar los miembros de la organización. Inténtalo nuevamente.",
+      "delete-success": "Miembro eliminado con éxito",
+      "delete-failure": "No se pudo eliminar al miembro. Inténtalo nuevamente.",
       "joined-at-label": "Miembro desde",
       "remove": {
         "title": "Eliminar miembro de la organización",
@@ -189,7 +197,7 @@
       "invite": {
         "title": "Invitar a la organización"
       },
-      "invite-success": "Invitación enviada exitosamente.",
+      "invite-success": "Invitación enviada con éxito.",
       "invite-failure": "No se pudo enviar la invitación. Inténtalo nuevamente."
     },
     "settings": {
@@ -201,42 +209,42 @@
         "title": "Eliminar organización",
         "message": "¿Estás seguro de que deseas eliminar la organización?"
       },
-      "delete-success": "Organización eliminada exitosamente",
+      "delete-success": "Organización eliminada con éxito",
       "delete-failure": "No se pudo eliminar la organización",
       "edit": {
         "title": "Editar organización",
-        "legal-name": "Nombre legal",
-        "legal-name-required": "El nombre legal es obligatorio.",
-        "legal-name-too-long": "El nombre legal es demasiado largo.",
+        "legal-name": "Razón social",
+        "legal-name-required": "La razón social es obligatoria.",
+        "legal-name-too-long": "La razón social es demasiado larga.",
         "commercial-name": "Nombre comercial",
         "commercial-name-required": "El nombre comercial es obligatorio.",
         "commercial-name-too-long": "El nombre comercial es demasiado largo.",
         "save": "Guardar cambios"
       },
-      "update-success": "Organización actualizada exitosamente.",
+      "update-success": "Organización actualizada con éxito.",
       "update-failure": "No se pudo actualizar la organización. Inténtalo nuevamente."
     },
     "projects": {
       "title": "Proyectos de la organización",
       "start-date-label": "Fecha de inicio",
-      "end-date-label": "Fecha de finalización",
+      "end-date-label": "Fecha de fin",
       "create-success": "Proyecto creado con éxito.",
-      "create-failure": "No se pudo crear el proyecto. Por favor, inténtalo de nuevo.",
-      "empty-list-message": "Actualmente no eres parte del equipo de ningún proyecto en la organización."
+      "create-failure": "No se pudo crear el proyecto. Inténtalo nuevamente.",
+      "empty-list-message": "Actualmente no eres miembro de ningún equipo de proyecto en la organización."
     }
   },
   "project": {
     "nav": {
-      "schedule": "Calendarización",
-      "team-members": "Miembros de Equipo",
-      "settings": "Ajustes"
+      "schedule": "Cronograma",
+      "team-members": "Miembros del proyecto",
+      "settings": "Configuración"
     },
     "edit": {
       "save": "Guardar cambios",
       "title": "Editar proyecto"
     },
     "create": {
-      "title": "Iniciar un nuevo proyecto"
+      "title": "Iniciar nuevo proyecto"
     },
     "settings": {
       "danger-zone": {
@@ -245,35 +253,43 @@
       },
       "delete": {
         "title": "¿Eliminar proyecto?",
-        "message": "Esta acción no se puede deshacer. ¿Está seguro de que desea eliminar este proyecto?"
-      },
-      "delete-success": "Proyecto eliminado con éxito.",
-      "delete-failure": "No se pudo eliminar el proyecto. Inténtelo de nuevo.",
-      "update-success": "Proyecto actualizado con éxito.",
-      "update-failure": "No se pudo actualizar el proyecto. Inténtelo de nuevo."
+        "message": "Esta acción no se puede deshacer. ¿Estás seguro de que deseas eliminar este proyecto?"
+      }
     },
+    "delete-success": "Proyecto eliminado con éxito.",
+    "delete-failure": "No se pudo eliminar el proyecto. Inténtalo nuevamente.",
+    "update-success": "Proyecto actualizado con éxito.",
+    "update-failure": "No se pudo actualizar el proyecto. Inténtalo nuevamente.",
     "schedule": {
-      "title": "Detalles de hito",
+      "title": "Detalles del cronograma",
       "first-column-subtitle": "Lista de hitos",
       "second-column-subtitle": "Acciones",
-      "empty-list-message": "Este proyecto no ha registrado hitos aún.",
+      "empty-list-message": "Este proyecto aún no tiene hitos registrados.",
       "create-milestone": "Nuevo hito",
-      "add-meeting": "Añadir reunión a un hito",
-      "add-task": "Añadir tarea a un hito",
+      "add-meeting": "Agregar reunión al hito",
+      "add-task": "Agregar tarea al hito",
       "dialog": {
-        "title": "Añadir un nuevo Hito"
+        "title": "Agregar nuevo hito"
       },
-      "create-success": "Hito añadido exitosamente.",
-      "create-failure": "No se pudo añadir el hito. Inténtelo de nuevo."
+      "create-success": "Hito agregado con éxito.",
+      "create-failure": "No se pudo agregar el nuevo hito. Inténtalo nuevamente.",
+      "task-label": "Lista de tareas:",
+      "no-tasks": "No se encontraron tareas para este hito.",
+      "tasks-fetch-failure": "No se pudieron cargar las tareas. Inténtalo nuevamente.",
+      "task-dialog": {
+        "title": "Agregar nueva tarea"
+      },
+      "task-create-success": "Tarea creada con éxito.",
+      "task-create-failure": "No se pudo crear la tarea. Inténtalo nuevamente."
     }
   },
   "client": {
     "projects": {
-      "title": "Tus proyectos en desarrollo",
-      "empty-list-message": "No has solicitado ningún proyecto en la plataforma aún."
+      "title": "Tus proyectos en curso",
+      "empty-list-message": "Aún no has solicitado ningún proyecto en la plataforma."
     },
     "organizations": {
-      "coming-soon-title": "Descubre organizaciones de consultoría"
+      "coming-soon-title": "Encuentra organizaciones consultoras de proyectos"
     },
     "nav": {
       "projects": "Proyectos",
@@ -283,33 +299,34 @@
   "project-tracking": {
     "nav": {
       "summary": "Resumen",
-      "change-process": "Proceso de Cambio",
-      "schedule": "Calendarización"
+      "change-process": "Proceso de cambio",
+      "schedule": "Cronograma"
     },
     "summary": {
-      "title": "Resumen del Proyecto",
+      "title": "Resumen del proyecto",
       "project-subtitle": "Información del proyecto",
       "organization-subtitle": "Información de la organización",
-      "history-title": "Historial de proceso de cambio"
+      "history-title": "Historial de procesos de cambio",
+      "empty-list-message": "Aún no se ha enviado ningún proceso de cambio."
     },
     "change-process": {
-      "create-success": "Solicitud de cambio creada correctamente.",
-      "create-failure": "Error al crear la solicitud de cambio. Inténtalo de nuevo.",
+      "create-success": "Solicitud de cambio creada con éxito.",
+      "create-failure": "No se pudo crear la solicitud de cambio. Inténtalo nuevamente.",
       "create": {
         "title": "Ingresa los detalles de tu solicitud",
-        "description": "Estos detalles iniciarán un Proceso de Cambio que será revisado por el contratista de la organización a cargo de tu proyecto. Con base en su experiencia, podrá determinar si la solicitud debe proceder y bajo qué condiciones.",
-        "warning": "No se puede iniciar un proceso de cambio si ya hay uno pendiente actualmente.",
+        "description": "Estos detalles iniciarán un Proceso de Cambio que será revisado por el contratista de la organización a cargo de tu proyecto. En base a su criterio profesional, podrán determinar si procede o no.",
+        "warning": "No se puede iniciar un nuevo proceso de cambio si ya hay uno pendiente.",
         "warning-label": "ADVERTENCIA"
       },
-      "title": "Iniciar un Proceso de Cambio"
+      "title": "Iniciar proceso de cambio"
     },
     "schedule": {
-      "coming-soon-title": "Calendario"
+      "coming-soon-title": "Cronograma"
     }
   },
   "common": {
     "coming-soon": {
-      "sub-text": "Esta funcionalidad no se encuentra aquí aún... pero va a estarlo. ¡Hasta entonces!"
+      "sub-text": "Esta funcionalidad aún no está disponible... ¡pero llegará pronto! ¡Mantente atento!"
     }
   }
 }
